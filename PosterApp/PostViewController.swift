@@ -116,7 +116,7 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
         
         post["title"] = eventTitle.text
         
-        post["userid"] = "12345" //Change to current user later
+        post["userid"] = PFUser.currentUser()?.objectId
         
         post["eventDate"] = eventDate.date
         
@@ -166,6 +166,18 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        if (PFUser.currentUser() == nil) {
+            
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                
+                let tbVc: UITabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Tab Bar Controller") as! TabBarController
+                
+                tbVc.viewWillAppear(true)
+                
+                self.presentViewController(tbVc, animated: true, completion: nil)
+            })
+        }
         
         scrollView.contentSize.height = 1600
         

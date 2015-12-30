@@ -515,7 +515,7 @@ Cementing music as a long standing movement The Compozers have been playing all 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2719.5" y="606"/>
+            <point key="canvasLocation" x="3697.5" y="570"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="fLb-AU-md7">
@@ -527,7 +527,7 @@ Cementing music as a long standing movement The Compozers have been playing all 
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="wLC-ev-Q2x" kind="relationship" relationship="viewControllers" id="Abf-Ub-nJS"/>
+                        <segue destination="imR-1f-cQu" kind="relationship" relationship="viewControllers" id="Abf-Ub-nJS"/>
                         <segue destination="RDp-ab-SAe" kind="relationship" relationship="viewControllers" id="D1P-bR-EV1"/>
                         <segue destination="CDf-hf-fCd" kind="relationship" relationship="viewControllers" id="09L-to-WAc"/>
                     </connections>
@@ -650,7 +650,7 @@ Cementing music as a long standing movement The Compozers have been playing all 
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hFI-5h-NzI" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="yR3-dL-oSI" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-101" y="934"/>
+            <point key="canvasLocation" x="-632" y="336"/>
         </scene>
         <!--Login-->
         <scene sceneID="Lt9-xM-Gko">
@@ -808,7 +808,7 @@ Cementing music as a long standing movement The Compozers have been playing all 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oEJ-yN-aOG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="737" y="950"/>
+            <point key="canvasLocation" x="206" y="352"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="gXW-Bm-gLg">
@@ -936,9 +936,9 @@ Cementing music as a long standing movement The Compozers have been playing all 
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b1L-fb-4lC" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="1Ch-V1-7gd" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1509" y="964"/>
+            <point key="canvasLocation" x="978" y="366"/>
         </scene>
-        <!--Profile-->
+        <!--Profile View Controller-->
         <scene sceneID="PcP-UC-rEu">
             <objects>
                 <viewController storyboardIdentifier="Profile" id="wLC-ev-Q2x" customClass="ProfileViewController" customModule="PosterApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -1005,15 +1005,20 @@ Cementing music as a long standing movement The Compozers have been playing all 
                             <constraint firstAttribute="centerX" secondItem="yO4-uQ-x5f" secondAttribute="centerX" id="PW1-AI-Rmk"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" id="T0D-tp-xJS"/>
-                    <navigationItem key="navigationItem" id="6nb-ue-eUd"/>
+                    <navigationItem key="navigationItem" id="6nb-ue-eUd">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="GeS-e8-hf2">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" id="K2y-Hk-MHN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="userNameLabel" destination="Ais-EV-MdY" id="L6l-Rb-ilj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="drb-H2-wRK" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1626" y="260"/>
+            <point key="canvasLocation" x="2830" y="570"/>
         </scene>
         <!--Feed-->
         <scene sceneID="H9G-Hh-mJq">
@@ -1033,6 +1038,25 @@ Cementing music as a long standing movement The Compozers have been playing all 
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ahi-q1-Xlc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2884" y="-648"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="dFO-uo-nql">
+            <objects>
+                <navigationController storyboardIdentifier="Profile Nav" automaticallyAdjustsScrollViewInsets="NO" id="imR-1f-cQu" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" id="T0D-tp-xJS"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="23J-F3-ZQX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wLC-ev-Q2x" kind="relationship" relationship="rootViewController" id="w5s-pq-rKj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VB6-mU-UZZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2018" y="570"/>
         </scene>
     </scenes>
     <resources>
