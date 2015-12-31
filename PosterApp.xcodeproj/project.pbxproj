@@ -28,6 +28,7 @@
 		BE7822B51C24848D00796E2B /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7822B41C24848D00796E2B /* EventCollectionViewCell.swift */; };
 		BE7822B81C2484F500796E2B /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7822B71C2484F500796E2B /* Event.swift */; };
 		BEB3DAC51C275B9B00452752 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB3DAC41C275B9B00452752 /* EventDetailsViewController.swift */; };
+		BEB7020B1C35C200007927A8 /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB7020A1C35C200007927A8 /* FavouritesViewController.swift */; };
 		BEBC33371C2F4BB1007FDCBB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBC33331C2F4BB1007FDCBB /* ProfileViewController.swift */; };
 		BEBC33381C2F4BB1007FDCBB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBC33341C2F4BB1007FDCBB /* LoginViewController.swift */; };
 		BEBC33391C2F4BB1007FDCBB /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBC33351C2F4BB1007FDCBB /* ResetPasswordViewController.swift */; };
@@ -62,7 +63,8 @@
 		BE7822B41C24848D00796E2B /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
 		BE7822B71C2484F500796E2B /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		BEB3DAC41C275B9B00452752 /* EventDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
-		BEBC33331C2F4BB1007FDCBB /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		BEB7020A1C35C200007927A8 /* FavouritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
+		BEBC33331C2F4BB1007FDCBB /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = Authenication/ProfileViewController.swift; sourceTree = "<group>"; };
 		BEBC33341C2F4BB1007FDCBB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BEBC33351C2F4BB1007FDCBB /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		BEBC33361C2F4BB1007FDCBB /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -118,8 +120,9 @@
 				BE7822B61C2484A900796E2B /* Event Feed */,
 				BEBC33321C2F4BB1007FDCBB /* Authenication */,
 				BEC2E6FE1C3313BD007CE64B /* TabBarController.swift */,
+				BEBC33331C2F4BB1007FDCBB /* ProfileViewController.swift */,
+				BEB7020A1C35C200007927A8 /* FavouritesViewController.swift */,
 				BEC2E7001C3335A6007CE64B /* Main.storyboard */,
-				BEC2E7031C33433E007CE64B /* FeedNavigationController.swift */,
 				BE1204231C1A061A00B9B9C1 /* AppDelegate.swift */,
 				BEB3DAC41C275B9B00452752 /* EventDetailsViewController.swift */,
 				BE1204251C1A061A00B9B9C1 /* PostViewController.swift */,
@@ -170,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				BE7822B31C2482CA00796E2B /* Model */,
+				BEC2E7031C33433E007CE64B /* FeedNavigationController.swift */,
 				BE7822AF1C24162400796E2B /* FeedViewController.swift */,
 				BE7822B41C24848D00796E2B /* EventCollectionViewCell.swift */,
 				BEF4DB081C28BCA5005C2928 /* WebViewController.swift */,
@@ -180,7 +184,6 @@
 		BEBC33321C2F4BB1007FDCBB /* Authenication */ = {
 			isa = PBXGroup;
 			children = (
-				BEBC33331C2F4BB1007FDCBB /* ProfileViewController.swift */,
 				BEBC33341C2F4BB1007FDCBB /* LoginViewController.swift */,
 				BEBC33351C2F4BB1007FDCBB /* ResetPasswordViewController.swift */,
 				BEBC33361C2F4BB1007FDCBB /* SignUpViewController.swift */,
@@ -272,6 +275,7 @@
 				BE7822B81C2484F500796E2B /* Event.swift in Sources */,
 				BEC2E6FF1C3313BD007CE64B /* TabBarController.swift in Sources */,
 				BEBC33381C2F4BB1007FDCBB /* LoginViewController.swift in Sources */,
+				BEB7020B1C35C200007927A8 /* FavouritesViewController.swift in Sources */,
 				BE7822B01C24162400796E2B /* FeedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

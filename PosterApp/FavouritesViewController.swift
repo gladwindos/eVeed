@@ -1,15 +1,15 @@
 //
-//  FeedViewController.swift
+//  FavouritesViewController.swift
 //  PosterApp
 //
-//  Created by Gladwin Dosunmu on 18/12/2015.
+//  Created by Gladwin Dosunmu on 31/12/2015.
 //  Copyright © 2015 Gladwin Dosunmu. All rights reserved.
 //
 
 import UIKit
-import Parse 
+import Parse
 
-class FeedViewController: UIViewController {
+class FavouritesViewController: UIViewController {
     
     func displayAlert(title: String, message: String) {
         
@@ -25,12 +25,33 @@ class FeedViewController: UIViewController {
         
     }
     
+    var userFavourites: [String] = []
+    
     // MARK: - IBOulets
     
     @IBOutlet weak var backgroundImageView: UIImageView!
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBAction func logOutAction(sender: AnyObject) {
+        
+        PFUser.logOutInBackgroundWithBlock { (error) -> Void in
+            
+            if error == nil {
+                
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    
+                    let tbVc: UITabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Tab Bar Controller") as! TabBarController
+                    
+                    tbVc.viewWillAppear(true)
+                    
+                    self.presentViewController(tbVc, animated: true, completion: nil)
+                })
+            }
+            
+        }
+        
+    }
     
     // MARK: - UICollectionViewDataSource
     
@@ -40,9 +61,25 @@ class FeedViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        if (PFUser.currentUser() == nil) {
+            
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                
+                let tbVc: UITabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Tab Bar Controller") as! TabBarController
+                
+                tbVc.viewWillAppear(true)
+                
+                self.presentViewController(tbVc, animated: true, completion: nil)
+            })
+        }
         
+        let currentUser = PFUser.currentUser()
+        
+        userFavourites = (currentUser?.objectForKey("favourites"))! as! [String]
         
         let query = PFQuery(className: "Event")
+        
+        query.whereKey("objectId", containedIn: userFavourites)
         
         var newImage: UIImage!
         
@@ -70,29 +107,29 @@ class FeedViewController: UIViewController {
                     } catch {print(error)}
                     
                     
-                    // Can't get image from inside block before setting image in collection view cell, 
+                    // Can't get image from inside block before setting image in collection view cell,
                     // do - catch, temporary fix
                     
-//                    let imageFile = object["imageFile"] as! PFFile
+                    //                    let imageFile = object["imageFile"] as! PFFile
                     
-//                    imageFile.getDataInBackgroundWithBlock({ (imageData: NSData?, error: NSError?) -> Void in
-//                        
-//                        if error != nil {
-//                            
-//                            print(error)
-//                            
-//                        } else {
-//                            
-//                            if let data = imageData {
-//                                
-//                                newImage = UIImage(data: data)
-//                                print(newImage)
-//                                
-//                            }
-//                            
-//                        }
-//                        
-//                    })
+                    //                    imageFile.getDataInBackgroundWithBlock({ (imageData: NSData?, error: NSError?) -> Void in
+                    //
+                    //                        if error != nil {
+                    //
+                    //                            print(error)
+                    //
+                    //                        } else {
+                    //
+                    //                            if let data = imageData {
+                    //
+                    //                                newImage = UIImage(data: data)
+                    //                                print(newImage)
+                    //
+                    //                            }
+                    //
+                    //                        }
+                    //
+                    //                    })
                     
                     self.createdEvents.append(Event(title: object["title"] as! String, date: "5th of Dec", eventID: object.objectId!, eventImage: newImage))
                     
@@ -104,12 +141,12 @@ class FeedViewController: UIViewController {
             
         }
     }
-
+    
     
     private struct Storyboard {
         static let CellIdentifier = "Event Cell"
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -117,7 +154,7 @@ class FeedViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        if segue.identifier == "show info" {
+        if segue.identifier == "show fav info" {
             
             if let indexPath = self.collectionView?.indexPathForCell(sender as! UICollectionViewCell) {
                 
@@ -132,11 +169,10 @@ class FeedViewController: UIViewController {
                     if error != nil {
                         
                         print(error)
-                        
                     } else if let event = object {
                         
                         infoVC.eventId = cellEventId
-                                                
+                        
                         if let imageFile = event["imageFile"]{
                             
                             imageFile.getDataInBackgroundWithBlock({ (imageData: NSData?, error: NSError?) -> Void in
@@ -193,7 +229,7 @@ class FeedViewController: UIViewController {
     
 }
 
-extension FeedViewController: UICollectionViewDataSource {
+extension FavouritesViewController: UICollectionViewDataSource {
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
@@ -212,7 +248,7 @@ extension FeedViewController: UICollectionViewDataSource {
     }
 }
 
-extension FeedViewController: UIScrollViewDelegate {
+extension FavouritesViewController: UIScrollViewDelegate {
     
     func scrollViewWillEndDragging(scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         
@@ -231,20 +267,6 @@ extension FeedViewController: UIScrollViewDelegate {
         targetContentOffset.memory = offset
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

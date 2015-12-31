@@ -7,9 +7,19 @@
 //
 
 import UIKit
+import Parse
 
 class EventDetailsViewController: UIViewController {
     
+    func displayAlert(title: String, message: String) {
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+        
+        self.presentViewController(alert, animated: true, completion: nil)
+        
+    }
     
     @IBOutlet var scrollView: UIScrollView!
     
@@ -33,6 +43,8 @@ class EventDetailsViewController: UIViewController {
     
     var ticketLinkHolder = ""
     
+    var eventId = ""
+    
     @IBAction func ticketLinkAction(sender: UIButton) {
         
     }
@@ -46,6 +58,47 @@ class EventDetailsViewController: UIViewController {
         }
     }
     
+    var userFavourites: [String] = []
+    
+    
+    @IBAction func addToFavourites(sender: AnyObject) {
+        
+        var AddorRemove = ""
+        
+        if let user = PFUser.currentUser() {
+            
+            userFavourites = user.objectForKey("favourites") as! [String]
+            
+            if userFavourites.contains(eventId) {
+                
+                user.removeObject(eventId, forKey: "favourites")
+                
+                AddorRemove = "removed from"
+                
+            } else {
+                
+                user.addObject(eventId, forKey: "favourites")
+                
+                AddorRemove = "added to"
+            }
+            
+            user.saveInBackgroundWithBlock { (success, error) -> Void in
+                
+                if success {
+                    
+                    self.displayAlert("\(AddorRemove.capitalizedString) Favourites", message: "This event has been \(AddorRemove) your favourites")
+                    
+                } else {
+                    
+                    self.displayAlert("Error", message: "\(error)")
+                }
+            }
+            
+        } else {
+            
+            displayAlert("Sorry", message: "You need to login to add to your favourites")
+        }
+    }
     
 
     override func viewDidLoad() {

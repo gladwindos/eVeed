@@ -86,7 +86,7 @@
                                                         <outlet property="eventImage" destination="B4J-SW-Smw" id="ax0-a5-SaR"/>
                                                         <outlet property="eventTitle" destination="BxN-cX-ZH6" id="JBf-PS-NEa"/>
                                                         <outlet property="eventdate" destination="gcR-yM-YyO" id="jqg-2u-qMN"/>
-                                                        <segue destination="vzB-e5-GPP" kind="show" identifier="show extra info" id="g4W-h6-yPB"/>
+                                                        <segue destination="vzB-e5-GPP" kind="show" identifier="show info" id="g4W-h6-yPB"/>
                                                     </connections>
                                                 </collectionViewCell>
                                             </cells>
@@ -118,7 +118,7 @@
                             <constraint firstItem="3uG-7i-QS2" firstAttribute="top" secondItem="Hpp-v5-l2L" secondAttribute="top" id="qQz-oc-5eM"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="HkP-hB-ugb"/>
+                    <navigationItem key="navigationItem" title="Feed" id="HkP-hB-ugb"/>
                     <connections>
                         <outlet property="backgroundImageView" destination="3uG-7i-QS2" id="y53-cp-8k0"/>
                         <outlet property="collectionView" destination="tVu-aU-eb1" id="V0b-ga-1Xh"/>
@@ -280,6 +280,13 @@ Cementing music as a long standing movement The Compozers have been playing all 
                             <constraint firstItem="3Rg-nV-qd4" firstAttribute="centerY" secondItem="KG3-s0-O8h" secondAttribute="centerY" id="wHB-Rv-O0J"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Event Details" id="N2w-m8-WvU">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="8Ir-g8-ehq">
+                            <connections>
+                                <action selector="addToFavourites:" destination="vzB-e5-GPP" id="Lh4-gt-iAM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="1250"/>
                     <connections>
@@ -515,7 +522,7 @@ Cementing music as a long standing movement The Compozers have been playing all 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3697.5" y="570"/>
+            <point key="canvasLocation" x="6261.5" y="1170"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="fLb-AU-md7">
@@ -527,9 +534,9 @@ Cementing music as a long standing movement The Compozers have been playing all 
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="imR-1f-cQu" kind="relationship" relationship="viewControllers" id="Abf-Ub-nJS"/>
                         <segue destination="RDp-ab-SAe" kind="relationship" relationship="viewControllers" id="D1P-bR-EV1"/>
                         <segue destination="CDf-hf-fCd" kind="relationship" relationship="viewControllers" id="09L-to-WAc"/>
+                        <segue destination="Kct-tr-fa9" kind="relationship" relationship="viewControllers" id="QN7-UK-S39"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qY3-0b-so6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1018,7 +1025,7 @@ Cementing music as a long standing movement The Compozers have been playing all 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="drb-H2-wRK" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2830" y="570"/>
+            <point key="canvasLocation" x="5394" y="1170"/>
         </scene>
         <!--Feed-->
         <scene sceneID="H9G-Hh-mJq">
@@ -1039,24 +1046,152 @@ Cementing music as a long standing movement The Compozers have been playing all 
             </objects>
             <point key="canvasLocation" x="2884" y="-648"/>
         </scene>
-        <!--Profile-->
-        <scene sceneID="dFO-uo-nql">
+        <!--Favourites-->
+        <scene sceneID="t3O-ob-L9K">
             <objects>
-                <navigationController storyboardIdentifier="Profile Nav" automaticallyAdjustsScrollViewInsets="NO" id="imR-1f-cQu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" id="T0D-tp-xJS"/>
+                <viewController storyboardIdentifier="Favourites" title="Favourites" id="02K-8X-2Wa" customClass="FavouritesViewController" customModule="PosterApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mR6-zY-FSK"/>
+                        <viewControllerLayoutGuide type="bottom" id="3Sk-JG-DMY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qhg-2l-Bdg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Set_it_off" translatesAutoresizingMaskIntoConstraints="NO" id="Vgy-QX-Btt">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TrZ-cW-xTe">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="jGD-0W-9Gm">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jwK-EL-5ZV">
+                                            <rect key="frame" x="0.0" y="67" width="600" height="489"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="20" minimumInteritemSpacing="10" id="YsR-Yh-2t1">
+                                                <size key="itemSize" width="280" height="469"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                            <cells>
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Event Cell" id="nb7-XH-FsT" customClass="EventCollectionViewCell" customModule="PosterApp" customModuleProvider="target">
+                                                    <rect key="frame" x="20" y="10" width="280" height="469"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="469"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Set_it_off" translatesAutoresizingMaskIntoConstraints="NO" id="sIK-MO-U3X">
+                                                                <rect key="frame" x="0.0" y="0.0" width="280" height="380"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="380" id="TgH-FS-NBm"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Law of Attraction" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7yJ-vB-vF3">
+                                                                <rect key="frame" x="0.0" y="383" width="280" height="45"/>
+                                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                                                <fontDescription key="fontDescription" type="italicSystem" pointSize="20"/>
+                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Dk-NL-JlD">
+                                                                <rect key="frame" x="0.0" y="424" width="280" height="45"/>
+                                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                                                <fontDescription key="fontDescription" type="italicSystem" pointSize="20"/>
+                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    </view>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottomMargin" secondItem="7yJ-vB-vF3" secondAttribute="bottom" constant="33" id="4je-tb-JAb"/>
+                                                        <constraint firstItem="7yJ-vB-vF3" firstAttribute="top" secondItem="sIK-MO-U3X" secondAttribute="bottom" constant="3" id="7Zr-Tz-rw3"/>
+                                                        <constraint firstItem="9Dk-NL-JlD" firstAttribute="width" secondItem="sIK-MO-U3X" secondAttribute="width" id="8Ay-nu-eB8"/>
+                                                        <constraint firstItem="sIK-MO-U3X" firstAttribute="top" secondItem="nb7-XH-FsT" secondAttribute="topMargin" constant="-8" id="CMn-zT-Krx"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="9Dk-NL-JlD" secondAttribute="trailing" constant="-8" id="Eas-IN-rH2"/>
+                                                        <constraint firstItem="9Dk-NL-JlD" firstAttribute="top" secondItem="sIK-MO-U3X" secondAttribute="bottom" constant="44" id="IH0-fE-QGv"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="sIK-MO-U3X" secondAttribute="trailing" constant="-8" id="O0w-tO-7Nw"/>
+                                                        <constraint firstItem="7yJ-vB-vF3" firstAttribute="width" secondItem="sIK-MO-U3X" secondAttribute="width" id="bLv-g5-Vcx"/>
+                                                        <constraint firstItem="9Dk-NL-JlD" firstAttribute="leading" secondItem="nb7-XH-FsT" secondAttribute="leadingMargin" constant="-8" id="bPN-IF-fbI"/>
+                                                        <constraint firstAttribute="bottomMargin" secondItem="9Dk-NL-JlD" secondAttribute="bottom" constant="-8" id="jLX-jH-2ZF"/>
+                                                        <constraint firstItem="7yJ-vB-vF3" firstAttribute="leading" secondItem="nb7-XH-FsT" secondAttribute="leadingMargin" constant="-8" id="qco-Q6-G9d"/>
+                                                        <constraint firstItem="sIK-MO-U3X" firstAttribute="leading" secondItem="nb7-XH-FsT" secondAttribute="leadingMargin" constant="-8" id="uLw-Pf-q9a"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="7yJ-vB-vF3" secondAttribute="trailing" constant="-8" id="yKd-pF-0SS"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <outlet property="eventImage" destination="sIK-MO-U3X" id="lfm-zx-GbY"/>
+                                                        <outlet property="eventTitle" destination="7yJ-vB-vF3" id="mu3-PA-dVQ"/>
+                                                        <outlet property="eventdate" destination="9Dk-NL-JlD" id="Lvp-fw-BhT"/>
+                                                        <segue destination="vzB-e5-GPP" kind="show" identifier="show fav info" id="G7t-MD-7uc"/>
+                                                    </connections>
+                                                </collectionViewCell>
+                                            </cells>
+                                            <connections>
+                                                <outlet property="dataSource" destination="02K-8X-2Wa" id="dhh-La-NS8"/>
+                                                <outlet property="delegate" destination="02K-8X-2Wa" id="FG4-Ov-qTC"/>
+                                            </connections>
+                                        </collectionView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="jwK-EL-5ZV" firstAttribute="leading" secondItem="jGD-0W-9Gm" secondAttribute="leading" id="0Vb-32-Tkv"/>
+                                        <constraint firstAttribute="bottom" secondItem="jwK-EL-5ZV" secondAttribute="bottom" constant="44" id="5xz-jC-48u"/>
+                                        <constraint firstItem="jwK-EL-5ZV" firstAttribute="top" secondItem="jGD-0W-9Gm" secondAttribute="top" constant="67" id="AgV-0I-kqs"/>
+                                        <constraint firstAttribute="trailing" secondItem="jwK-EL-5ZV" secondAttribute="trailing" id="HUf-3c-1Ij"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Vgy-QX-Btt" firstAttribute="leading" secondItem="TrZ-cW-xTe" secondAttribute="leading" id="1d1-V2-ZQ5"/>
+                            <constraint firstItem="Vgy-QX-Btt" firstAttribute="bottom" secondItem="3Sk-JG-DMY" secondAttribute="top" id="D9Z-HZ-6Zo"/>
+                            <constraint firstItem="TrZ-cW-xTe" firstAttribute="leading" secondItem="qhg-2l-Bdg" secondAttribute="leading" id="L7Q-K3-SxO"/>
+                            <constraint firstItem="TrZ-cW-xTe" firstAttribute="bottom" secondItem="3Sk-JG-DMY" secondAttribute="top" id="WMj-RZ-JuB"/>
+                            <constraint firstItem="TrZ-cW-xTe" firstAttribute="trailing" secondItem="Vgy-QX-Btt" secondAttribute="trailing" id="dNr-YG-aTO"/>
+                            <constraint firstItem="TrZ-cW-xTe" firstAttribute="top" secondItem="qhg-2l-Bdg" secondAttribute="top" id="fN6-rr-GI8"/>
+                            <constraint firstAttribute="trailing" secondItem="TrZ-cW-xTe" secondAttribute="trailing" id="kM2-eE-dNb"/>
+                            <constraint firstItem="Vgy-QX-Btt" firstAttribute="top" secondItem="TrZ-cW-xTe" secondAttribute="top" id="mH3-8C-rJl"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="vEg-7K-TL6">
+                        <barButtonItem key="leftBarButtonItem" title="LogOut" id="3Sk-vF-RsX">
+                            <connections>
+                                <action selector="logOutAction:" destination="02K-8X-2Wa" id="nCG-7A-WpC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="Vgy-QX-Btt" id="JiY-LI-8cO"/>
+                        <outlet property="collectionView" destination="jwK-EL-5ZV" id="I56-dM-jks"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fce-pn-Kb8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3582" y="144"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="zpb-gz-QWt">
+            <objects>
+                <navigationController storyboardIdentifier="Profile Nav" automaticallyAdjustsScrollViewInsets="NO" id="Kct-tr-fa9" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" id="eNU-3s-uCG"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="23J-F3-ZQX">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="W4T-rz-fJ2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="wLC-ev-Q2x" kind="relationship" relationship="rootViewController" id="w5s-pq-rKj"/>
+                        <segue destination="02K-8X-2Wa" kind="relationship" relationship="rootViewController" id="gy3-k2-qhg"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VB6-mU-UZZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rYp-3i-IWd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2018" y="570"/>
+            <point key="canvasLocation" x="2260" y="352"/>
         </scene>
     </scenes>
     <resources>
@@ -1067,4 +1202,7 @@ Cementing music as a long standing movement The Compozers have been playing all 
         <image name="placeholder.png" width="300" height="200"/>
         <image name="user" width="126" height="126"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="G7t-MD-7uc"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -58,6 +58,7 @@ class SignUpViewController: UIViewController {
             newUser.username = username
             newUser.password = password
             newUser.email = finalEmail
+            newUser["favourites"] = []
             
             // Sign up user asynchronously
             newUser.signUpInBackgroundWithBlock({ (succeed, error) -> Void in

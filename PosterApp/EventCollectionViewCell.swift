@@ -33,6 +33,7 @@ class EventCollectionViewCell: UICollectionViewCell {
         eventTitle.text! = event.title
         eventdate.text! = event.date
         eventImage.image! = event.eventImage
+        
     }
     
     override func layoutSubviews() {

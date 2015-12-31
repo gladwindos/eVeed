@@ -23,18 +23,7 @@ class Event {
         self.eventID = eventID
         self.eventImage = eventImage
     }
-    
-    //Mark: - Private
-    
-//    static func createEvents() -> [Event] {
-//        
-//        return [
-//            Event(title: "Law of Attraction", date: "6th of dec", eventID: "1234", eventImage: UIImage(named: "LOA")!),
-//            Event(title: "Set It Off", date: "7th of Dec", eventID: "4321", eventImage: UIImage(named: "Set_it_off")!),
-//            Event(title: "Lights Off", date: "8th of Dec", eventID: "2134", eventImage: UIImage(named: "Lights_off")!)
-//        ]
-//        
-//  }
+
 }
 
 
