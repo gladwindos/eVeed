@@ -40,7 +40,12 @@ class FeedViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+    }
+    
+    override func viewDidAppear(animated: Bool) {
         
+        // Clear events array
+        createdEvents = []
         
         let query = PFQuery(className: "Event")
         
@@ -70,29 +75,29 @@ class FeedViewController: UIViewController {
                     } catch {print(error)}
                     
                     
-                    // Can't get image from inside block before setting image in collection view cell, 
+                    // Can't get image from inside block before setting image in collection view cell,
                     // do - catch, temporary fix
                     
-//                    let imageFile = object["imageFile"] as! PFFile
+                    //                    let imageFile = object["imageFile"] as! PFFile
                     
-//                    imageFile.getDataInBackgroundWithBlock({ (imageData: NSData?, error: NSError?) -> Void in
-//                        
-//                        if error != nil {
-//                            
-//                            print(error)
-//                            
-//                        } else {
-//                            
-//                            if let data = imageData {
-//                                
-//                                newImage = UIImage(data: data)
-//                                print(newImage)
-//                                
-//                            }
-//                            
-//                        }
-//                        
-//                    })
+                    //                    imageFile.getDataInBackgroundWithBlock({ (imageData: NSData?, error: NSError?) -> Void in
+                    //
+                    //                        if error != nil {
+                    //
+                    //                            print(error)
+                    //
+                    //                        } else {
+                    //
+                    //                            if let data = imageData {
+                    //
+                    //                                newImage = UIImage(data: data)
+                    //                                print(newImage)
+                    //
+                    //                            }
+                    //
+                    //                        }
+                    //
+                    //                    })
                     
                     self.createdEvents.append(Event(title: object["title"] as! String, date: "5th of Dec", eventID: object.objectId!, eventImage: newImage))
                     
@@ -103,6 +108,7 @@ class FeedViewController: UIViewController {
             self.collectionView.reloadData()
             
         }
+        
     }
 
     

@@ -61,6 +61,14 @@ class FavouritesViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        // Clear Events array
+        createdEvents = []
+        
+        
         if (PFUser.currentUser() == nil) {
             
             dispatch_async(dispatch_get_main_queue(), { () -> Void in

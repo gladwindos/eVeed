@@ -302,10 +302,38 @@ Cementing music as a long standing movement The Compozers have been playing all 
             </objects>
             <point key="canvasLocation" x="5210" y="-598"/>
         </scene>
+        <!--Menu Table View Controller-->
+        <scene sceneID="xbL-dG-eCG">
+            <objects>
+                <tableViewController id="a7Q-eg-jde" customClass="MenuTableViewController" customModule="PosterApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="7sB-xI-KDV">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="menu cell" id="HVa-PN-21p">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HVa-PN-21p" id="TDg-Hv-j0T">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="a7Q-eg-jde" id="08E-aA-XGp"/>
+                            <outlet property="delegate" destination="a7Q-eg-jde" id="4Zt-pD-4Vh"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eQU-J1-KkP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4737" y="388"/>
+        </scene>
         <!--Add Post-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="Post" title="Add Post" id="BYZ-38-t0r" customClass="PostViewController" customModule="PosterApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Add Post" title="Add Post" id="BYZ-38-t0r" customClass="PostViewController" customModule="PosterApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -522,7 +550,7 @@ Cementing music as a long standing movement The Compozers have been playing all 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6261.5" y="1170"/>
+            <point key="canvasLocation" x="5731.5" y="876"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="fLb-AU-md7">
@@ -1013,11 +1041,7 @@ Cementing music as a long standing movement The Compozers have been playing all 
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6nb-ue-eUd">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="GeS-e8-hf2">
-                            <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="K2y-Hk-MHN"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="GeS-e8-hf2"/>
                     </navigationItem>
                     <connections>
                         <outlet property="userNameLabel" destination="Ais-EV-MdY" id="L6l-Rb-ilj"/>
@@ -1025,7 +1049,7 @@ Cementing music as a long standing movement The Compozers have been playing all 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="drb-H2-wRK" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5394" y="1170"/>
+            <point key="canvasLocation" x="4930" y="1448"/>
         </scene>
         <!--Feed-->
         <scene sceneID="H9G-Hh-mJq">
@@ -1162,6 +1186,11 @@ Cementing music as a long standing movement The Compozers have been playing all 
                         <barButtonItem key="leftBarButtonItem" title="LogOut" id="3Sk-vF-RsX">
                             <connections>
                                 <action selector="logOutAction:" destination="02K-8X-2Wa" id="nCG-7A-WpC"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Menu" style="plain" id="gU8-HS-gbT">
+                            <connections>
+                                <segue destination="a7Q-eg-jde" kind="show" id="gwu-XZ-2fj"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

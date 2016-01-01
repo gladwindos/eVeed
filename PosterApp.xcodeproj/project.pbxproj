@@ -36,6 +36,7 @@
 		BEC2E6FF1C3313BD007CE64B /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC2E6FE1C3313BD007CE64B /* TabBarController.swift */; };
 		BEC2E7021C3335A6007CE64B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEC2E7001C3335A6007CE64B /* Main.storyboard */; };
 		BEC2E7041C33433E007CE64B /* FeedNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC2E7031C33433E007CE64B /* FeedNavigationController.swift */; };
+		BEEDD1411C3702DF00B1F2DE /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEDD1401C3702DF00B1F2DE /* MenuTableViewController.swift */; };
 		BEF4DB091C28BCA5005C2928 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF4DB081C28BCA5005C2928 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		BEC2E6FE1C3313BD007CE64B /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		BEC2E7011C3335A6007CE64B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BEC2E7031C33433E007CE64B /* FeedNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedNavigationController.swift; sourceTree = "<group>"; };
+		BEEDD1401C3702DF00B1F2DE /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		BEF4DB081C28BCA5005C2928 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,6 +125,7 @@
 				BEBC33331C2F4BB1007FDCBB /* ProfileViewController.swift */,
 				BEB7020A1C35C200007927A8 /* FavouritesViewController.swift */,
 				BEC2E7001C3335A6007CE64B /* Main.storyboard */,
+				BEEDD1401C3702DF00B1F2DE /* MenuTableViewController.swift */,
 				BE1204231C1A061A00B9B9C1 /* AppDelegate.swift */,
 				BEB3DAC41C275B9B00452752 /* EventDetailsViewController.swift */,
 				BE1204251C1A061A00B9B9C1 /* PostViewController.swift */,
@@ -265,6 +268,7 @@
 			files = (
 				BE1204261C1A061A00B9B9C1 /* PostViewController.swift in Sources */,
 				BE7822B51C24848D00796E2B /* EventCollectionViewCell.swift in Sources */,
+				BEEDD1411C3702DF00B1F2DE /* MenuTableViewController.swift in Sources */,
 				BEBC33391C2F4BB1007FDCBB /* ResetPasswordViewController.swift in Sources */,
 				BE1204241C1A061A00B9B9C1 /* AppDelegate.swift in Sources */,
 				BEB3DAC51C275B9B00452752 /* EventDetailsViewController.swift in Sources */,

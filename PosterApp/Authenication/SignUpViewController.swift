@@ -72,11 +72,24 @@ class SignUpViewController: UIViewController {
                     
                 } else {
                     
-                    self.displayAlert("Success", message: "Signed Up")
+                    let alert = UIAlertController(title: "Success", message: "Signed Up", preferredStyle: UIAlertControllerStyle.Alert)
+                    
+                    alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
+                        
+                        self.dismissViewControllerAnimated(true, completion: nil)
+                        
+                        }))
+                    
+                    self.presentViewController(alert, animated: true, completion: nil)
                     
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                        let viewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Profile") 
-                        self.presentViewController(viewController, animated: true, completion: nil)
+                        let tbVc: TabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Tab Bar Controller") as! TabBarController
+                        
+                        tbVc.viewWillAppear(true)
+                        
+                        
+                        self.presentViewController(tbVc, animated: true, completion: nil)
+                        
                     })
                     
                 }
