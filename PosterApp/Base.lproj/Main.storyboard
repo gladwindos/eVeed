@@ -137,11 +137,11 @@
                         <viewControllerLayoutGuide type="bottom" id="pa9-g8-6hO"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4YM-MU-Buh">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="1250"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="1100"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OgB-7Q-hmv">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="1250"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="1100"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                             </webView>
                         </subviews>
@@ -170,23 +170,23 @@
                         <viewControllerLayoutGuide type="bottom" id="YfR-oE-Y67"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="KG3-s0-O8h">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="1250"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="1100"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Rg-nV-qd4">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="1250"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="1100"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Set_it_off" translatesAutoresizingMaskIntoConstraints="NO" id="2Mf-jd-XbS">
                                         <rect key="frame" x="160" y="195" width="280" height="380"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="280" id="M2v-tn-XXy"/>
-                                            <constraint firstAttribute="height" constant="380" id="fKH-C1-c5R"/>
+                                            <constraint firstAttribute="height" constant="380" id="koH-oV-jxB"/>
+                                            <constraint firstAttribute="width" constant="280" id="mEx-IV-mEL"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set It Off" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jxe-54-crv">
                                         <rect key="frame" x="239" y="72" width="123" height="39"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="39" id="9JR-yJ-6S4"/>
+                                            <constraint firstAttribute="height" constant="39" id="ys1-NQ-3cZ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="28"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -195,7 +195,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Extra Info" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZo-pm-tgr">
                                         <rect key="frame" x="256" y="635" width="89" height="39"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="39" id="Uft-Zi-mza"/>
+                                            <constraint firstAttribute="height" constant="39" id="YlS-Eq-Y77"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -204,46 +204,36 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24th December 2015, 10pm - Late" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="reG-pE-RbA">
                                         <rect key="frame" x="140" y="119" width="321" height="39"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="39" id="42k-oX-ItA"/>
+                                            <constraint firstAttribute="height" constant="39" id="fpr-1S-Brd"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5rq-il-3fB">
-                                        <rect key="frame" x="22" y="687" width="557" height="434"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="atQ-0Z-r3h">
+                                        <rect key="frame" x="39" y="678" width="538" height="245"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="434" id="Aij-li-Nzp"/>
+                                            <constraint firstAttribute="height" constant="245" id="HGT-Vv-mnU"/>
                                         </constraints>
                                         <attributedString key="attributedText">
                                             <fragment>
                                                 <string key="content">"I'm more than happy to take them to all the different platforms that I go on and make sure that the world gets to know about them, because them brothers are crazy" FUSE ODG, MOBO 2014 Winner 
 
 After a great year Decadence Entertainment and Waylnn Wolfe will be granting fans wishes, with the third instalment of The Compozers Headline concert "A Night With The Compozers 3 and friends" to be held at London O2 Forum, Kentish Town. 
-
-Cementing music as a long standing movement The Compozers have been playing all over the country during this festival circuit, including Wireless Festival, V Festival and Glastonbury accompanying Anglo-Ghanaian rapper Fuse ODG who has been cracking the top ten so far and 2015 MOBO nominee George The Poet. Following a busy summer, September 2015 saw the boys headline their first West African tour in both Nigeria and Ghana, selling out 4 dates including Africa's biggest award show "Vodafone Ghana Music Awards"
-
 </string>
                                                 <attributes>
                                                     <font key="NSFont" size="14" name="HelveticaNeue"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                 </attributes>
                                             </fragment>
-                                            <fragment>
-                                                <string key="content">Saturday 2nd January at Forum Kentish Town, A Night with The Compozers is truly a showcase of the best music has to offer its audience. A homage to its grass roots with The Compozers conducting the music, a nod to the future in Mista Silva and a celebrations of some its pioneer special guests.</string>
-                                                <attributes>
-                                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                </attributes>
-                                            </fragment>
                                         </attributedString>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RVa-Oy-Dgr">
-                                        <rect key="frame" x="238" y="1150" width="124" height="64"/>
+                                        <rect key="frame" x="238" y="963" width="124" height="64"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="64" id="rMn-Of-F7m"/>
+                                            <constraint firstAttribute="height" constant="64" id="kaR-8A-bbs"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                         <state key="normal" title="Link to Tickets"/>
@@ -254,30 +244,31 @@ Cementing music as a long standing movement The Compozers have been playing all 
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="RVa-Oy-Dgr" firstAttribute="centerX" secondItem="3Rg-nV-qd4" secondAttribute="centerX" id="AJm-KF-i20"/>
-                                    <constraint firstItem="jxe-54-crv" firstAttribute="top" secondItem="3Rg-nV-qd4" secondAttribute="top" constant="72" id="FuT-r2-mBM"/>
-                                    <constraint firstItem="2Mf-jd-XbS" firstAttribute="top" secondItem="reG-pE-RbA" secondAttribute="bottom" constant="37" id="Ivz-E0-gd4"/>
-                                    <constraint firstAttribute="bottom" secondItem="RVa-Oy-Dgr" secondAttribute="bottom" constant="36" id="OkT-H3-x28"/>
-                                    <constraint firstAttribute="trailing" secondItem="5rq-il-3fB" secondAttribute="trailing" constant="21" id="Tgq-5Q-m36"/>
-                                    <constraint firstItem="RVa-Oy-Dgr" firstAttribute="top" secondItem="5rq-il-3fB" secondAttribute="bottom" constant="29" id="UVF-Fx-C6M"/>
-                                    <constraint firstItem="5rq-il-3fB" firstAttribute="centerX" secondItem="3Rg-nV-qd4" secondAttribute="centerX" id="Wu8-Fq-Rkz"/>
-                                    <constraint firstItem="reG-pE-RbA" firstAttribute="centerX" secondItem="3Rg-nV-qd4" secondAttribute="centerX" id="XV0-0w-y6x"/>
-                                    <constraint firstItem="5rq-il-3fB" firstAttribute="leading" secondItem="3Rg-nV-qd4" secondAttribute="leading" constant="22" id="YXr-Mh-23x"/>
-                                    <constraint firstItem="jxe-54-crv" firstAttribute="centerX" secondItem="3Rg-nV-qd4" secondAttribute="centerX" id="Yc1-Cc-q0F"/>
-                                    <constraint firstItem="dZo-pm-tgr" firstAttribute="centerX" secondItem="3Rg-nV-qd4" secondAttribute="centerX" id="aph-s6-tFb"/>
-                                    <constraint firstItem="2Mf-jd-XbS" firstAttribute="centerX" secondItem="3Rg-nV-qd4" secondAttribute="centerX" id="bul-vy-w9j"/>
-                                    <constraint firstItem="5rq-il-3fB" firstAttribute="top" secondItem="dZo-pm-tgr" secondAttribute="bottom" constant="13" id="f6f-xa-gNj"/>
-                                    <constraint firstItem="dZo-pm-tgr" firstAttribute="top" secondItem="2Mf-jd-XbS" secondAttribute="bottom" constant="60" id="z2l-4b-uLB"/>
-                                    <constraint firstItem="reG-pE-RbA" firstAttribute="top" secondItem="jxe-54-crv" secondAttribute="bottom" constant="8" id="zU6-uT-dpv"/>
+                                    <constraint firstItem="dZo-pm-tgr" firstAttribute="top" secondItem="2Mf-jd-XbS" secondAttribute="bottom" constant="60" id="1RM-Ef-dfy"/>
+                                    <constraint firstItem="RVa-Oy-Dgr" firstAttribute="trailing" secondItem="jxe-54-crv" secondAttribute="trailing" id="8xI-2t-Occ"/>
+                                    <constraint firstItem="reG-pE-RbA" firstAttribute="centerX" secondItem="jxe-54-crv" secondAttribute="centerX" id="A9X-4l-V27"/>
+                                    <constraint firstItem="atQ-0Z-r3h" firstAttribute="top" secondItem="dZo-pm-tgr" secondAttribute="bottom" constant="4" id="AgO-vO-dKi"/>
+                                    <constraint firstItem="RVa-Oy-Dgr" firstAttribute="top" secondItem="3Rg-nV-qd4" secondAttribute="top" constant="963" id="BHF-rn-bEp"/>
+                                    <constraint firstItem="atQ-0Z-r3h" firstAttribute="centerX" secondItem="dZo-pm-tgr" secondAttribute="centerX" constant="7.5" id="IrN-go-eZt"/>
+                                    <constraint firstItem="2Mf-jd-XbS" firstAttribute="top" secondItem="reG-pE-RbA" secondAttribute="bottom" constant="37" id="PbE-zK-MPu"/>
+                                    <constraint firstItem="atQ-0Z-r3h" firstAttribute="leading" secondItem="3Rg-nV-qd4" secondAttribute="leading" constant="39" id="Svp-PD-16M"/>
+                                    <constraint firstItem="dZo-pm-tgr" firstAttribute="centerX" secondItem="3Rg-nV-qd4" secondAttribute="centerX" id="XT4-1w-8NR"/>
+                                    <constraint firstItem="jxe-54-crv" firstAttribute="top" secondItem="3Rg-nV-qd4" secondAttribute="top" constant="72" id="YhC-yS-nJp"/>
+                                    <constraint firstItem="reG-pE-RbA" firstAttribute="top" secondItem="jxe-54-crv" secondAttribute="bottom" constant="8" symbolic="YES" id="awW-r5-Hcf"/>
+                                    <constraint firstAttribute="bottom" secondItem="RVa-Oy-Dgr" secondAttribute="bottom" constant="73" id="ccX-Bl-88k"/>
+                                    <constraint firstItem="dZo-pm-tgr" firstAttribute="centerX" secondItem="RVa-Oy-Dgr" secondAttribute="centerX" id="fTE-9s-OiK"/>
+                                    <constraint firstItem="reG-pE-RbA" firstAttribute="centerX" secondItem="2Mf-jd-XbS" secondAttribute="centerX" id="ji3-dZ-3fZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="atQ-0Z-r3h" secondAttribute="trailing" constant="23" id="pre-jA-pr4"/>
+                                    <constraint firstAttribute="trailing" secondItem="reG-pE-RbA" secondAttribute="trailing" constant="139" id="xR1-qI-GVk"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="3Rg-nV-qd4" firstAttribute="height" secondItem="KG3-s0-O8h" secondAttribute="height" id="1vD-3t-bZX"/>
-                            <constraint firstItem="3Rg-nV-qd4" firstAttribute="width" secondItem="KG3-s0-O8h" secondAttribute="width" id="aNQ-nN-QZ9"/>
-                            <constraint firstItem="3Rg-nV-qd4" firstAttribute="centerX" secondItem="KG3-s0-O8h" secondAttribute="centerX" id="ny2-Id-Dn8"/>
-                            <constraint firstItem="3Rg-nV-qd4" firstAttribute="centerY" secondItem="KG3-s0-O8h" secondAttribute="centerY" id="wHB-Rv-O0J"/>
+                            <constraint firstAttribute="trailing" secondItem="3Rg-nV-qd4" secondAttribute="trailing" id="5Wy-fn-yCe"/>
+                            <constraint firstItem="3Rg-nV-qd4" firstAttribute="leading" secondItem="KG3-s0-O8h" secondAttribute="leading" id="ScJ-q0-DgN"/>
+                            <constraint firstAttribute="bottom" secondItem="3Rg-nV-qd4" secondAttribute="bottom" id="aIa-cS-yFs"/>
+                            <constraint firstItem="3Rg-nV-qd4" firstAttribute="top" secondItem="KG3-s0-O8h" secondAttribute="top" id="bxn-6j-1mQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Event Details" id="N2w-m8-WvU">
@@ -288,12 +279,12 @@ Cementing music as a long standing movement The Compozers have been playing all 
                         </barButtonItem>
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="600" height="1250"/>
+                    <size key="freeformSize" width="600" height="1100"/>
                     <connections>
                         <outlet property="eventDate" destination="reG-pE-RbA" id="jyq-Wz-FA5"/>
                         <outlet property="eventImage" destination="2Mf-jd-XbS" id="k9I-An-gsN"/>
                         <outlet property="eventTitle" destination="jxe-54-crv" id="ESa-TP-PNe"/>
-                        <outlet property="extraInfo" destination="5rq-il-3fB" id="Yrl-sx-fE7"/>
+                        <outlet property="extraInfo" destination="atQ-0Z-r3h" id="byk-ZR-4TE"/>
                         <outlet property="scrollView" destination="3Rg-nV-qd4" id="OlC-PS-4HT"/>
                         <outlet property="ticketLink" destination="RVa-Oy-Dgr" id="x8W-Fc-AfK"/>
                     </connections>
@@ -347,9 +338,6 @@ Cementing music as a long standing movement The Compozers have been playing all 
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7eY-Ux-Yeu">
                                         <rect key="frame" x="137" y="410" width="102" height="24"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="102" id="6Dq-X9-BCk"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -361,18 +349,12 @@ Cementing music as a long standing movement The Compozers have been playing all 
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ticket Link" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FiN-YE-V9K">
                                         <rect key="frame" x="136" y="852" width="104" height="24"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="104" id="wGq-Pd-yxt"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U9r-Wb-mGy">
                                         <rect key="frame" x="136" y="534" width="104" height="24"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="104" id="ZUi-Do-Cii"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -384,40 +366,22 @@ Cementing music as a long standing movement The Compozers have been playing all 
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Extra Info" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0w-yi-oZA">
                                         <rect key="frame" x="142" y="956" width="92" height="24"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="92" id="pUf-D8-479"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="E.g Contact Info " translatesAutoresizingMaskIntoConstraints="NO" id="Z4n-Z7-MXq">
-                                        <rect key="frame" x="32" y="988" width="311" height="200"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="311" id="Gz0-lP-AED"/>
-                                            <constraint firstAttribute="height" constant="200" id="awT-fX-s2D"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                        <dataDetectorType key="dataDetectorTypes" phoneNumber="YES"/>
-                                    </textView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2v2-ls-G5a">
                                         <rect key="frame" x="38" y="100" width="300" height="230"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="umu-zm-ndH">
                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="300" id="4lB-lf-WJb"/>
-                                                    <constraint firstAttribute="height" constant="200" id="jgk-GU-YlL"/>
+                                                    <constraint firstAttribute="width" constant="300" id="GtT-eJ-Ffn"/>
+                                                    <constraint firstAttribute="height" constant="200" id="xM6-n2-akc"/>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Hn-O2-14s">
                                                 <rect key="frame" x="0.0" y="200" width="300" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="LuV-lG-TeJ"/>
-                                                    <constraint firstAttribute="width" constant="300" id="mS0-9O-UHb"/>
-                                                </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <state key="normal" title="Choose Image"/>
                                                 <connections>
@@ -427,16 +391,7 @@ Cementing music as a long standing movement The Compozers have been playing all 
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="5Hn-O2-14s" firstAttribute="centerX" secondItem="2v2-ls-G5a" secondAttribute="centerX" id="3Ym-5I-hFb"/>
-                                            <constraint firstItem="umu-zm-ndH" firstAttribute="top" secondItem="2v2-ls-G5a" secondAttribute="top" id="7VO-xw-qXp"/>
-                                            <constraint firstAttribute="bottom" secondItem="5Hn-O2-14s" secondAttribute="bottom" id="CFg-np-k3w"/>
                                             <constraint firstItem="umu-zm-ndH" firstAttribute="centerX" secondItem="2v2-ls-G5a" secondAttribute="centerX" id="K6M-MI-yvJ"/>
-                                            <constraint firstItem="umu-zm-ndH" firstAttribute="leading" secondItem="2v2-ls-G5a" secondAttribute="leading" id="NLv-hD-81E"/>
-                                            <constraint firstAttribute="trailing" secondItem="umu-zm-ndH" secondAttribute="trailing" id="SEA-vI-BfZ"/>
-                                            <constraint firstItem="5Hn-O2-14s" firstAttribute="leading" secondItem="2v2-ls-G5a" secondAttribute="leading" id="cVP-6m-qOt"/>
-                                            <constraint firstAttribute="trailing" secondItem="5Hn-O2-14s" secondAttribute="trailing" id="gM8-av-Q1m"/>
-                                            <constraint firstAttribute="width" constant="300" id="jZG-LV-w1D"/>
-                                            <constraint firstItem="5Hn-O2-14s" firstAttribute="top" secondItem="umu-zm-ndH" secondAttribute="bottom" id="keg-RU-o5d"/>
-                                            <constraint firstAttribute="height" constant="230" id="khS-mM-dQl"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -451,26 +406,16 @@ Cementing music as a long standing movement The Compozers have been playing all 
                                             <!--2015-12-10 20:48:25 +0000-->
                                         </date>
                                     </datePicker>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="University" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzv-Jo-STA">
-                                        <rect key="frame" x="139" y="1229" width="98" height="24"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="98" id="HWS-Em-d4o"/>
-                                        </constraints>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzv-Jo-STA">
+                                        <rect key="frame" x="146" y="1229" width="84" height="24"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zk6-QA-ZHF">
-                                        <rect key="frame" x="29" y="1278" width="318" height="216"/>
-                                        <connections>
-                                            <outlet property="dataSource" destination="2fb-jz-4JQ" id="bpa-12-5gv"/>
-                                            <outlet property="delegate" destination="2fb-jz-4JQ" id="3Bl-hh-eXd"/>
-                                        </connections>
-                                    </pickerView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRR-wP-7TR">
-                                        <rect key="frame" x="152" y="1502" width="73" height="36"/>
+                                        <rect key="frame" x="152" y="1522" width="73" height="36"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="73" id="zRR-ch-bRt"/>
+                                            <constraint firstAttribute="width" constant="73" id="vj7-vN-AbC"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <state key="normal" title="Post"/>
@@ -478,60 +423,87 @@ Cementing music as a long standing movement The Compozers have been playing all 
                                             <action selector="postEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i0C-jn-ODg"/>
                                         </connections>
                                     </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s8z-q9-E1Z">
+                                        <rect key="frame" x="38" y="1261" width="300" height="233"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="233" id="yUE-Er-rrf"/>
+                                        </constraints>
+                                        <attributedString key="attributedText">
+                                            <fragment>
+                                                <string key="content">E.g   20 Grove Lea
+Hatfield
+Al10 8LA</string>
+                                                <attributes>
+                                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="5"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="E.g Contact Info " translatesAutoresizingMaskIntoConstraints="NO" id="Z4n-Z7-MXq">
+                                        <rect key="frame" x="32" y="988" width="311" height="200"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="CHg-O7-rHP"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <dataDetectorType key="dataDetectorTypes" phoneNumber="YES"/>
+                                    </textView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="1bD-Hk-Qfs" firstAttribute="top" secondItem="7eY-Ux-Yeu" secondAttribute="bottom" constant="15" id="09z-UH-9xG"/>
-                                    <constraint firstItem="2v2-ls-G5a" firstAttribute="leading" secondItem="2fb-jz-4JQ" secondAttribute="leading" constant="38" id="0Qf-bj-wUt"/>
-                                    <constraint firstAttribute="trailing" secondItem="2v2-ls-G5a" secondAttribute="trailing" constant="37" id="0uD-v1-FHQ"/>
-                                    <constraint firstAttribute="trailing" secondItem="Yfe-Hz-7Ei" secondAttribute="trailing" constant="27" id="1tE-ZT-ee8"/>
-                                    <constraint firstAttribute="trailing" secondItem="zk6-QA-ZHF" secondAttribute="trailing" constant="28" id="2FS-oc-Eed"/>
-                                    <constraint firstItem="2v2-ls-G5a" firstAttribute="top" secondItem="2fb-jz-4JQ" secondAttribute="top" constant="100" id="2yE-of-PYu"/>
-                                    <constraint firstAttribute="bottom" secondItem="JRR-wP-7TR" secondAttribute="bottom" constant="62" id="5jT-S9-1uc"/>
+                                    <constraint firstItem="Yfe-Hz-7Ei" firstAttribute="trailing" secondItem="1bD-Hk-Qfs" secondAttribute="trailing" id="5Yl-9o-LyY"/>
                                     <constraint firstItem="Yfe-Hz-7Ei" firstAttribute="centerX" secondItem="2fb-jz-4JQ" secondAttribute="centerX" id="5jc-CU-lOv"/>
-                                    <constraint firstItem="U9r-Wb-mGy" firstAttribute="centerX" secondItem="2fb-jz-4JQ" secondAttribute="centerX" id="8Da-WW-SXN"/>
-                                    <constraint firstAttribute="trailing" secondItem="1bD-Hk-Qfs" secondAttribute="trailing" constant="27" id="BD5-bk-I33"/>
-                                    <constraint firstItem="U9r-Wb-mGy" firstAttribute="top" secondItem="1bD-Hk-Qfs" secondAttribute="bottom" constant="55" id="DC0-dI-E5M"/>
+                                    <constraint firstItem="Yfe-Hz-7Ei" firstAttribute="top" secondItem="FiN-YE-V9K" secondAttribute="bottom" constant="8" symbolic="YES" id="5sR-f2-x9L"/>
+                                    <constraint firstItem="FiN-YE-V9K" firstAttribute="top" secondItem="sDw-z1-DQc" secondAttribute="bottom" constant="59" id="7ci-kP-mG2"/>
+                                    <constraint firstItem="Yfe-Hz-7Ei" firstAttribute="centerX" secondItem="N0w-yi-oZA" secondAttribute="centerX" id="7wu-Y0-Zts"/>
+                                    <constraint firstItem="s8z-q9-E1Z" firstAttribute="top" secondItem="bzv-Jo-STA" secondAttribute="bottom" constant="8" symbolic="YES" id="9XJ-71-dBl"/>
+                                    <constraint firstItem="N0w-yi-oZA" firstAttribute="top" secondItem="Yfe-Hz-7Ei" secondAttribute="bottom" constant="42" id="9te-6D-AZR"/>
+                                    <constraint firstItem="2v2-ls-G5a" firstAttribute="leading" secondItem="s8z-q9-E1Z" secondAttribute="leading" id="Akl-rF-s7u"/>
+                                    <constraint firstItem="N0w-yi-oZA" firstAttribute="centerX" secondItem="2fb-jz-4JQ" secondAttribute="centerX" id="CgM-ia-1aE"/>
+                                    <constraint firstItem="1bD-Hk-Qfs" firstAttribute="leading" secondItem="Yfe-Hz-7Ei" secondAttribute="leading" id="DIC-cf-GO8"/>
                                     <constraint firstItem="2v2-ls-G5a" firstAttribute="centerX" secondItem="2fb-jz-4JQ" secondAttribute="centerX" id="F3a-fc-fvu"/>
-                                    <constraint firstItem="sDw-z1-DQc" firstAttribute="centerX" secondItem="2fb-jz-4JQ" secondAttribute="centerX" id="HnU-Lb-nfQ"/>
-                                    <constraint firstItem="bzv-Jo-STA" firstAttribute="top" secondItem="Z4n-Z7-MXq" secondAttribute="bottom" constant="41" id="IDH-uS-UeP"/>
-                                    <constraint firstItem="Yfe-Hz-7Ei" firstAttribute="top" secondItem="FiN-YE-V9K" secondAttribute="bottom" constant="8" id="JzK-GL-wRd"/>
-                                    <constraint firstItem="bzv-Jo-STA" firstAttribute="centerX" secondItem="2fb-jz-4JQ" secondAttribute="centerX" id="KuB-gs-JBO"/>
-                                    <constraint firstItem="zk6-QA-ZHF" firstAttribute="leading" secondItem="2fb-jz-4JQ" secondAttribute="leading" constant="29" id="Mrg-zO-GKa"/>
-                                    <constraint firstItem="Yfe-Hz-7Ei" firstAttribute="leading" secondItem="2fb-jz-4JQ" secondAttribute="leading" constant="27" id="PEG-qw-ANP"/>
-                                    <constraint firstItem="sDw-z1-DQc" firstAttribute="leading" secondItem="2fb-jz-4JQ" secondAttribute="leading" id="YMy-Se-WA9"/>
-                                    <constraint firstItem="1bD-Hk-Qfs" firstAttribute="leading" secondItem="2fb-jz-4JQ" secondAttribute="leading" constant="27" id="Yho-27-iv0"/>
-                                    <constraint firstAttribute="trailing" secondItem="sDw-z1-DQc" secondAttribute="trailing" id="ZkP-5x-sRS"/>
-                                    <constraint firstItem="7eY-Ux-Yeu" firstAttribute="top" secondItem="2v2-ls-G5a" secondAttribute="bottom" constant="80" id="bdl-u5-tZu"/>
-                                    <constraint firstItem="zk6-QA-ZHF" firstAttribute="top" secondItem="bzv-Jo-STA" secondAttribute="bottom" constant="25" id="eQg-Ac-PXO"/>
-                                    <constraint firstItem="N0w-yi-oZA" firstAttribute="centerX" secondItem="2fb-jz-4JQ" secondAttribute="centerX" id="gN5-sO-l4g"/>
-                                    <constraint firstItem="sDw-z1-DQc" firstAttribute="top" secondItem="U9r-Wb-mGy" secondAttribute="bottom" constant="19" id="iSl-Ot-SEC"/>
-                                    <constraint firstItem="FiN-YE-V9K" firstAttribute="centerX" secondItem="2fb-jz-4JQ" secondAttribute="centerX" id="jlP-ze-bOp"/>
-                                    <constraint firstItem="Z4n-Z7-MXq" firstAttribute="top" secondItem="N0w-yi-oZA" secondAttribute="bottom" constant="8" id="lNi-qj-5aW"/>
+                                    <constraint firstItem="2v2-ls-G5a" firstAttribute="top" secondItem="2fb-jz-4JQ" secondAttribute="top" constant="100" id="G4q-oM-Rav"/>
+                                    <constraint firstItem="bzv-Jo-STA" firstAttribute="centerX" secondItem="s8z-q9-E1Z" secondAttribute="centerX" id="HCt-AQ-CU4"/>
+                                    <constraint firstItem="Z4n-Z7-MXq" firstAttribute="top" secondItem="N0w-yi-oZA" secondAttribute="bottom" constant="8" symbolic="YES" id="IVc-q8-ehf"/>
+                                    <constraint firstItem="JRR-wP-7TR" firstAttribute="top" secondItem="s8z-q9-E1Z" secondAttribute="bottom" constant="28" id="Mt0-yM-urf"/>
+                                    <constraint firstAttribute="trailing" secondItem="sDw-z1-DQc" secondAttribute="trailing" id="OfJ-gh-9A4"/>
+                                    <constraint firstItem="bzv-Jo-STA" firstAttribute="top" secondItem="Z4n-Z7-MXq" secondAttribute="bottom" constant="41" id="RS3-nH-LHw"/>
+                                    <constraint firstItem="sDw-z1-DQc" firstAttribute="top" secondItem="U9r-Wb-mGy" secondAttribute="bottom" constant="19" id="SpU-1d-lho"/>
+                                    <constraint firstItem="1bD-Hk-Qfs" firstAttribute="top" secondItem="7eY-Ux-Yeu" secondAttribute="bottom" constant="15" id="Zuq-wa-y9H"/>
+                                    <constraint firstItem="U9r-Wb-mGy" firstAttribute="top" secondItem="1bD-Hk-Qfs" secondAttribute="bottom" constant="55" id="aGo-6f-PcA"/>
+                                    <constraint firstItem="sDw-z1-DQc" firstAttribute="leading" secondItem="2fb-jz-4JQ" secondAttribute="leading" id="dVY-gQ-ssW"/>
+                                    <constraint firstItem="N0w-yi-oZA" firstAttribute="centerX" secondItem="Z4n-Z7-MXq" secondAttribute="centerX" id="deE-zx-0WE"/>
+                                    <constraint firstItem="bzv-Jo-STA" firstAttribute="centerX" secondItem="Z4n-Z7-MXq" secondAttribute="centerX" id="eIV-lp-6Bd"/>
+                                    <constraint firstItem="Z4n-Z7-MXq" firstAttribute="leading" secondItem="2fb-jz-4JQ" secondAttribute="leading" constant="32" id="fLf-vo-4Ru"/>
+                                    <constraint firstItem="JRR-wP-7TR" firstAttribute="centerX" secondItem="s8z-q9-E1Z" secondAttribute="centerX" id="gW5-AK-ijt"/>
+                                    <constraint firstItem="1bD-Hk-Qfs" firstAttribute="leading" secondItem="2fb-jz-4JQ" secondAttribute="leading" constant="27" id="i1G-We-Zjo"/>
                                     <constraint firstItem="1bD-Hk-Qfs" firstAttribute="centerX" secondItem="2fb-jz-4JQ" secondAttribute="centerX" id="nSN-cr-T7H"/>
-                                    <constraint firstItem="FiN-YE-V9K" firstAttribute="top" secondItem="sDw-z1-DQc" secondAttribute="bottom" constant="59" id="pux-Of-OS7"/>
-                                    <constraint firstItem="zk6-QA-ZHF" firstAttribute="centerX" secondItem="2fb-jz-4JQ" secondAttribute="centerX" id="q7k-6b-lhS"/>
-                                    <constraint firstItem="7eY-Ux-Yeu" firstAttribute="centerX" secondItem="2fb-jz-4JQ" secondAttribute="centerX" id="rdX-p2-Gr9"/>
-                                    <constraint firstItem="N0w-yi-oZA" firstAttribute="top" secondItem="Yfe-Hz-7Ei" secondAttribute="bottom" constant="42" id="sBf-tc-FFR"/>
-                                    <constraint firstItem="JRR-wP-7TR" firstAttribute="top" secondItem="zk6-QA-ZHF" secondAttribute="bottom" constant="8" symbolic="YES" id="w5v-Ny-Sm9"/>
-                                    <constraint firstItem="Z4n-Z7-MXq" firstAttribute="centerX" secondItem="2fb-jz-4JQ" secondAttribute="centerX" id="wHZ-Jb-1sM"/>
-                                    <constraint firstItem="JRR-wP-7TR" firstAttribute="centerX" secondItem="zk6-QA-ZHF" secondAttribute="centerX" id="yj8-n8-VlL"/>
+                                    <constraint firstItem="FiN-YE-V9K" firstAttribute="centerX" secondItem="Yfe-Hz-7Ei" secondAttribute="centerX" id="rlj-NA-Idb"/>
+                                    <constraint firstAttribute="bottom" secondItem="JRR-wP-7TR" secondAttribute="bottom" constant="42" id="rtq-nz-btN"/>
+                                    <constraint firstItem="s8z-q9-E1Z" firstAttribute="trailing" secondItem="2v2-ls-G5a" secondAttribute="trailing" id="vhY-KV-Xw9"/>
+                                    <constraint firstItem="7eY-Ux-Yeu" firstAttribute="top" secondItem="2v2-ls-G5a" secondAttribute="bottom" constant="80" id="xMe-FQ-3RX"/>
+                                    <constraint firstItem="U9r-Wb-mGy" firstAttribute="centerX" secondItem="sDw-z1-DQc" secondAttribute="centerX" id="xYD-9W-hsV"/>
+                                    <constraint firstItem="FiN-YE-V9K" firstAttribute="leading" secondItem="U9r-Wb-mGy" secondAttribute="leading" id="zeG-Yf-jEJ"/>
+                                    <constraint firstItem="7eY-Ux-Yeu" firstAttribute="centerX" secondItem="1bD-Hk-Qfs" secondAttribute="centerX" id="zyG-0c-PSD"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="F3a-fc-fvu"/>
                                         <exclude reference="nSN-cr-T7H"/>
                                         <exclude reference="5jc-CU-lOv"/>
-                                        <exclude reference="q7k-6b-lhS"/>
                                     </mask>
                                 </variation>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="2fb-jz-4JQ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="J17-ff-LXI"/>
-                            <constraint firstItem="2fb-jz-4JQ" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="cBb-9K-5cm"/>
-                            <constraint firstItem="2fb-jz-4JQ" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="yKB-ab-X5E"/>
-                            <constraint firstItem="2fb-jz-4JQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zvS-0P-Slc"/>
+                            <constraint firstItem="2fb-jz-4JQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="OGB-Fn-k0q"/>
+                            <constraint firstItem="2fb-jz-4JQ" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="PnC-lC-6as"/>
+                            <constraint firstAttribute="trailing" secondItem="2fb-jz-4JQ" secondAttribute="trailing" id="tlY-lj-f63"/>
+                            <constraint firstItem="2fb-jz-4JQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xgE-I0-oNj"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Add Event" id="o6a-6t-EXd"/>
@@ -543,7 +515,6 @@ Cementing music as a long standing movement The Compozers have been playing all 
                         <outlet property="eventExtraInfo" destination="Z4n-Z7-MXq" id="pDK-jV-Ywg"/>
                         <outlet property="eventTicketLink" destination="Yfe-Hz-7Ei" id="1ql-Ia-SDh"/>
                         <outlet property="eventTitle" destination="1bD-Hk-Qfs" id="yxz-Yz-n9R"/>
-                        <outlet property="eventUni" destination="zk6-QA-ZHF" id="WgO-ju-EmZ"/>
                         <outlet property="imageToPost" destination="umu-zm-ndH" id="729-ug-TIy"/>
                         <outlet property="scrollView" destination="2fb-jz-4JQ" id="Cvq-be-WxC"/>
                     </connections>

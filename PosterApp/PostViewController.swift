@@ -9,39 +9,11 @@
 import UIKit
 import Parse
 
-class PostViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
-    
-    var pickerDataSource = ["Herts", "Other"]
-    
-    var eventUniPicked = 1
+class PostViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         
         return 1
-    }
-    
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        
-        return pickerDataSource.count
-    }
-    
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        
-        return pickerDataSource[row]
-    }
-    
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
-        if row == 0 {
-            
-            eventUniPicked = 0
-            
-        } else if row == 1 {
-            
-            eventUniPicked = 1
-            
-        }
-        
     }
     
     func displayAlert(title: String, message: String) {
@@ -93,8 +65,6 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
     
     @IBOutlet var eventExtraInfo: UITextView!
     
-    @IBOutlet var eventUni: UIPickerView!
-    
     @IBAction func postEvent(sender: UIButton) {
         
         activityIndicator = UIActivityIndicatorView(frame: self.view.frame)
@@ -123,8 +93,6 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
         post["ticketLink"] = eventTicketLink.text
         
         post["extraInfo"] = eventExtraInfo.text
-        
-        post["eventUni"] = eventUniPicked
         
         let imageData = UIImageJPEGRepresentation(imageToPost.image!, 0.5)
         
@@ -173,16 +141,13 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
                 
                 let tbVc: UITabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Tab Bar Controller") as! TabBarController
                 
-                tbVc.viewWillAppear(true)
+                tbVc.viewDidLoad()
                 
                 self.presentViewController(tbVc, animated: true, completion: nil)
             })
         }
         
         scrollView.contentSize.height = 1600
-        
-        self.eventUni.dataSource = self
-        self.eventUni.delegate = self
         
         
     }

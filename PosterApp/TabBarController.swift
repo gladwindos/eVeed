@@ -14,6 +14,8 @@ class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        setNewViewControllers()
 
     }
     
@@ -36,14 +38,8 @@ class TabBarController: UITabBarController {
         
         setViewControllers([vc1, vc2], animated: true)
         
-        print(viewControllers)
     }
     
-    override func viewWillAppear(animated: Bool) {
-        
-        setNewViewControllers()
-        
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

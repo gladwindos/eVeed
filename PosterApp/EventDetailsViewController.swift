@@ -35,7 +35,7 @@ class EventDetailsViewController: UIViewController {
     
     var imageHolder: UIImage = UIImage(named: "placeholder")!
     
-    @IBOutlet var extraInfo: UITextView!
+    @IBOutlet weak var extraInfo: UITextView!
     
     var extraInfoHolder = ""
     
@@ -106,7 +106,7 @@ class EventDetailsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        scrollView.contentSize.height = 1250
+        scrollView.contentSize.height = 1100
         
         eventTitle.text = titleHolder
         

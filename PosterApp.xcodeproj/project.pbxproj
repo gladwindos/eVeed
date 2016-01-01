@@ -34,9 +34,9 @@
 		BEBC33391C2F4BB1007FDCBB /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBC33351C2F4BB1007FDCBB /* ResetPasswordViewController.swift */; };
 		BEBC333A1C2F4BB1007FDCBB /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBC33361C2F4BB1007FDCBB /* SignUpViewController.swift */; };
 		BEC2E6FF1C3313BD007CE64B /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC2E6FE1C3313BD007CE64B /* TabBarController.swift */; };
-		BEC2E7021C3335A6007CE64B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEC2E7001C3335A6007CE64B /* Main.storyboard */; };
 		BEC2E7041C33433E007CE64B /* FeedNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC2E7031C33433E007CE64B /* FeedNavigationController.swift */; };
 		BEEDD1411C3702DF00B1F2DE /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEDD1401C3702DF00B1F2DE /* MenuTableViewController.swift */; };
+		BEEDD1431C37296A00B1F2DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEC2E7001C3335A6007CE64B /* Main.storyboard */; };
 		BEF4DB091C28BCA5005C2928 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF4DB081C28BCA5005C2928 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -255,7 +255,7 @@
 				BE12042E1C1A061A00B9B9C1 /* LaunchScreen.storyboard in Resources */,
 				BE1204521C1A346300B9B9C1 /* placeholder.png in Resources */,
 				BE12042B1C1A061A00B9B9C1 /* Assets.xcassets in Resources */,
-				BEC2E7021C3335A6007CE64B /* Main.storyboard in Resources */,
+				BEEDD1431C37296A00B1F2DE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

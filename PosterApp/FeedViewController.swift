@@ -34,17 +34,21 @@ class FeedViewController: UIViewController {
     
     // MARK: - UICollectionViewDataSource
     
-    var createdEvents: [Event] = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        print("view did load")
+        
+//        loadEvents()
         
     }
     
-    override func viewDidAppear(animated: Bool) {
+    var createdEvents: [Event] = []
+    
+    func loadEvents() {
         
-        // Clear events array
         createdEvents = []
         
         let query = PFQuery(className: "Event")
@@ -108,7 +112,15 @@ class FeedViewController: UIViewController {
             self.collectionView.reloadData()
             
         }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
         
+        print("view did appear")
+        
+        // Clear events array
+
+        loadEvents()
     }
 
     

@@ -51,7 +51,7 @@ class LoginViewController: UIViewController {
                         
                         let tbVc: UITabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Tab Bar Controller") as! TabBarController
                         
-                        tbVc.viewWillAppear(true)
+                        tbVc.viewDidLoad()
                         
                         self.presentViewController(tbVc, animated: true, completion: nil)
                     })
