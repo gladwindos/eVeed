@@ -45,9 +45,21 @@ class FeedViewController: UIViewController {
         
     }
     
+    var activityIndicator = UIActivityIndicatorView()
+    
     var createdEvents: [Event] = []
     
     func loadEvents() {
+        
+        activityIndicator = UIActivityIndicatorView(frame: self.view.frame)
+        activityIndicator.backgroundColor = UIColor(white: 1.0, alpha: 0.5)
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+        view.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
+        
+        UIApplication.sharedApplication().beginIgnoringInteractionEvents()
         
         createdEvents = []
         
@@ -56,6 +68,10 @@ class FeedViewController: UIViewController {
         var newImage: UIImage!
         
         query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+            
+            self.activityIndicator.stopAnimating()
+            
+            UIApplication.sharedApplication().endIgnoringInteractionEvents()
             
             if error != nil {
                 
@@ -111,6 +127,7 @@ class FeedViewController: UIViewController {
             
             self.collectionView.reloadData()
             
+            
         }
     }
     
@@ -122,7 +139,6 @@ class FeedViewController: UIViewController {
 
         loadEvents()
     }
-
     
     private struct Storyboard {
         static let CellIdentifier = "Event Cell"
