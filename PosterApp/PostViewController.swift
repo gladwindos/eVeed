@@ -36,6 +36,8 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
     
     @IBOutlet var imageToPost: UIImageView!
     
+    var imageHolder: UIImage = UIImage(named: "placeholder")!
+    
     @IBOutlet var chooseImageOutlet: UIButton!
     
     @IBAction func chooseImageAction(sender: UIButton) {
@@ -59,11 +61,23 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
     
     @IBOutlet var eventTitle: UITextField!
     
+    var titleHolder = ""
+    
     @IBOutlet var eventDate: UIDatePicker!
+    
+    var dateHolder = NSDate()
     
     @IBOutlet var eventTicketLink: UITextField!
     
+    var ticketHolder = ""
+    
     @IBOutlet var eventExtraInfo: UITextView!
+    
+    var extraInfoHolder = ""
+    
+    var idHolder = ""
+    
+    var editingPost = false
     
     @IBAction func postEvent(sender: UIButton) {
         
@@ -79,10 +93,13 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
         
         
         
-        // transforming NSDate to Time
-        
-        
         let post = PFObject(className: "Event")
+        
+        if editingPost == true {
+            
+            post.objectId = idHolder
+        }
+
         
         post["title"] = eventTitle.text
         
@@ -106,17 +123,31 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
             
             UIApplication.sharedApplication().endIgnoringInteractionEvents()
             
+            
+            
             if error == nil {
                 
-                self.displayAlert("Done", message: "Event has been posted successfully")
+                let alert = UIAlertController(title: "Done", message: "Event has been posted successfully", preferredStyle: UIAlertControllerStyle.Alert)
                 
-                self.imageToPost.image = UIImage(named: "placeholder.png")
                 
-                self.eventTitle.text = ""
+                alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
+                    
+                    //                    self.dismissViewControllerAnimated(true, completion: nil)
+                    
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        
+                        let tbVc: UITabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Tab Bar Controller") as! TabBarController
+                        
+                        tbVc.viewDidLoad()
+                        
+                        tbVc.selectedIndex = 0
+                        
+                        self.presentViewController(tbVc, animated: true, completion: nil)
+                    })
+                    
+                }))
                 
-                self.eventTicketLink.text = ""
-                
-                self.eventExtraInfo.text = "" // Change to origonal later
+                self.presentViewController(alert, animated: true, completion: nil)
                 
             } else {
                 
@@ -128,6 +159,7 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
         
         chooseImageOutlet.setTitle("Choose Image", forState: UIControlState.Normal)
         
+        editingPost = false
     }
     
 
@@ -149,6 +181,30 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
         
         scrollView.contentSize.height = 1600
         
+        eventTitle.text = titleHolder
+        
+        eventDate.date = dateHolder
+        
+        imageToPost.image = imageHolder
+        
+        eventExtraInfo.text = extraInfoHolder
+        
+        eventTicketLink.text = ticketHolder
+        
+        
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        
+        self.view.endEditing(true)
+        
+    }
+    
+    func textFieldShouldReturn(TextField: UITextField!) -> Bool {
+        
+        TextField.resignFirstResponder()
+        
+        return true
         
     }
 

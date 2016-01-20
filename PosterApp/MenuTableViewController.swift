@@ -13,7 +13,7 @@ class MenuTableViewController: UITableViewController {
     
     // Maybe change to dictionary later and iterate over
     
-    let events = ["Add Post", "Edit Post", "Edit Account", "Logout"]
+    let events = ["Add Event", "My Events", "Logout"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,7 +59,11 @@ class MenuTableViewController: UITableViewController {
         
         self.showViewController(pVc, sender: self)
             
-        } else if indexPath.row == 3 {
+        } else if indexPath.row == 1 {
+            
+            performSegueWithIdentifier("edit post", sender: self)
+            
+        } else if indexPath.row == 2 {
             
             var activityIndicator = UIActivityIndicatorView()
             

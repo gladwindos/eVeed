@@ -35,6 +35,7 @@
 		BEBC333A1C2F4BB1007FDCBB /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBC33361C2F4BB1007FDCBB /* SignUpViewController.swift */; };
 		BEC2E6FF1C3313BD007CE64B /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC2E6FE1C3313BD007CE64B /* TabBarController.swift */; };
 		BEC2E7041C33433E007CE64B /* FeedNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC2E7031C33433E007CE64B /* FeedNavigationController.swift */; };
+		BECF9C831C4FF872006AA222 /* EditPostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECF9C821C4FF872006AA222 /* EditPostTableViewController.swift */; };
 		BEEDD1411C3702DF00B1F2DE /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEDD1401C3702DF00B1F2DE /* MenuTableViewController.swift */; };
 		BEEDD1431C37296A00B1F2DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEC2E7001C3335A6007CE64B /* Main.storyboard */; };
 		BEF4DB091C28BCA5005C2928 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF4DB081C28BCA5005C2928 /* WebViewController.swift */; };
@@ -72,6 +73,7 @@
 		BEC2E6FE1C3313BD007CE64B /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		BEC2E7011C3335A6007CE64B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BEC2E7031C33433E007CE64B /* FeedNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedNavigationController.swift; sourceTree = "<group>"; };
+		BECF9C821C4FF872006AA222 /* EditPostTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPostTableViewController.swift; sourceTree = "<group>"; };
 		BEEDD1401C3702DF00B1F2DE /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		BEF4DB081C28BCA5005C2928 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -125,6 +127,7 @@
 				BEBC33331C2F4BB1007FDCBB /* ProfileViewController.swift */,
 				BEB7020A1C35C200007927A8 /* FavouritesViewController.swift */,
 				BEC2E7001C3335A6007CE64B /* Main.storyboard */,
+				BECF9C821C4FF872006AA222 /* EditPostTableViewController.swift */,
 				BEEDD1401C3702DF00B1F2DE /* MenuTableViewController.swift */,
 				BE1204231C1A061A00B9B9C1 /* AppDelegate.swift */,
 				BEB3DAC41C275B9B00452752 /* EventDetailsViewController.swift */,
@@ -280,6 +283,7 @@
 				BE7822B81C2484F500796E2B /* Event.swift in Sources */,
 				BEC2E6FF1C3313BD007CE64B /* TabBarController.swift in Sources */,
 				BEBC33381C2F4BB1007FDCBB /* LoginViewController.swift in Sources */,
+				BECF9C831C4FF872006AA222 /* EditPostTableViewController.swift in Sources */,
 				BEB7020B1C35C200007927A8 /* FavouritesViewController.swift in Sources */,
 				BE7822B01C24162400796E2B /* FeedViewController.swift in Sources */,
 			);

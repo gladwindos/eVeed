@@ -323,10 +323,41 @@ After a great year Decadence Entertainment and Waylnn Wolfe will be granting fan
                             <outlet property="delegate" destination="a7Q-eg-jde" id="4Zt-pD-4Vh"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="9oF-8C-cFz" kind="show" identifier="edit post" id="MNI-cg-pKV"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eQU-J1-KkP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4737" y="388"/>
+        </scene>
+        <!--Edit Post Table View Controller-->
+        <scene sceneID="g2s-VK-Eua">
+            <objects>
+                <tableViewController id="9oF-8C-cFz" customClass="EditPostTableViewController" customModule="PosterApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="B6n-Kj-GOY">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="post to edit" id="SIf-GC-MA4">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SIf-GC-MA4" id="fMS-qb-7UL">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="9oF-8C-cFz" id="hVm-pq-ulq"/>
+                            <outlet property="delegate" destination="9oF-8C-cFz" id="Mmx-bt-P7D"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SkA-n1-iKo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5490" y="388"/>
         </scene>
         <!--Add Post-->
         <scene sceneID="tne-QT-ifu">
@@ -528,7 +559,7 @@ Al10 8LA</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5731.5" y="876"/>
+            <point key="canvasLocation" x="6143.5" y="858"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="fLb-AU-md7">
