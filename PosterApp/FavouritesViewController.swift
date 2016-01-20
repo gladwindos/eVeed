@@ -143,7 +143,17 @@ class FavouritesViewController: UIViewController {
                     //
                     //                    })
                     
-                    self.createdEvents.append(Event(title: object["title"] as! String, date: "5th of Dec", eventID: object.objectId!, eventImage: newImage))
+                    let parseDate = object["eventDate"] as! NSDate
+                    
+                    var dateFormatter = NSDateFormatter()
+                    
+                    dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+                    
+                    dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
+                    
+                    let dateString = dateFormatter.stringFromDate(parseDate)
+                    
+                    self.createdEvents.append(Event(title: object["title"] as! String, date: dateString, eventID: object.objectId!, eventImage: newImage))
                     
                 }
                 
@@ -218,9 +228,19 @@ class FavouritesViewController: UIViewController {
                             
                         }
                         
+                        let parseDate = event["eventDate"] as! NSDate
+                        
+                        var dateFormatter = NSDateFormatter()
+                        
+                        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+                        
+                        dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
+                        
+                        let dateString = dateFormatter.stringFromDate(parseDate)
+                        
                         if (event["eventDate"] != nil) {
                             
-                            infoVC.dateHolder = "5th of Dec"
+                            infoVC.dateHolder = dateString
                             
                         }
                         
