@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import Parse
 
 class MenuTableViewController: UITableViewController {
+    
+    // Maybe change to dictionary later and iterate over
     
     let events = ["Add Post", "Edit Post", "Edit Account", "Logout"]
 
@@ -56,6 +59,52 @@ class MenuTableViewController: UITableViewController {
         
         self.showViewController(pVc, sender: self)
             
+        } else if indexPath.row == 3 {
+            
+            var activityIndicator = UIActivityIndicatorView()
+            
+            activityIndicator = UIActivityIndicatorView(frame: self.view.frame)
+            activityIndicator.backgroundColor = UIColor(white: 1.0, alpha: 0.5)
+            activityIndicator.center = self.view.center
+            activityIndicator.hidesWhenStopped = true
+            activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+            view.addSubview(activityIndicator)
+            activityIndicator.startAnimating()
+            
+            UIApplication.sharedApplication().beginIgnoringInteractionEvents()
+            
+            PFUser.logOutInBackgroundWithBlock { (error) -> Void in
+                
+                activityIndicator.stopAnimating()
+                
+                UIApplication.sharedApplication().endIgnoringInteractionEvents()
+                
+                if error == nil {
+                    
+                    let alert = UIAlertController(title: "Success", message: "Logged Out", preferredStyle: UIAlertControllerStyle.Alert)
+                    
+                    
+                    alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
+                        
+                        //                    self.dismissViewControllerAnimated(true, completion: nil)
+                        
+                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                            
+                            let tbVc: UITabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Tab Bar Controller") as! TabBarController
+                            
+                            tbVc.viewDidLoad()
+                            
+                            self.presentViewController(tbVc, animated: true, completion: nil)
+                        })
+                        
+                    }))
+                    
+                    self.presentViewController(alert, animated: true, completion: nil)
+                    
+
+                }
+                
+            }
         }
         
     }

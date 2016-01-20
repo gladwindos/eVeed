@@ -35,21 +35,6 @@ class FavouritesViewController: UIViewController {
     
     @IBAction func logOutAction(sender: AnyObject) {
         
-        PFUser.logOutInBackgroundWithBlock { (error) -> Void in
-            
-            if error == nil {
-                
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    
-                    let tbVc: UITabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Tab Bar Controller") as! TabBarController
-                    
-                    tbVc.viewDidLoad()
-                    
-                    self.presentViewController(tbVc, animated: true, completion: nil)
-                })
-            }
-            
-        }
         
     }
     
@@ -60,6 +45,8 @@ class FavouritesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        loadEVents()
         
     }
     
@@ -168,7 +155,7 @@ class FavouritesViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         
-        loadEVents()
+//        loadEVents()
     }
     
     

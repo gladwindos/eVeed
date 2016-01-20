@@ -53,6 +53,8 @@ class LoginViewController: UIViewController {
                         
                         tbVc.viewDidLoad()
                         
+                        tbVc.selectedIndex = 1
+                        
                         self.presentViewController(tbVc, animated: true, completion: nil)
                     })
                     

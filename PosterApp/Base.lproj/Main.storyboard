@@ -27,8 +27,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tVu-aU-eb1">
-                                            <rect key="frame" x="0.0" y="67" width="600" height="489"/>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tVu-aU-eb1">
+                                            <rect key="frame" x="0.0" y="67" width="600" height="440"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="20" minimumInteritemSpacing="10" id="uE4-5H-EKO">
                                                 <size key="itemSize" width="280" height="469"/>
@@ -38,7 +38,7 @@
                                             </collectionViewFlowLayout>
                                             <cells>
                                                 <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Event Cell" id="TUZ-C2-nF1" customClass="EventCollectionViewCell" customModule="PosterApp" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="10" width="280" height="469"/>
+                                                    <rect key="frame" x="20" y="-15" width="280" height="469"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                         <rect key="frame" x="0.0" y="0.0" width="280" height="469"/>
@@ -202,7 +202,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24th December 2015, 10pm - Late" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="reG-pE-RbA">
-                                        <rect key="frame" x="140" y="119" width="321" height="39"/>
+                                        <rect key="frame" x="8" y="119" width="569" height="39"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="39" id="fpr-1S-Brd"/>
                                         </constraints>
@@ -246,20 +246,21 @@ After a great year Decadence Entertainment and Waylnn Wolfe will be granting fan
                                 <constraints>
                                     <constraint firstItem="dZo-pm-tgr" firstAttribute="top" secondItem="2Mf-jd-XbS" secondAttribute="bottom" constant="60" id="1RM-Ef-dfy"/>
                                     <constraint firstItem="RVa-Oy-Dgr" firstAttribute="trailing" secondItem="jxe-54-crv" secondAttribute="trailing" id="8xI-2t-Occ"/>
-                                    <constraint firstItem="reG-pE-RbA" firstAttribute="centerX" secondItem="jxe-54-crv" secondAttribute="centerX" id="A9X-4l-V27"/>
+                                    <constraint firstItem="reG-pE-RbA" firstAttribute="centerX" secondItem="jxe-54-crv" secondAttribute="centerX" constant="-8" id="A9X-4l-V27"/>
                                     <constraint firstItem="atQ-0Z-r3h" firstAttribute="top" secondItem="dZo-pm-tgr" secondAttribute="bottom" constant="4" id="AgO-vO-dKi"/>
                                     <constraint firstItem="RVa-Oy-Dgr" firstAttribute="top" secondItem="3Rg-nV-qd4" secondAttribute="top" constant="963" id="BHF-rn-bEp"/>
                                     <constraint firstItem="atQ-0Z-r3h" firstAttribute="centerX" secondItem="dZo-pm-tgr" secondAttribute="centerX" constant="7.5" id="IrN-go-eZt"/>
                                     <constraint firstItem="2Mf-jd-XbS" firstAttribute="top" secondItem="reG-pE-RbA" secondAttribute="bottom" constant="37" id="PbE-zK-MPu"/>
+                                    <constraint firstItem="jxe-54-crv" firstAttribute="centerX" secondItem="3Rg-nV-qd4" secondAttribute="centerX" id="RXO-aB-Al0"/>
                                     <constraint firstItem="atQ-0Z-r3h" firstAttribute="leading" secondItem="3Rg-nV-qd4" secondAttribute="leading" constant="39" id="Svp-PD-16M"/>
                                     <constraint firstItem="dZo-pm-tgr" firstAttribute="centerX" secondItem="3Rg-nV-qd4" secondAttribute="centerX" id="XT4-1w-8NR"/>
                                     <constraint firstItem="jxe-54-crv" firstAttribute="top" secondItem="3Rg-nV-qd4" secondAttribute="top" constant="72" id="YhC-yS-nJp"/>
                                     <constraint firstItem="reG-pE-RbA" firstAttribute="top" secondItem="jxe-54-crv" secondAttribute="bottom" constant="8" symbolic="YES" id="awW-r5-Hcf"/>
                                     <constraint firstAttribute="bottom" secondItem="RVa-Oy-Dgr" secondAttribute="bottom" constant="73" id="ccX-Bl-88k"/>
                                     <constraint firstItem="dZo-pm-tgr" firstAttribute="centerX" secondItem="RVa-Oy-Dgr" secondAttribute="centerX" id="fTE-9s-OiK"/>
-                                    <constraint firstItem="reG-pE-RbA" firstAttribute="centerX" secondItem="2Mf-jd-XbS" secondAttribute="centerX" id="ji3-dZ-3fZ"/>
+                                    <constraint firstItem="reG-pE-RbA" firstAttribute="centerX" secondItem="2Mf-jd-XbS" secondAttribute="centerX" constant="-7.5" id="ji3-dZ-3fZ"/>
                                     <constraint firstAttribute="trailing" secondItem="atQ-0Z-r3h" secondAttribute="trailing" constant="23" id="pre-jA-pr4"/>
-                                    <constraint firstAttribute="trailing" secondItem="reG-pE-RbA" secondAttribute="trailing" constant="139" id="xR1-qI-GVk"/>
+                                    <constraint firstAttribute="trailing" secondItem="reG-pE-RbA" secondAttribute="trailing" constant="23" id="xR1-qI-GVk"/>
                                 </constraints>
                             </scrollView>
                         </subviews>

@@ -39,9 +39,8 @@ class FeedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        print("view did load")
         
-//        loadEvents()
+        loadEvents()
         
     }
     
@@ -132,12 +131,9 @@ class FeedViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        
-        print("view did appear")
-        
-        // Clear events array
 
-        loadEvents()
+
+//        loadEvents()
     }
     
     private struct Storyboard {
