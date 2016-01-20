@@ -32,8 +32,11 @@ class FeedViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     
-    // MARK: - UICollectionViewDataSource
     
+    @IBAction func refreshAction(sender: AnyObject) {
+        
+        viewDidLoad()
+    }
     
     
     override func viewDidLoad() {

@@ -118,7 +118,13 @@
                             <constraint firstItem="3uG-7i-QS2" firstAttribute="top" secondItem="Hpp-v5-l2L" secondAttribute="top" id="qQz-oc-5eM"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Feed" id="HkP-hB-ugb"/>
+                    <navigationItem key="navigationItem" title="Feed" id="HkP-hB-ugb">
+                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="8kn-QU-8qd">
+                            <connections>
+                                <action selector="refreshAction:" destination="P1b-g5-Sgi" id="WfW-E6-FJN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="backgroundImageView" destination="3uG-7i-QS2" id="y53-cp-8k0"/>
                         <outlet property="collectionView" destination="tVu-aU-eb1" id="V0b-ga-1Xh"/>
@@ -1155,9 +1161,9 @@ Al10 8LA</string>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vEg-7K-TL6">
-                        <barButtonItem key="leftBarButtonItem" title="LogOut" id="3Sk-vF-RsX">
+                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="iix-iL-duF">
                             <connections>
-                                <action selector="logOutAction:" destination="02K-8X-2Wa" id="nCG-7A-WpC"/>
+                                <action selector="refreshAction:" destination="02K-8X-2Wa" id="i79-vm-LMx"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Menu" style="plain" id="gU8-HS-gbT">

@@ -33,10 +33,11 @@ class FavouritesViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    @IBAction func logOutAction(sender: AnyObject) {
+    @IBAction func refreshAction(sender: AnyObject) {
         
-        
+        viewDidLoad()
     }
+    
     
     // MARK: - UICollectionViewDataSource
     
