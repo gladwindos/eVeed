@@ -34,10 +34,20 @@ class EventCollectionViewCell: UICollectionViewCell {
         eventdate.text! = event.date
         eventImage.image! = event.eventImage
         
+        
+        
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        
+        if (UIScreen.mainScreen().bounds.size.height == 480) {
+            
+            self.transform = CGAffineTransformMakeScale(0.7, 0.7)
+        } else if (UIScreen.mainScreen().bounds.size.height == 568) {
+            
+            self.transform = CGAffineTransformMakeScale(0.9, 0.9)
+        }
         
         self.layer.cornerRadius = 10.0
         self.clipsToBounds = true

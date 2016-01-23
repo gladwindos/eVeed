@@ -115,6 +115,11 @@ class EventDetailsViewController: UIViewController {
         eventImage.image = imageHolder
         
         extraInfo.text = extraInfoHolder
+        
+        if (UIScreen.mainScreen().bounds.size.height == 480) {
+            
+            eventImage.transform = CGAffineTransformMakeScale(0.8, 0.8)
+        }
 
     }
 
