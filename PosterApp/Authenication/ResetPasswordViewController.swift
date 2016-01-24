@@ -11,13 +11,18 @@ import Parse
 
 class ResetPasswordViewController: UIViewController {
     
+    var shouldDismiss = false
+    
     func displayAlert(title: String, message: String) {
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
         
         alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
             
-            self.dismissViewControllerAnimated(true, completion: nil)
+            if self.shouldDismiss == true {
+                
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }
             
         }))
         
@@ -32,9 +37,20 @@ class ResetPasswordViewController: UIViewController {
         let email = self.emailField.text
         let finalEmail = email?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
         
-        PFUser.requestPasswordResetForEmailInBackground(finalEmail!)
-        
-        displayAlert("Password Reset", message: "An email containing information on how to reset your password has been sent to " + finalEmail! + ".")
+        PFUser.requestPasswordResetForEmailInBackground(finalEmail!) { (success, error) -> Void in
+            
+            if error == nil {
+                
+                self.shouldDismiss = true
+                
+                self.displayAlert("Password Reset", message: "An email containing information on how to reset your password has been sent to " + finalEmail! + ".")
+                
+            } else {
+                
+                self.displayAlert("Error", message: "\(error!.userInfo["error"]!)")
+            }
+            
+        }
         
     }
 

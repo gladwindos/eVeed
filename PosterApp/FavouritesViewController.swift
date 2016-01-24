@@ -191,6 +191,8 @@ class FavouritesViewController: UIViewController {
                 
                 let query = PFQuery(className: "Event")
                 
+                query.orderByAscending("eventDate")
+                
                 query.getObjectInBackgroundWithId(cellEventId, block: { (object, error) -> Void in
                     
                     if error != nil {

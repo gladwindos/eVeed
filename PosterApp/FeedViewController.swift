@@ -69,11 +69,14 @@ class FeedViewController: UIViewController {
         
         var newImage: UIImage!
         
+        query.orderByAscending("eventDate")
+        
         query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
             
             self.activityIndicator.stopAnimating()
             
             UIApplication.sharedApplication().endIgnoringInteractionEvents()
+            
             
             if error != nil {
                 
