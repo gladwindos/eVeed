@@ -173,6 +173,8 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        scrollView.keyboardDismissMode = .OnDrag
+        
         if (PFUser.currentUser() == nil) {
             
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
