@@ -31,13 +31,22 @@ class EventDetailsViewController: UIViewController {
     
     var dateHolder = ""
     
+    @IBOutlet weak var usernameOutlet: UILabel!
+    
+    var usernameHolder = ""
+    
     @IBOutlet var eventImage: UIImageView!
     
     var imageHolder: UIImage = UIImage(named: "placeholder")!
     
-    @IBOutlet weak var extraInfo: UITextView!
+    @IBOutlet weak var extraInfo: UILabel!
     
     var extraInfoHolder = ""
+    
+    @IBOutlet weak var location: UILabel!
+    
+    var locationHolder = ""
+    
     
     @IBOutlet var ticketLink: UIButton!
     
@@ -106,15 +115,18 @@ class EventDetailsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        scrollView.contentSize.height = 1100
         
         eventTitle.text = titleHolder
         
         eventDate.text = dateHolder
         
+        usernameOutlet.text = usernameHolder
+        
         eventImage.image = imageHolder
         
         extraInfo.text = extraInfoHolder
+        
+        location.text = locationHolder
         
         if (UIScreen.mainScreen().bounds.size.height == 480) {
             

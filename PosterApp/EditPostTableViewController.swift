@@ -167,6 +167,8 @@ class EditPostTableViewController: UITableViewController {
             
             pVc.extraInfoHolder = object!["extraInfo"] as! String
             
+            pVc.locationHolder = object!["location"] as! String
+            
             pVc.idHolder = (object?.objectId)!
             
 //            pVc.post = object!

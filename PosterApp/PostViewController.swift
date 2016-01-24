@@ -115,6 +115,8 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
         
         post["extraInfo"] = eventExtraInfo.text
         
+        post["location"] = eventLocation.text
+        
         let imageData = UIImageJPEGRepresentation(imageToPost.image!, 0.5)
         
         let imageFile = PFFile(name: "\(eventTitle.text!)_image.png", data: imageData!)

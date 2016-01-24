@@ -230,11 +230,33 @@ class FeedViewController: UIViewController {
                             
                         }
                         
+                        if (event["location"] != nil) {
+                            
+                            infoVC.locationHolder = event["location"] as! String
+                            
+                        }
+                        
                         if (event["ticketLink"] != nil) {
                             
                             infoVC.ticketLinkHolder = event["ticketLink"] as! String
                             
                         }
+                        
+                        if (event["userid"] != nil) {
+                            
+                            let eventUserId = event["userid"] as! String
+                            
+                            do {
+                            
+                                let eventUser = try PFQuery.getUserObjectWithId(eventUserId)
+                                infoVC.usernameHolder = "Posted by " + eventUser.username!
+                                
+                            } catch {
+                                print(error)
+                            }
+                            
+                        }
+                        
                         
                         infoVC.viewDidLoad()
                     }
