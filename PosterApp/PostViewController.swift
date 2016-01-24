@@ -75,6 +75,10 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
     
     var extraInfoHolder = ""
     
+    @IBOutlet weak var eventLocation: UITextView!
+    
+    var locationHolder = ""
+    
     var idHolder = ""
     
     var editingPost = false
@@ -179,6 +183,12 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
             })
         }
         
+        eventExtraInfo.layer.borderWidth = 1.0
+        eventExtraInfo.layer.borderColor = UIColor.lightGrayColor().CGColor
+        
+        eventLocation.layer.borderWidth = 1.0
+        eventLocation.layer.borderColor = UIColor.lightGrayColor().CGColor
+        
         scrollView.contentSize.height = 1600
         
         eventTitle.text = titleHolder
@@ -188,6 +198,8 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
         imageToPost.image = imageHolder
         
         eventExtraInfo.text = extraInfoHolder
+        
+        eventLocation.text = locationHolder
         
         eventTicketLink.text = ticketHolder
         
