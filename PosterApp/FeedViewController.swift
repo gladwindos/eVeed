@@ -126,7 +126,7 @@ class FeedViewController: UIViewController {
                     
                     let parseDate = object["eventDate"] as! NSDate
                     
-                    var dateFormatter = NSDateFormatter()
+                    let dateFormatter = NSDateFormatter()
                     
                     dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
                     
@@ -213,7 +213,7 @@ class FeedViewController: UIViewController {
                         
                         let parseDate = event["eventDate"] as! NSDate
                         
-                        var dateFormatter = NSDateFormatter()
+                        let dateFormatter = NSDateFormatter()
                         
                         dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
                         

@@ -29,9 +29,9 @@ class SignUpViewController: UIViewController {
     
     @IBAction func signUpAction(sender: AnyObject) {
         
-        let username = self.usernameField.text
+        let username = self.usernameField.text?.lowercaseString.stringByReplacingOccurrencesOfString(" ", withString: "")
         let password = self.passwordField.text
-        let email = self.emailField.text
+        let email = self.emailField.text?.lowercaseString
         let finalEmail = email?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
         
         // Validate text fields
@@ -45,7 +45,7 @@ class SignUpViewController: UIViewController {
             
         } else if email?.characters.count < 8 {
             
-            displayAlert("invalid", message: "Password must be greater than 8 characters")
+            displayAlert("invalid", message: "email must be greater than 8 characters")
             
         } else {
             
@@ -61,36 +61,39 @@ class SignUpViewController: UIViewController {
             newUser["favourites"] = []
             
             // Sign up user asynchronously
-            newUser.signUpInBackgroundWithBlock({ (succeed, error) -> Void in
+            newUser.signUpInBackgroundWithBlock({ (success, error) -> Void in
                 
                 //Stop spinner
                 spinner.stopAnimating()
                 
                 if ((error) != nil) {
                     
-                    self.displayAlert("Error", message: "\(error)")
+                    self.displayAlert("Error", message: "\(error!.userInfo["error"]!)")
                     
                 } else {
+                    
                     
                     let alert = UIAlertController(title: "Success", message: "Signed Up", preferredStyle: UIAlertControllerStyle.Alert)
                     
                     alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
                         
-                        self.dismissViewControllerAnimated(true, completion: nil)
+                        //                        self.dismissViewControllerAnimated(true, completion: nil)
                         
-                        }))
+                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                            let tbVc: TabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Tab Bar Controller") as! TabBarController
+                            
+                            tbVc.viewDidLoad()
+                            
+                            
+                            self.presentViewController(tbVc, animated: true, completion: nil)
+                            
+                        })
+                        
+                    }))
                     
                     self.presentViewController(alert, animated: true, completion: nil)
                     
-                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                        let tbVc: TabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Tab Bar Controller") as! TabBarController
-                        
-                        tbVc.viewDidLoad()
-                        
-                        
-                        self.presentViewController(tbVc, animated: true, completion: nil)
-                        
-                    })
+                    
                     
                 }
             })

@@ -145,7 +145,7 @@ class FavouritesViewController: UIViewController {
                     
                     let parseDate = object["eventDate"] as! NSDate
                     
-                    var dateFormatter = NSDateFormatter()
+                    let dateFormatter = NSDateFormatter()
                     
                     dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
                     
@@ -232,7 +232,7 @@ class FavouritesViewController: UIViewController {
                         
                         let parseDate = event["eventDate"] as! NSDate
                         
-                        var dateFormatter = NSDateFormatter()
+                        let dateFormatter = NSDateFormatter()
                         
                         dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
                         

@@ -100,7 +100,7 @@ class EditPostTableViewController: UITableViewController {
                     
                     let parseDate = object["eventDate"] as! NSDate
                     
-                    var dateFormatter = NSDateFormatter()
+                    let dateFormatter = NSDateFormatter()
                     
                     dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
                     

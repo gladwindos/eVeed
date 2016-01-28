@@ -17,7 +17,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginAction(sender: AnyObject) {
         
-        let username = self.usernameField.text
+        let username = self.usernameField.text?.lowercaseString.stringByReplacingOccurrencesOfString(" ", withString: "")
         let password = self.passwordField.text
         
         var activityIndicator = UIActivityIndicatorView()
