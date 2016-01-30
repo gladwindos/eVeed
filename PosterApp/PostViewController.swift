@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class PostViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class PostViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         
@@ -59,6 +59,37 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
         chooseImageOutlet.setTitle("Change Image", forState: UIControlState.Normal)
     }
     
+    // University picker view
+    
+    @IBOutlet weak var universityTextField: UITextField!
+    
+    var universityTextFieldHolder = "University?"
+    
+    let universityOptions = ["University of Hertfordshire", "Other"]
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return universityOptions.count
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return universityOptions[row]
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        universityTextField.text = universityOptions[row]
+    }
+    
+    func donePicker() {
+        
+        if universityTextField.text == "University?" {
+            
+            universityTextField.text = universityOptions[0]
+        }
+        
+        universityTextField.resignFirstResponder()
+    }
+    
+    
     @IBOutlet var eventTitle: UITextField!
     
     var titleHolder = ""
@@ -85,93 +116,110 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
     
     @IBAction func postEvent(sender: UIButton) {
         
-        activityIndicator = UIActivityIndicatorView(frame: self.view.frame)
-        activityIndicator.backgroundColor = UIColor(white: 1.0, alpha: 0.5)
-        activityIndicator.center = self.view.center
-        activityIndicator.hidesWhenStopped = true
-        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
-        view.addSubview(activityIndicator)
-        activityIndicator.startAnimating()
-        
-        UIApplication.sharedApplication().beginIgnoringInteractionEvents()
-        
-        
-        
-        let post = PFObject(className: "Event")
-        
-        if editingPost == true {
+        if ((eventTitle.text?.isEmpty) == true) {
+            displayAlert("Error", message: "Please enter a title")
             
-            post.objectId = idHolder
-        }
-
-        
-        post["title"] = eventTitle.text
-        
-        post["userid"] = PFUser.currentUser()?.objectId
-        
-        post["eventDate"] = eventDate.date
-        
-        post["ticketLink"] = eventTicketLink.text
-        
-        post["extraInfo"] = eventExtraInfo.text
-        
-        post["location"] = eventLocation.text
-        
-        let imageData = UIImageJPEGRepresentation(imageToPost.image!, 0.5)
-        
-        let imageFile = PFFile(name: "\(eventTitle.text!)_image.png", data: imageData!)
-        
-        post["imageFile"] = imageFile
-        
-        post.saveInBackgroundWithBlock { (success, error) -> Void in
+        } else if eventLocation.text.isEmpty == true {
             
-            self.activityIndicator.stopAnimating()
+            displayAlert("Error", message: "Please enter a location")
             
-            UIApplication.sharedApplication().endIgnoringInteractionEvents()
+        } else {
+        
+            activityIndicator = UIActivityIndicatorView(frame: self.view.frame)
+            activityIndicator.backgroundColor = UIColor(white: 1.0, alpha: 0.5)
+            activityIndicator.center = self.view.center
+            activityIndicator.hidesWhenStopped = true
+            activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+            view.addSubview(activityIndicator)
+            activityIndicator.startAnimating()
+            
+            UIApplication.sharedApplication().beginIgnoringInteractionEvents()
             
             
             
-            if error == nil {
+            let post = PFObject(className: "Event")
+            
+            if editingPost == true {
                 
-                let alert = UIAlertController(title: "Done", message: "Event has been posted successfully", preferredStyle: UIAlertControllerStyle.Alert)
+                post.objectId = idHolder
+            }
+            
+            
+            post["title"] = eventTitle.text
+            
+            post["userid"] = PFUser.currentUser()?.objectId
+            
+            post["eventDate"] = eventDate.date
+            
+            post["ticketLink"] = eventTicketLink.text
+            
+            post["extraInfo"] = eventExtraInfo.text
+            
+            post["location"] = eventLocation.text
+            
+            if universityTextField.text == "University?" {
+                universityTextField.text = "Other"
+            }
+            
+            post["university"] = universityTextField.text
+            
+            let imageData = UIImageJPEGRepresentation(imageToPost.image!, 0.5)
+            
+            let imageFile = PFFile(name: "\(eventTitle.text!)_image.png", data: imageData!)
+            
+            post["imageFile"] = imageFile
+            
+            post.saveInBackgroundWithBlock { (success, error) -> Void in
+                
+                self.activityIndicator.stopAnimating()
+                
+                UIApplication.sharedApplication().endIgnoringInteractionEvents()
                 
                 
-                alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
+                
+                if error == nil {
                     
-                    //                    self.dismissViewControllerAnimated(true, completion: nil)
+                    let alert = UIAlertController(title: "Done", message: "Event has been posted successfully", preferredStyle: UIAlertControllerStyle.Alert)
                     
-                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                        
-                        let tbVc: UITabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Tab Bar Controller") as! TabBarController
-                        
-                        tbVc.viewDidLoad()
-                        
-                        tbVc.selectedIndex = 0
-                        
-                        self.presentViewController(tbVc, animated: true, completion: nil)
-                    })
                     
-                }))
-                
-                self.presentViewController(alert, animated: true, completion: nil)
-                
-            } else {
-                
-                self.displayAlert("Error", message: "Please try again later")
+                    alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
+                        
+                        //                    self.dismissViewControllerAnimated(true, completion: nil)
+                        
+                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                            
+                            let tbVc: UITabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Tab Bar Controller") as! TabBarController
+                            
+                            tbVc.viewDidLoad()
+                            
+                            tbVc.selectedIndex = 0
+                            
+                            self.presentViewController(tbVc, animated: true, completion: nil)
+                        })
+                        
+                    }))
+                    
+                    self.presentViewController(alert, animated: true, completion: nil)
+                    
+                } else {
+                    
+                    self.displayAlert("Error", message: "Please try again later")
+                    
+                }
                 
             }
             
+            chooseImageOutlet.setTitle("Choose Image", forState: UIControlState.Normal)
+            
+            editingPost = false
         }
-        
-        chooseImageOutlet.setTitle("Choose Image", forState: UIControlState.Normal)
-        
-        editingPost = false
     }
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
         
         scrollView.keyboardDismissMode = .OnDrag
         
@@ -193,7 +241,7 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
         eventLocation.layer.borderWidth = 1.0
         eventLocation.layer.borderColor = UIColor.lightGrayColor().CGColor
         
-        scrollView.contentSize.height = 1600
+//        scrollView.contentSize.height = 1700
         
         eventTitle.text = titleHolder
         
@@ -207,6 +255,25 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
         
         eventTicketLink.text = ticketHolder
         
+        universityTextField.text = universityTextFieldHolder
+        
+        let pickerView = UIPickerView()
+        
+        pickerView.delegate = self
+        
+        universityTextField.inputView = pickerView
+        
+        let toolBar = UIToolbar()
+        toolBar.barStyle = UIBarStyle.Default
+        toolBar.translucent = true
+        toolBar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: "donePicker")
+        
+        toolBar.setItems([doneButton], animated: false)
+        toolBar.userInteractionEnabled = true
+        
+        universityTextField.inputAccessoryView = toolBar
         
     }
     

@@ -171,6 +171,8 @@ class EditPostTableViewController: UITableViewController {
             
             pVc.idHolder = (object?.objectId)!
             
+            pVc.universityTextFieldHolder = object!["university"] as! String
+            
 //            pVc.post = object!
             
             if let imageFile = object!["imageFile"]{

@@ -239,9 +239,16 @@ class FeedViewController: UIViewController {
                             
                         }
                         
-                        if (event["ticketLink"] != nil) {
+                        if let link = event["ticketLink"] {
                             
-                            infoVC.ticketLinkHolder = event["ticketLink"] as! String
+                            if link as! String == "" {
+                                
+                                infoVC.ticketLink.hidden = true
+                                
+                            } else {
+                                
+                                infoVC.ticketLinkHolder = event["ticketLink"] as! String
+                            }
                             
                         }
                         

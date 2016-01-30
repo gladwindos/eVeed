@@ -391,11 +391,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2fb-jz-4JQ">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1700"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7eY-Ux-Yeu">
                                         <rect key="frame" x="137" y="410" width="102" height="24"/>
@@ -423,6 +423,11 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yfe-Hz-7Ei">
                                         <rect key="frame" x="27" y="884" width="321" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="URL"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="University?" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hF5-FU-q55">
+                                        <rect key="frame" x="27" y="1553" width="321" height="30"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="URL"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Extra Info" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0w-yi-oZA">
@@ -473,17 +478,6 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRR-wP-7TR">
-                                        <rect key="frame" x="152" y="1522" width="73" height="36"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="73" id="vj7-vN-AbC"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                        <state key="normal" title="Post"/>
-                                        <connections>
-                                            <action selector="postEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i0C-jn-ODg"/>
-                                        </connections>
-                                    </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s8z-q9-E1Z">
                                         <rect key="frame" x="38" y="1261" width="300" height="233"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -512,11 +506,23 @@ Al10 8LA</string>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRR-wP-7TR">
+                                        <rect key="frame" x="151" y="1616" width="73" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="73" id="vj7-vN-AbC"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <state key="normal" title="Post"/>
+                                        <connections>
+                                            <action selector="postEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i0C-jn-ODg"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Yfe-Hz-7Ei" firstAttribute="trailing" secondItem="1bD-Hk-Qfs" secondAttribute="trailing" id="5Yl-9o-LyY"/>
                                     <constraint firstItem="Yfe-Hz-7Ei" firstAttribute="centerX" secondItem="2fb-jz-4JQ" secondAttribute="centerX" id="5jc-CU-lOv"/>
                                     <constraint firstItem="Yfe-Hz-7Ei" firstAttribute="top" secondItem="FiN-YE-V9K" secondAttribute="bottom" constant="8" symbolic="YES" id="5sR-f2-x9L"/>
+                                    <constraint firstItem="hF5-FU-q55" firstAttribute="trailing" secondItem="Yfe-Hz-7Ei" secondAttribute="trailing" id="6nD-Su-aKv"/>
                                     <constraint firstItem="FiN-YE-V9K" firstAttribute="top" secondItem="sDw-z1-DQc" secondAttribute="bottom" constant="59" id="7ci-kP-mG2"/>
                                     <constraint firstItem="Yfe-Hz-7Ei" firstAttribute="centerX" secondItem="N0w-yi-oZA" secondAttribute="centerX" id="7wu-Y0-Zts"/>
                                     <constraint firstItem="s8z-q9-E1Z" firstAttribute="top" secondItem="bzv-Jo-STA" secondAttribute="bottom" constant="8" symbolic="YES" id="9XJ-71-dBl"/>
@@ -529,21 +535,23 @@ Al10 8LA</string>
                                     <constraint firstItem="2v2-ls-G5a" firstAttribute="top" secondItem="2fb-jz-4JQ" secondAttribute="top" constant="100" id="G4q-oM-Rav"/>
                                     <constraint firstItem="bzv-Jo-STA" firstAttribute="centerX" secondItem="s8z-q9-E1Z" secondAttribute="centerX" id="HCt-AQ-CU4"/>
                                     <constraint firstItem="Z4n-Z7-MXq" firstAttribute="top" secondItem="N0w-yi-oZA" secondAttribute="bottom" constant="8" symbolic="YES" id="IVc-q8-ehf"/>
-                                    <constraint firstItem="JRR-wP-7TR" firstAttribute="top" secondItem="s8z-q9-E1Z" secondAttribute="bottom" constant="28" id="Mt0-yM-urf"/>
+                                    <constraint firstItem="JRR-wP-7TR" firstAttribute="top" secondItem="s8z-q9-E1Z" secondAttribute="bottom" constant="122" id="Mt0-yM-urf"/>
                                     <constraint firstAttribute="trailing" secondItem="sDw-z1-DQc" secondAttribute="trailing" id="OfJ-gh-9A4"/>
                                     <constraint firstItem="bzv-Jo-STA" firstAttribute="top" secondItem="Z4n-Z7-MXq" secondAttribute="bottom" constant="41" id="RS3-nH-LHw"/>
                                     <constraint firstItem="sDw-z1-DQc" firstAttribute="top" secondItem="U9r-Wb-mGy" secondAttribute="bottom" constant="19" id="SpU-1d-lho"/>
+                                    <constraint firstItem="hF5-FU-q55" firstAttribute="leading" secondItem="Yfe-Hz-7Ei" secondAttribute="leading" id="U8W-yz-Ieh"/>
                                     <constraint firstItem="1bD-Hk-Qfs" firstAttribute="top" secondItem="7eY-Ux-Yeu" secondAttribute="bottom" constant="15" id="Zuq-wa-y9H"/>
                                     <constraint firstItem="U9r-Wb-mGy" firstAttribute="top" secondItem="1bD-Hk-Qfs" secondAttribute="bottom" constant="55" id="aGo-6f-PcA"/>
                                     <constraint firstItem="sDw-z1-DQc" firstAttribute="leading" secondItem="2fb-jz-4JQ" secondAttribute="leading" id="dVY-gQ-ssW"/>
                                     <constraint firstItem="N0w-yi-oZA" firstAttribute="centerX" secondItem="Z4n-Z7-MXq" secondAttribute="centerX" id="deE-zx-0WE"/>
                                     <constraint firstItem="bzv-Jo-STA" firstAttribute="centerX" secondItem="Z4n-Z7-MXq" secondAttribute="centerX" id="eIV-lp-6Bd"/>
                                     <constraint firstItem="Z4n-Z7-MXq" firstAttribute="leading" secondItem="2fb-jz-4JQ" secondAttribute="leading" constant="32" id="fLf-vo-4Ru"/>
+                                    <constraint firstItem="JRR-wP-7TR" firstAttribute="top" secondItem="hF5-FU-q55" secondAttribute="bottom" constant="33" id="fYf-Es-yt3"/>
                                     <constraint firstItem="JRR-wP-7TR" firstAttribute="centerX" secondItem="s8z-q9-E1Z" secondAttribute="centerX" id="gW5-AK-ijt"/>
                                     <constraint firstItem="1bD-Hk-Qfs" firstAttribute="leading" secondItem="2fb-jz-4JQ" secondAttribute="leading" constant="27" id="i1G-We-Zjo"/>
                                     <constraint firstItem="1bD-Hk-Qfs" firstAttribute="centerX" secondItem="2fb-jz-4JQ" secondAttribute="centerX" id="nSN-cr-T7H"/>
                                     <constraint firstItem="FiN-YE-V9K" firstAttribute="centerX" secondItem="Yfe-Hz-7Ei" secondAttribute="centerX" id="rlj-NA-Idb"/>
-                                    <constraint firstAttribute="bottom" secondItem="JRR-wP-7TR" secondAttribute="bottom" constant="42" id="rtq-nz-btN"/>
+                                    <constraint firstAttribute="bottom" secondItem="JRR-wP-7TR" secondAttribute="bottom" constant="48" id="rtq-nz-btN"/>
                                     <constraint firstItem="s8z-q9-E1Z" firstAttribute="trailing" secondItem="2v2-ls-G5a" secondAttribute="trailing" id="vhY-KV-Xw9"/>
                                     <constraint firstItem="7eY-Ux-Yeu" firstAttribute="top" secondItem="2v2-ls-G5a" secondAttribute="bottom" constant="80" id="xMe-FQ-3RX"/>
                                     <constraint firstItem="U9r-Wb-mGy" firstAttribute="centerX" secondItem="sDw-z1-DQc" secondAttribute="centerX" constant="1" id="xYD-9W-hsV"/>
@@ -570,7 +578,7 @@ Al10 8LA</string>
                     </view>
                     <tabBarItem key="tabBarItem" title="Add Event" id="o6a-6t-EXd"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="1600"/>
+                    <size key="freeformSize" width="375" height="1700"/>
                     <connections>
                         <outlet property="chooseImageOutlet" destination="5Hn-O2-14s" id="2ha-yp-xeZ"/>
                         <outlet property="eventDate" destination="sDw-z1-DQc" id="yAu-dR-G7f"/>
@@ -580,6 +588,7 @@ Al10 8LA</string>
                         <outlet property="eventTitle" destination="1bD-Hk-Qfs" id="yxz-Yz-n9R"/>
                         <outlet property="imageToPost" destination="umu-zm-ndH" id="729-ug-TIy"/>
                         <outlet property="scrollView" destination="2fb-jz-4JQ" id="Cvq-be-WxC"/>
+                        <outlet property="universityTextField" destination="hF5-FU-q55" id="95e-T8-gD7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

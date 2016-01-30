@@ -115,6 +115,7 @@ class EventDetailsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
+        view.backgroundColor = UIColor(patternImage: UIImage(named: "plain_background")!)
         
         eventTitle.text = titleHolder
         
