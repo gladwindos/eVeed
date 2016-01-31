@@ -1,24 +1,15 @@
 //
-//  EditPostTableViewController.swift
+//  SearchTableViewController.swift
 //  PosterApp
 //
-//  Created by Gladwin Dosunmu on 20/01/2016.
+//  Created by Gladwin Dosunmu on 31/01/2016.
 //  Copyright © 2016 Gladwin Dosunmu. All rights reserved.
 //
 
 import UIKit
 import Parse
 
-class EditPostTableViewController: UITableViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        loadEvents()
-        
-
-    }
-    
+class SearchTableViewController: UITableViewController {
     
     var createdEvents: [Event] = []
     
@@ -36,21 +27,20 @@ class EditPostTableViewController: UITableViewController {
         
         UIApplication.sharedApplication().beginIgnoringInteractionEvents()
         
-        let currentUser = PFUser.currentUser()
-        
         createdEvents = []
         
         let query = PFQuery(className: "Event")
         
-        query.whereKey("userid", equalTo: (currentUser?.objectId)!)
-        
         var newImage: UIImage!
+        
+        query.orderByAscending("eventDate")
         
         query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
             
             self.activityIndicator.stopAnimating()
             
             UIApplication.sharedApplication().endIgnoringInteractionEvents()
+            
             
             if error != nil {
                 
@@ -118,7 +108,35 @@ class EditPostTableViewController: UITableViewController {
             
             
         }
+    }
+    
+    let searchController = UISearchController(searchResultsController: nil)
+    
+    var filteredEvents = [Event]()
+    
+    func filterContentForSearch(searchText: String, scope: String = "All") {
+        filteredEvents = createdEvents.filter { event in
+            return event.title.lowercaseString.containsString(searchText.lowercaseString)
+            
+        }
+        tableView.reloadData()
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        tableView.tableHeaderView = searchController.searchBar
+        
+        loadEvents()
+
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -135,78 +153,151 @@ class EditPostTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        if searchController.active && searchController.searchBar.text != "" {
+            return filteredEvents.count
+        }
         return createdEvents.count
     }
 
-
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("post to edit", forIndexPath: indexPath)
-
-        cell.textLabel?.text = createdEvents[indexPath.row].title
+        let cell = tableView.dequeueReusableCellWithIdentifier("search cell", forIndexPath: indexPath)
+        
+        let event: Event
+        
+        if searchController.active && searchController.searchBar.text != "" {
+            event = filteredEvents[indexPath.row]
+        } else {
+            event = createdEvents[indexPath.row]
+        }
+        
+        cell.textLabel?.text = event.title
+        cell.textLabel?.font = UIFont.systemFontOfSize(18)
+        
+        cell.detailTextLabel?.text = event.date
+        cell.detailTextLabel?.font = UIFont.systemFontOfSize(12)
+        cell.detailTextLabel?.textColor = UIColor.grayColor()
 
         return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        let selectedEvent = createdEvents[indexPath.row]
+        let infoVC: EventDetailsViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Event Details") as! EventDetailsViewController
         
-        let pVc: PostViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Add Post") as! PostViewController
+        let event: Event
+        
+        if searchController.active && searchController.searchBar.text != "" {
+            event = filteredEvents[indexPath.row]
+        } else {
+            event = createdEvents[indexPath.row]
+        }
+        
+        let cellEventId = event.eventID
         
         let query = PFQuery(className: "Event")
         
-        query.getObjectInBackgroundWithId(selectedEvent.eventID) { (object, error) -> Void in
+        query.getObjectInBackgroundWithId(cellEventId, block: { (object, error) -> Void in
             
-            pVc.editingPost = true
-            
-            pVc.titleHolder = object!["title"] as! String
-            
-            pVc.dateHolder = object!["eventDate"] as! NSDate
-            
-            pVc.ticketHolder = object!["ticketLink"] as! String
-            
-            pVc.extraInfoHolder = object!["extraInfo"] as! String
-            
-            pVc.locationHolder = object!["location"] as! String
-            
-            pVc.idHolder = (object?.objectId)!
-            
-            pVc.universityTextFieldHolder = object!["university"] as! String
-            
-//            pVc.post = object!
-            
-            if let imageFile = object!["imageFile"]{
+            if error != nil {
                 
-                imageFile.getDataInBackgroundWithBlock({ (imageData: NSData?, error: NSError?) -> Void in
+                print(error)
+                
+            } else if let event = object {
+                
+                infoVC.eventId = cellEventId
+                
+                if let imageFile = event["imageFile"]{
                     
-                    if error != nil {
+                    imageFile.getDataInBackgroundWithBlock({ (imageData: NSData?, error: NSError?) -> Void in
                         
-                        print(error)
-                        
-                    } else {
-                        
-                        if let data = imageData {
+                        if error != nil {
                             
-                            pVc.imageHolder = UIImage(data: data)!
+                            print(error)
                             
-                            pVc.viewDidLoad()
+                        } else {
+                            
+                            if let data = imageData {
+                                
+                                infoVC.imageHolder = UIImage(data: data)!
+                                
+                                infoVC.viewDidLoad()
+                                
+                            }
                             
                         }
                         
+                    })
+                }
+                if (event["title"] != nil) {
+                    
+                    infoVC.titleHolder = event["title"] as! String
+                    
+                }
+                
+                let parseDate = event["eventDate"] as! NSDate
+                
+                let dateFormatter = NSDateFormatter()
+                
+                dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+                
+                dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
+                
+                let dateString = dateFormatter.stringFromDate(parseDate)
+                
+                if (event["eventDate"] != nil) {
+                    
+                    infoVC.dateHolder = dateString
+                    
+                }
+                
+                if (event["extraInfo"] != nil) {
+                    
+                    infoVC.extraInfoHolder = event["extraInfo"] as! String
+                    
+                }
+                
+                if (event["location"] != nil) {
+                    
+                    infoVC.locationHolder = event["location"] as! String
+                    
+                }
+                
+                if let link = event["ticketLink"] {
+                    
+                    if link as! String == "" {
+                        
+                        infoVC.ticketLink.hidden = true
+                        
+                    } else {
+                        
+                        infoVC.ticketLinkHolder = event["ticketLink"] as! String
                     }
                     
-                })
+                }
+                
+                if (event["userid"] != nil) {
+                    
+                    let eventUserId = event["userid"] as! String
+                    
+                    do {
+                        
+                        let eventUser = try PFQuery.getUserObjectWithId(eventUserId)
+                        infoVC.usernameHolder = "Posted by " + eventUser.username!
+                        
+                    } catch {
+                        print(error)
+                    }
+                    
+                }
+                
+                
+                infoVC.viewDidLoad()
             }
-            
-            pVc.viewDidLoad()
-        }
+        })
         
-        
-        self.showViewController(pVc, sender: self)
-
-        
-        
+        self.showViewController(infoVC, sender: self)
     }
+
 
     /*
     // Override to support conditional editing of the table view.
@@ -254,3 +345,26 @@ class EditPostTableViewController: UITableViewController {
     */
 
 }
+
+extension SearchTableViewController: UISearchResultsUpdating {
+    
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        filterContentForSearch(searchController.searchBar.text!)
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -36,7 +36,9 @@ class TabBarController: UITabBarController {
             vc2 = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Profile Nav") as! UINavigationController
         }
         
-        setViewControllers([vc1, vc2], animated: true)
+        let vc3 = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Search Nav") as! UINavigationController
+        
+        setViewControllers([vc1, vc2, vc3], animated: true)
         
     }
     

@@ -15,13 +15,15 @@ class Event {
     var date: String!
     var eventImage: UIImage!
     var eventID: String!
+    var university: String!
     
-    init(title: String, date: String, eventID: String, eventImage: UIImage!) {
+    init(title: String, date: String, eventID: String, eventImage: UIImage!, university: String) {
         
         self.title = title
         self.date = date
         self.eventID = eventID
         self.eventImage = eventImage
+        self.university = university
     }
 
 }

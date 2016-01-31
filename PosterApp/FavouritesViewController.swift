@@ -153,7 +153,7 @@ class FavouritesViewController: UIViewController {
                     
                     let dateString = dateFormatter.stringFromDate(parseDate)
                     
-                    self.createdEvents.append(Event(title: object["title"] as! String, date: dateString, eventID: object.objectId!, eventImage: newImage))
+                    self.createdEvents.append(Event(title: object["title"] as! String, date: dateString, eventID: object.objectId!, eventImage: newImage, university: object["university"] as! String))
                     
                 }
                 
