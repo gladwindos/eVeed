@@ -21,6 +21,15 @@ class EventDetailsViewController: UIViewController {
         
     }
     
+    @IBAction func shareAction(sender: UIBarButtonItem) {
+        
+        let aVC = UIActivityViewController(activityItems: ["Check out this event on Eveed!", eventTitle.text!, eventImage.image!], applicationActivities: nil)
+        
+        self.presentViewController(aVC, animated: true, completion: nil)
+        
+    }
+    
+    
     @IBOutlet var scrollView: UIScrollView!
     
     @IBOutlet var eventTitle: UILabel!

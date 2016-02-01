@@ -4,6 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Feed-->
@@ -300,11 +301,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Event Details" id="N2w-m8-WvU">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="8Ir-g8-ehq">
-                            <connections>
-                                <action selector="addToFavourites:" destination="vzB-e5-GPP" id="Lh4-gt-iAM"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="8Ir-g8-ehq">
+                                <connections>
+                                    <action selector="addToFavourites:" destination="vzB-e5-GPP" id="Lh4-gt-iAM"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="action" id="Lip-YK-BMD">
+                                <connections>
+                                    <action selector="shareAction:" destination="vzB-e5-GPP" id="Y2U-Sz-hn8"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="940"/>
