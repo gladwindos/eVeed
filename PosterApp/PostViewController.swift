@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class PostViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
+class PostViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         
@@ -81,12 +81,12 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
     
     func donePicker() {
         
-        if universityTextField.text == "University?" {
+        if universityTextField.isFirstResponder() && universityTextField.text == "University?" {
             
             universityTextField.text = universityOptions[0]
         }
         
-        universityTextField.resignFirstResponder()
+        self.view.endEditing(true)
     }
     
     
@@ -94,9 +94,35 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
     
     var titleHolder = ""
     
-    @IBOutlet var eventDate: UIDatePicker!
+    // Date
     
-    var dateHolder = NSDate()
+    @IBOutlet weak var dateText: UITextField!
+    
+    var finalDate = NSDate()
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        
+        let datePicker = UIDatePicker()
+        
+        datePicker.datePickerMode = .DateAndTime
+        
+        textField.inputView = datePicker
+        
+        datePicker.addTarget(self, action: "datePickerChanged:", forControlEvents: .ValueChanged)
+    }
+    
+    func datePickerChanged(sender: UIDatePicker) {
+        
+        finalDate = sender.date
+        
+        let formatter = NSDateFormatter()
+        formatter.dateStyle = .LongStyle
+        formatter.timeStyle = .ShortStyle
+        dateText.text = formatter.stringFromDate(sender.date)
+    }
+    
+    
+    
     
     @IBOutlet var eventTicketLink: UITextField!
     
@@ -104,7 +130,7 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
     
     @IBOutlet var eventExtraInfo: UITextView!
     
-    var extraInfoHolder = ""
+    var extraInfoHolder = "E.g Contact Info"
     
     @IBOutlet weak var eventLocation: UITextView!
     
@@ -149,7 +175,7 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
             
             post["userid"] = PFUser.currentUser()?.objectId
             
-            post["eventDate"] = eventDate.date
+            post["eventDate"] = finalDate
             
             post["ticketLink"] = eventTicketLink.text
             
@@ -220,6 +246,7 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        self.dateText.delegate = self
         
         scrollView.keyboardDismissMode = .OnDrag
         
@@ -245,7 +272,10 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
         
         eventTitle.text = titleHolder
         
-        eventDate.date = dateHolder
+        let formatter = NSDateFormatter()
+        formatter.dateStyle = .LongStyle
+        formatter.timeStyle = .ShortStyle
+        dateText.text = formatter.stringFromDate(finalDate)
         
         imageToPost.image = imageHolder
         
@@ -274,6 +304,11 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
         toolBar.userInteractionEnabled = true
         
         universityTextField.inputAccessoryView = toolBar
+        dateText.inputAccessoryView = toolBar
+        eventTitle.inputAccessoryView = toolBar
+        eventTicketLink.inputAccessoryView = toolBar
+        eventLocation.inputAccessoryView = toolBar
+        eventExtraInfo.inputAccessoryView = toolBar
         
     }
     
@@ -283,7 +318,7 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
         
     }
     
-    func textFieldShouldReturn(TextField: UITextField!) -> Bool {
+    func textFieldShouldReturn(TextField: UITextField) -> Bool {
         
         TextField.resignFirstResponder()
         

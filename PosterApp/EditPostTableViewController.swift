@@ -161,7 +161,7 @@ class EditPostTableViewController: UITableViewController {
             
             pVc.titleHolder = object!["title"] as! String
             
-            pVc.dateHolder = object!["eventDate"] as! NSDate
+            pVc.finalDate = object!["eventDate"] as! NSDate
             
             pVc.ticketHolder = object!["ticketLink"] as! String
             
