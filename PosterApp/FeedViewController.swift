@@ -100,8 +100,8 @@ class FeedViewController: UIViewController {
                     } catch {print(error)}
                     
                     
-                    // Can't get image from inside block before setting image in collection view cell,
-                    // do - catch, temporary fix
+                    // Can't get image from inside block before setting image in collection view cell
+                    
                     
                     //                    let imageFile = object["imageFile"] as! PFFile
                     

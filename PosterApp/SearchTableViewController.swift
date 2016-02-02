@@ -65,7 +65,7 @@ class SearchTableViewController: UITableViewController {
                     
                     
                     // Can't get image from inside block before setting image in collection view cell,
-                    // do - catch, temporary fix
+                    
                     
                     //                    let imageFile = object["imageFile"] as! PFFile
                     
