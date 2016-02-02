@@ -266,6 +266,19 @@ class FeedViewController: UIViewController {
                             }
                             
                         }
+                        if let currentUser = PFUser.currentUser() {
+                            
+                            if currentUser["favourites"].containsObject(cellEventId) {
+                                
+                                infoVC.isFavourite = true
+                                
+                            } else {
+                                
+                                infoVC.isFavourite = false
+                            }
+                            
+                            
+                        }
                         
                         
                         infoVC.viewDidLoad()

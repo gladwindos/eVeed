@@ -29,6 +29,9 @@ class EventDetailsViewController: UIViewController {
         
     }
     
+    @IBOutlet weak var favouriteButton: UIBarButtonItem!
+    
+    var isFavourite = false
     
     @IBOutlet var scrollView: UIScrollView!
     
@@ -46,7 +49,7 @@ class EventDetailsViewController: UIViewController {
     
     @IBOutlet var eventImage: UIImageView!
     
-    var imageHolder: UIImage = UIImage(named: "placeholder")!
+    var imageHolder: UIImage = UIImage(named: "blank")!
     
     @IBOutlet weak var extraInfo: UILabel!
     
@@ -93,11 +96,19 @@ class EventDetailsViewController: UIViewController {
                 
                 AddorRemove = "removed from"
                 
+                isFavourite = false
+                
+                favouriteButton.image = UIImage(named: "Star-50")
+                
             } else {
                 
                 user.addObject(eventId, forKey: "favourites")
                 
                 AddorRemove = "added to"
+                
+                isFavourite = true
+                
+                favouriteButton.image = UIImage(named: "Star_Filled-50")
             }
             
             user.saveInBackgroundWithBlock { (success, error) -> Void in
@@ -114,7 +125,7 @@ class EventDetailsViewController: UIViewController {
             
         } else {
             
-            displayAlert("Sorry", message: "You need to login to add to your favourites")
+            displayAlert("Sorry", message: "You need to login to add this event to your favourites")
         }
     }
     
@@ -124,7 +135,13 @@ class EventDetailsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        view.backgroundColor = UIColor(patternImage: UIImage(named: "plain_background")!)
+//        view.backgroundColor = UIColor(patternImage: UIImage(named: "background_blend")!)
+        
+        if isFavourite == true {
+            favouriteButton.image = UIImage(named: "Star_Filled-50")
+        } else {
+            favouriteButton.image = UIImage(named: "Star-50")
+        }
         
         eventTitle.text = titleHolder
         

@@ -36,7 +36,7 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
     
     @IBOutlet var imageToPost: UIImageView!
     
-    var imageHolder: UIImage = UIImage(named: "placeholder")!
+    var imageHolder: UIImage = UIImage(named: "eVeed_logo_black")!
     
     @IBOutlet var chooseImageOutlet: UIButton!
     

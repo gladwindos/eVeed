@@ -25,6 +25,8 @@ class TabBarController: UITabBarController {
         
         let vc1: UINavigationController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Feed Nav") as! UINavigationController
         
+        vc1.tabBarItem.image = UIImage(named: "Activity_Feed-50")
+        
         var vc2 = UIViewController()
         
         if (PFUser.currentUser() == nil) {
@@ -36,7 +38,11 @@ class TabBarController: UITabBarController {
             vc2 = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Profile Nav") as! UINavigationController
         }
         
+        vc2.tabBarItem.image = UIImage(named: "User_Male-50")
+        
         let vc3 = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Search Nav") as! UINavigationController
+        
+        vc3.tabBarItem.image = UIImage(named: "Search-50")
         
         setViewControllers([vc1, vc2, vc3], animated: true)
         

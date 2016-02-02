@@ -24,7 +24,6 @@
 		BE1204481C1A06F000B9B9C1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1204471C1A06F000B9B9C1 /* SystemConfiguration.framework */; };
 		BE12044A1C1A06F800B9B9C1 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1204491C1A06F800B9B9C1 /* libz.tbd */; };
 		BE12044C1C1A070300B9B9C1 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BE12044B1C1A070300B9B9C1 /* libsqlite3.tbd */; };
-		BE1204521C1A346300B9B9C1 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = BE1204511C1A346300B9B9C1 /* placeholder.png */; };
 		BE7822B01C24162400796E2B /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7822AF1C24162400796E2B /* FeedViewController.swift */; };
 		BE7822B51C24848D00796E2B /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7822B41C24848D00796E2B /* EventCollectionViewCell.swift */; };
 		BE7822B81C2484F500796E2B /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7822B71C2484F500796E2B /* Event.swift */; };
@@ -62,7 +61,6 @@
 		BE1204471C1A06F000B9B9C1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		BE1204491C1A06F800B9B9C1 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		BE12044B1C1A070300B9B9C1 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		BE1204511C1A346300B9B9C1 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		BE7822AF1C24162400796E2B /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		BE7822B41C24848D00796E2B /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
 		BE7822B71C2484F500796E2B /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
@@ -123,22 +121,16 @@
 		BE1204221C1A061A00B9B9C1 /* PosterApp */ = {
 			isa = PBXGroup;
 			children = (
+				BE70C6191C61057A006FE7AE /* Tab Bar */,
 				BE7822B61C2484A900796E2B /* Event Feed */,
-				BEBC33321C2F4BB1007FDCBB /* Authenication */,
-				BEC2E6FE1C3313BD007CE64B /* TabBarController.swift */,
-				BEBC33331C2F4BB1007FDCBB /* ProfileViewController.swift */,
-				BEB7020A1C35C200007927A8 /* FavouritesViewController.swift */,
-				BEC2E7001C3335A6007CE64B /* Main.storyboard */,
-				BE0DE7AA1C5E84F800502F04 /* SearchTableViewController.swift */,
-				BECF9C821C4FF872006AA222 /* EditPostTableViewController.swift */,
-				BEEDD1401C3702DF00B1F2DE /* MenuTableViewController.swift */,
+				BE70C6161C610500006FE7AE /* Profile */,
+				BE70C6171C61052F006FE7AE /* Search */,
+				BE70C6181C610565006FE7AE /* Event Details */,
 				BE1204231C1A061A00B9B9C1 /* AppDelegate.swift */,
-				BEB3DAC41C275B9B00452752 /* EventDetailsViewController.swift */,
-				BE1204251C1A061A00B9B9C1 /* PostViewController.swift */,
-				BE12042A1C1A061A00B9B9C1 /* Assets.xcassets */,
+				BEC2E7001C3335A6007CE64B /* Main.storyboard */,
 				BE12042C1C1A061A00B9B9C1 /* LaunchScreen.storyboard */,
+				BE12042A1C1A061A00B9B9C1 /* Assets.xcassets */,
 				BE12042F1C1A061A00B9B9C1 /* Info.plist */,
-				BE1204511C1A346300B9B9C1 /* placeholder.png */,
 			);
 			path = PosterApp;
 			sourceTree = "<group>";
@@ -168,6 +160,43 @@
 				BE1204391C1A06BF00B9B9C1 /* AudioToolbox.framework */,
 			);
 			name = "System Frameworks";
+			sourceTree = "<group>";
+		};
+		BE70C6161C610500006FE7AE /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				BEBC33321C2F4BB1007FDCBB /* Authenication */,
+				BEBC33331C2F4BB1007FDCBB /* ProfileViewController.swift */,
+				BEB7020A1C35C200007927A8 /* FavouritesViewController.swift */,
+				BECF9C821C4FF872006AA222 /* EditPostTableViewController.swift */,
+				BEEDD1401C3702DF00B1F2DE /* MenuTableViewController.swift */,
+				BE1204251C1A061A00B9B9C1 /* PostViewController.swift */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		BE70C6171C61052F006FE7AE /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				BE0DE7AA1C5E84F800502F04 /* SearchTableViewController.swift */,
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
+		BE70C6181C610565006FE7AE /* Event Details */ = {
+			isa = PBXGroup;
+			children = (
+				BEB3DAC41C275B9B00452752 /* EventDetailsViewController.swift */,
+			);
+			name = "Event Details";
+			sourceTree = "<group>";
+		};
+		BE70C6191C61057A006FE7AE /* Tab Bar */ = {
+			isa = PBXGroup;
+			children = (
+				BEC2E6FE1C3313BD007CE64B /* TabBarController.swift */,
+			);
+			name = "Tab Bar";
 			sourceTree = "<group>";
 		};
 		BE7822B31C2482CA00796E2B /* Model */ = {
@@ -260,7 +289,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE12042E1C1A061A00B9B9C1 /* LaunchScreen.storyboard in Resources */,
-				BE1204521C1A346300B9B9C1 /* placeholder.png in Resources */,
 				BE12042B1C1A061A00B9B9C1 /* Assets.xcassets in Resources */,
 				BEEDD1431C37296A00B1F2DE /* Main.storyboard in Resources */,
 			);
