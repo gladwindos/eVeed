@@ -430,7 +430,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/eVeed/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.gladwin.PosterApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gladwin.eVeed;
 				PRODUCT_NAME = eVeed;
 				PROVISIONING_PROFILE = "";
 			};
@@ -450,7 +450,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/eVeed/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.gladwin.PosterApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gladwin.eVeed;
 				PRODUCT_NAME = eVeed;
 				PROVISIONING_PROFILE = "";
 			};
