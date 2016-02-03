@@ -104,7 +104,7 @@
 		BE1204171C1A061A00B9B9C1 = {
 			isa = PBXGroup;
 			children = (
-				BE1204221C1A061A00B9B9C1 /* PosterApp */,
+				BE1204221C1A061A00B9B9C1 /* eVeed */,
 				BE1204211C1A061A00B9B9C1 /* Products */,
 				BE12044D1C1A071C00B9B9C1 /* Frameworks */,
 			);
@@ -118,7 +118,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BE1204221C1A061A00B9B9C1 /* PosterApp */ = {
+		BE1204221C1A061A00B9B9C1 /* eVeed */ = {
 			isa = PBXGroup;
 			children = (
 				BE70C6191C61057A006FE7AE /* Tab Bar */,
@@ -132,7 +132,7 @@
 				BECA2F5B1C6258A700714F60 /* Launch Screen.storyboard */,
 				BE12042F1C1A061A00B9B9C1 /* Info.plist */,
 			);
-			path = PosterApp;
+			path = eVeed;
 			sourceTree = "<group>";
 		};
 		BE12044D1C1A071C00B9B9C1 /* Frameworks */ = {
@@ -427,7 +427,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/parse-library-1.10.0",
 				);
-				INFOPLIST_FILE = PosterApp/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/eVeed/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gladwin.PosterApp;
@@ -447,7 +447,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/parse-library-1.10.0",
 				);
-				INFOPLIST_FILE = PosterApp/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/eVeed/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gladwin.PosterApp;
