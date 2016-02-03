@@ -143,6 +143,8 @@ class EditPostTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("post to edit", forIndexPath: indexPath)
 
         cell.textLabel?.text = createdEvents[indexPath.row].title
+        
+        cell.accessoryType = .DisclosureIndicator
 
         return cell
     }

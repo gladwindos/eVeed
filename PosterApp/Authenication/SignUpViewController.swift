@@ -73,7 +73,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                 } else {
                     
                     
-                    let alert = UIAlertController(title: "Success", message: "Signed Up", preferredStyle: UIAlertControllerStyle.Alert)
+                    let alert = UIAlertController(title: "Sign up", message: "Welcome to eVeed!", preferredStyle: UIAlertControllerStyle.Alert)
                     
                     alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
                         

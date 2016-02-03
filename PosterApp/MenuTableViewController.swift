@@ -13,7 +13,7 @@ class MenuTableViewController: UITableViewController {
     
     // Maybe change to dictionary later and iterate over
     
-    let events = ["Add Event", "My Events", "Logout"]
+    let events = ["Add Event", "My Events", "Log Out"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +47,10 @@ class MenuTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("menu cell", forIndexPath: indexPath)
 
         cell.textLabel?.text = events[indexPath.row]
+        
+        if indexPath.row == 0 || indexPath.row == 1 {
+            cell.accessoryType = .DisclosureIndicator
+        }
 
         return cell
     }
@@ -65,6 +69,10 @@ class MenuTableViewController: UITableViewController {
             
         } else if indexPath.row == 2 {
             
+            let alert = UIAlertController(title: "Log Out", message: "Are you sure you want to log out?", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            alert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action) -> Void in
+                
             var activityIndicator = UIActivityIndicatorView()
             
             activityIndicator = UIActivityIndicatorView(frame: self.view.frame)
@@ -72,7 +80,7 @@ class MenuTableViewController: UITableViewController {
             activityIndicator.center = self.view.center
             activityIndicator.hidesWhenStopped = true
             activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
-            view.addSubview(activityIndicator)
+            self.view.addSubview(activityIndicator)
             activityIndicator.startAnimating()
             
             UIApplication.sharedApplication().beginIgnoringInteractionEvents()
@@ -84,13 +92,6 @@ class MenuTableViewController: UITableViewController {
                 UIApplication.sharedApplication().endIgnoringInteractionEvents()
                 
                 if error == nil {
-                    
-                    let alert = UIAlertController(title: "Success", message: "Logged Out", preferredStyle: UIAlertControllerStyle.Alert)
-                    
-                    
-                    alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
-                        
-                        //                    self.dismissViewControllerAnimated(true, completion: nil)
                         
                         dispatch_async(dispatch_get_main_queue(), { () -> Void in
                             
@@ -101,14 +102,21 @@ class MenuTableViewController: UITableViewController {
                             self.presentViewController(tbVc, animated: true, completion: nil)
                         })
                         
-                    }))
-                    
-                    self.presentViewController(alert, animated: true, completion: nil)
-                    
 
                 }
                 
             }
+                
+            }))
+            
+            alert.addAction(UIAlertAction(title: "No", style: .Default, handler: { (action) -> Void in
+                
+                tableView.deselectRowAtIndexPath(indexPath, animated: true)
+                
+            }))
+                        
+            self.presentViewController(alert, animated: true, completion: nil)
+
         }
         
     }

@@ -10,7 +10,7 @@
         <!--Feed-->
         <scene sceneID="N0a-Z1-iOT">
             <objects>
-                <viewController storyboardIdentifier="Feed" title="Feed" id="P1b-g5-Sgi" customClass="FeedViewController" customModule="PosterApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Feed" title="Feed" id="P1b-g5-Sgi" customClass="FeedViewController" customModule="eVeed" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3Jr-Gk-kUS"/>
                         <viewControllerLayoutGuide type="bottom" id="f2a-VF-eel"/>
@@ -38,7 +38,7 @@
                                                 <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                             </collectionViewFlowLayout>
                                             <cells>
-                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Event Cell" id="TUZ-C2-nF1" customClass="EventCollectionViewCell" customModule="PosterApp" customModuleProvider="target">
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Event Cell" id="TUZ-C2-nF1" customClass="EventCollectionViewCell" customModule="eVeed" customModuleProvider="target">
                                                     <rect key="frame" x="20" y="7" width="280" height="463"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -135,7 +135,7 @@
         <!--Web View Controller-->
         <scene sceneID="hu8-sr-LWw">
             <objects>
-                <viewController id="3pI-R1-QaG" customClass="WebViewController" customModule="PosterApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="3pI-R1-QaG" customClass="WebViewController" customModule="eVeed" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0oR-cC-uIw"/>
                         <viewControllerLayoutGuide type="bottom" id="pa9-g8-6hO"/>
@@ -168,7 +168,7 @@
         <!--Event Details-->
         <scene sceneID="hNC-IC-Rz8">
             <objects>
-                <viewController storyboardIdentifier="Event Details" title="Event Details" id="vzB-e5-GPP" customClass="EventDetailsViewController" customModule="PosterApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Event Details" title="Event Details" id="vzB-e5-GPP" customClass="EventDetailsViewController" customModule="eVeed" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aiN-KI-Smf"/>
                         <viewControllerLayoutGuide type="bottom" id="YfR-oE-Y67"/>
@@ -335,7 +335,7 @@
         <!--Search-->
         <scene sceneID="OgG-wp-IeT">
             <objects>
-                <tableViewController storyboardIdentifier="Search" title="Search" id="Vh4-af-6C1" customClass="SearchTableViewController" customModule="PosterApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Search" title="Search" id="Vh4-af-6C1" customClass="SearchTableViewController" customModule="eVeed" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Mvz-6n-o2y">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -380,7 +380,7 @@
         <!--Menu Table View Controller-->
         <scene sceneID="xbL-dG-eCG">
             <objects>
-                <tableViewController id="a7Q-eg-jde" customClass="MenuTableViewController" customModule="PosterApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="a7Q-eg-jde" customClass="MenuTableViewController" customModule="eVeed" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="7sB-xI-KDV">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -411,7 +411,7 @@
         <!--My Events-->
         <scene sceneID="g2s-VK-Eua">
             <objects>
-                <tableViewController title="My Events" id="9oF-8C-cFz" customClass="EditPostTableViewController" customModule="PosterApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="My Events" id="9oF-8C-cFz" customClass="EditPostTableViewController" customModule="eVeed" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="B6n-Kj-GOY">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -439,7 +439,7 @@
         <!--Add Post-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="Add Post" title="Add Post" id="BYZ-38-t0r" customClass="PostViewController" customModule="PosterApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Add Post" title="Add Post" id="BYZ-38-t0r" customClass="PostViewController" customModule="eVeed" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -651,7 +651,7 @@ Al10 8LA</string>
         <!--Tab Bar Controller-->
         <scene sceneID="fLb-AU-md7">
             <objects>
-                <tabBarController storyboardIdentifier="Tab Bar Controller" id="ZN3-qu-HBb" customClass="TabBarController" customModule="PosterApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="Tab Bar Controller" id="ZN3-qu-HBb" customClass="TabBarController" customModule="eVeed" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="NNR-eu-Tbh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -671,7 +671,7 @@ Al10 8LA</string>
         <!--Reset Password View Controller-->
         <scene sceneID="frI-p0-Scb">
             <objects>
-                <viewController storyboardIdentifier="ResetPassword" id="zrb-Es-qXf" customClass="ResetPasswordViewController" customModule="PosterApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResetPassword" id="zrb-Es-qXf" customClass="ResetPasswordViewController" customModule="eVeed" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HFW-0X-pFV"/>
                         <viewControllerLayoutGuide type="bottom" id="brB-SK-JO6"/>
@@ -692,7 +692,7 @@ Al10 8LA</string>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jJo-LF-O8Y">
                                             <rect key="frame" x="168" y="142" width="265" height="317"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eveed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CqV-so-Drb">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="eVeed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CqV-so-Drb">
                                                     <rect key="frame" x="80" y="20" width="107" height="29"/>
                                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="24"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -798,10 +798,10 @@ Al10 8LA</string>
             </objects>
             <point key="canvasLocation" x="-632" y="336"/>
         </scene>
-        <!--Login-->
+        <!--Log In-->
         <scene sceneID="Lt9-xM-Gko">
             <objects>
-                <viewController storyboardIdentifier="Login" id="RDp-ab-SAe" customClass="LoginViewController" customModule="PosterApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Login" id="RDp-ab-SAe" customClass="LoginViewController" customModule="eVeed" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Sln-lG-UHR"/>
                         <viewControllerLayoutGuide type="bottom" id="Iv6-xs-gL1"/>
@@ -833,9 +833,9 @@ Al10 8LA</string>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                                 </textField>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NrL-Ve-YqB">
-                                                    <rect key="frame" x="103" y="166" width="63" height="45"/>
+                                                    <rect key="frame" x="100" y="166" width="69" height="45"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="24"/>
-                                                    <state key="normal" title="Login">
+                                                    <state key="normal" title="Log In">
                                                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -843,11 +843,11 @@ Al10 8LA</string>
                                                         <action selector="loginAction:" destination="RDp-ab-SAe" eventType="touchUpInside" id="KFS-a7-Pv0"/>
                                                     </connections>
                                                 </button>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D5l-oe-HDt">
-                                                    <rect key="frame" x="0.0" y="255" width="270" height="20"/>
-                                                </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hhn-iu-xcX">
                                                     <rect key="frame" x="103" y="271" width="64" height="33"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="64" id="mL2-gO-n0r"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                                     <state key="normal" title="Sign Up">
                                                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -868,8 +868,8 @@ Al10 8LA</string>
                                                         <segue destination="zrb-Es-qXf" kind="presentation" id="eOF-jR-IW1"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eveed" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vHC-yk-ITN">
-                                                    <rect key="frame" x="99" y="20" width="73" height="29"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="eVeed" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vHC-yk-ITN">
+                                                    <rect key="frame" x="99" y="20" width="74" height="29"/>
                                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="24"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -878,37 +878,32 @@ Al10 8LA</string>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstItem="ySx-6X-rw1" firstAttribute="centerX" secondItem="vHC-yk-ITN" secondAttribute="centerX" constant="-0.25" id="3be-7l-kxX"/>
-                                                <constraint firstItem="D5l-oe-HDt" firstAttribute="centerX" secondItem="1Mi-aq-4rg" secondAttribute="centerX" id="4ol-pr-Poa"/>
                                                 <constraint firstAttribute="centerX" secondItem="vHC-yk-ITN" secondAttribute="centerX" constant="-0.5" id="6Gs-9F-whD"/>
-                                                <constraint firstAttribute="trailing" secondItem="D5l-oe-HDt" secondAttribute="trailing" id="Clj-OC-C9g"/>
-                                                <constraint firstItem="vHC-yk-ITN" firstAttribute="top" secondItem="4Eh-3P-3eW" secondAttribute="top" constant="20" id="GyZ-Ig-bOv"/>
+                                                <constraint firstItem="ySx-6X-rw1" firstAttribute="top" secondItem="vHC-yk-ITN" secondAttribute="bottom" constant="2" id="8e1-uI-4M8"/>
+                                                <constraint firstItem="1Mi-aq-4rg" firstAttribute="leading" secondItem="4Eh-3P-3eW" secondAttribute="leading" constant="75" id="9nA-l3-s2q"/>
+                                                <constraint firstAttribute="bottom" secondItem="hhn-iu-xcX" secondAttribute="bottom" constant="13" id="CdE-Ab-p06"/>
                                                 <constraint firstItem="vHC-yk-ITN" firstAttribute="top" secondItem="4Eh-3P-3eW" secondAttribute="top" constant="20" id="Hyf-TR-OLN"/>
-                                                <constraint firstItem="1Mi-aq-4rg" firstAttribute="top" secondItem="NrL-Ve-YqB" secondAttribute="bottom" constant="19" id="JNj-rV-6F0"/>
-                                                <constraint firstItem="rTr-wu-5ef" firstAttribute="leading" secondItem="ySx-6X-rw1" secondAttribute="leading" id="MHG-LL-JWi"/>
-                                                <constraint firstItem="NrL-Ve-YqB" firstAttribute="top" secondItem="rTr-wu-5ef" secondAttribute="bottom" constant="32" id="MiL-DG-z0J"/>
-                                                <constraint firstItem="D5l-oe-HDt" firstAttribute="leading" secondItem="4Eh-3P-3eW" secondAttribute="leading" id="PeF-xw-ZAQ"/>
+                                                <constraint firstItem="hhn-iu-xcX" firstAttribute="top" secondItem="1Mi-aq-4rg" secondAttribute="bottom" constant="8" symbolic="YES" id="Ofi-eF-mHG"/>
+                                                <constraint firstItem="rTr-wu-5ef" firstAttribute="top" secondItem="ySx-6X-rw1" secondAttribute="bottom" constant="23" id="R7C-Ng-rT8"/>
                                                 <constraint firstItem="rTr-wu-5ef" firstAttribute="top" secondItem="ySx-6X-rw1" secondAttribute="bottom" constant="23" id="Shg-sy-G2O"/>
-                                                <constraint firstItem="ySx-6X-rw1" firstAttribute="centerX" secondItem="vHC-yk-ITN" secondAttribute="centerX" id="TZs-GP-cvu"/>
-                                                <constraint firstItem="D5l-oe-HDt" firstAttribute="top" secondItem="NrL-Ve-YqB" secondAttribute="bottom" constant="44" id="Tof-8c-UKr"/>
-                                                <constraint firstItem="D5l-oe-HDt" firstAttribute="centerX" secondItem="NrL-Ve-YqB" secondAttribute="centerX" id="Trq-Nf-B0d"/>
-                                                <constraint firstAttribute="bottom" secondItem="hhn-iu-xcX" secondAttribute="bottom" constant="13" id="ZOv-KO-yPS"/>
-                                                <constraint firstAttribute="bottom" secondItem="D5l-oe-HDt" secondAttribute="bottom" constant="42" id="a1O-fd-yvG"/>
-                                                <constraint firstItem="rTr-wu-5ef" firstAttribute="top" secondItem="ySx-6X-rw1" secondAttribute="bottom" constant="23" id="bHY-uf-M5L"/>
+                                                <constraint firstItem="rTr-wu-5ef" firstAttribute="centerX" secondItem="1Mi-aq-4rg" secondAttribute="centerX" id="Sxf-PV-efG"/>
+                                                <constraint firstItem="ySx-6X-rw1" firstAttribute="leading" secondItem="4Eh-3P-3eW" secondAttribute="leading" constant="13" id="Vpd-eb-ygS"/>
+                                                <constraint firstItem="rTr-wu-5ef" firstAttribute="leading" secondItem="ySx-6X-rw1" secondAttribute="leading" id="WPA-si-sFO"/>
+                                                <constraint firstItem="NrL-Ve-YqB" firstAttribute="top" secondItem="rTr-wu-5ef" secondAttribute="bottom" constant="32" id="XyF-bl-BBH"/>
+                                                <constraint firstItem="hhn-iu-xcX" firstAttribute="centerX" secondItem="NrL-Ve-YqB" secondAttribute="centerX" id="aAl-c1-Mdc"/>
+                                                <constraint firstItem="vHC-yk-ITN" firstAttribute="centerX" secondItem="ySx-6X-rw1" secondAttribute="centerX" id="bPz-kr-bI4"/>
                                                 <constraint firstItem="vHC-yk-ITN" firstAttribute="centerX" secondItem="ySx-6X-rw1" secondAttribute="centerX" constant="0.5" id="gSm-W7-dVr"/>
-                                                <constraint firstItem="ySx-6X-rw1" firstAttribute="top" secondItem="vHC-yk-ITN" secondAttribute="bottom" constant="2" id="ghs-1Z-HSF"/>
                                                 <constraint firstItem="NrL-Ve-YqB" firstAttribute="top" secondItem="rTr-wu-5ef" secondAttribute="bottom" constant="32" id="hPz-5a-Z6v"/>
+                                                <constraint firstItem="vHC-yk-ITN" firstAttribute="top" secondItem="4Eh-3P-3eW" secondAttribute="top" constant="20" id="iCy-CY-7nE"/>
                                                 <constraint firstItem="NrL-Ve-YqB" firstAttribute="centerX" secondItem="rTr-wu-5ef" secondAttribute="centerX" constant="-0.5" id="kvH-x0-tvW"/>
+                                                <constraint firstItem="1Mi-aq-4rg" firstAttribute="top" secondItem="NrL-Ve-YqB" secondAttribute="bottom" constant="19" id="lDO-Wa-noK"/>
                                                 <constraint firstAttribute="centerX" secondItem="vHC-yk-ITN" secondAttribute="centerX" constant="-0.75" id="lzX-oq-xbb"/>
                                                 <constraint firstItem="ySx-6X-rw1" firstAttribute="centerX" secondItem="rTr-wu-5ef" secondAttribute="centerX" id="mUP-TC-o8Q"/>
-                                                <constraint firstItem="rTr-wu-5ef" firstAttribute="trailing" secondItem="ySx-6X-rw1" secondAttribute="trailing" id="mXx-d2-IWS"/>
                                                 <constraint firstItem="ySx-6X-rw1" firstAttribute="top" secondItem="vHC-yk-ITN" secondAttribute="bottom" constant="3.5" id="myl-pc-uRc"/>
-                                                <constraint firstItem="hhn-iu-xcX" firstAttribute="leading" secondItem="NrL-Ve-YqB" secondAttribute="leading" id="qWU-SF-laN"/>
-                                                <constraint firstItem="rTr-wu-5ef" firstAttribute="centerX" secondItem="1Mi-aq-4rg" secondAttribute="centerX" id="stV-TQ-XCA"/>
-                                                <constraint firstItem="ySx-6X-rw1" firstAttribute="leading" secondItem="4Eh-3P-3eW" secondAttribute="leading" constant="13" id="wvM-ev-Pim"/>
+                                                <constraint firstItem="1Mi-aq-4rg" firstAttribute="centerX" secondItem="hhn-iu-xcX" secondAttribute="centerX" id="q6f-N3-aKh"/>
+                                                <constraint firstItem="ySx-6X-rw1" firstAttribute="trailing" secondItem="rTr-wu-5ef" secondAttribute="trailing" id="sRD-On-bUo"/>
+                                                <constraint firstItem="ySx-6X-rw1" firstAttribute="centerX" secondItem="4Eh-3P-3eW" secondAttribute="centerX" id="tAA-I9-70U"/>
                                                 <constraint firstAttribute="centerY" secondItem="vHC-yk-ITN" secondAttribute="centerY" id="x9d-w3-MCs"/>
-                                                <constraint firstItem="hhn-iu-xcX" firstAttribute="top" secondItem="1Mi-aq-4rg" secondAttribute="bottom" constant="8" symbolic="YES" id="xQb-ah-KD5"/>
-                                                <constraint firstItem="hhn-iu-xcX" firstAttribute="centerX" secondItem="D5l-oe-HDt" secondAttribute="centerX" id="yOe-9M-H37"/>
-                                                <constraint firstItem="1Mi-aq-4rg" firstAttribute="leading" secondItem="4Eh-3P-3eW" secondAttribute="leading" constant="75" id="zo4-cl-QLI"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
@@ -928,8 +923,8 @@ Al10 8LA</string>
                                         </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="4Eh-3P-3eW" firstAttribute="centerX" secondItem="IqK-bU-l5a" secondAttribute="centerX" id="FHn-d2-QGu"/>
-                                        <constraint firstItem="4Eh-3P-3eW" firstAttribute="centerY" secondItem="IqK-bU-l5a" secondAttribute="centerY" id="nFh-wG-jyr"/>
+                                        <constraint firstItem="4Eh-3P-3eW" firstAttribute="centerY" secondItem="IqK-bU-l5a" secondAttribute="centerY" id="2e3-ll-urT"/>
+                                        <constraint firstItem="4Eh-3P-3eW" firstAttribute="centerX" secondItem="IqK-bU-l5a" secondAttribute="centerX" id="GYt-sm-etF"/>
                                     </constraints>
                                 </view>
                                 <blurEffect style="light"/>
@@ -937,17 +932,17 @@ Al10 8LA</string>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="PG3-K2-4YM" firstAttribute="top" secondItem="BYA-e8-gNy" secondAttribute="top" id="FRA-xG-jYl"/>
-                            <constraint firstAttribute="trailing" secondItem="PG3-K2-4YM" secondAttribute="trailing" id="LZb-Kz-Vqm"/>
-                            <constraint firstItem="PG3-K2-4YM" firstAttribute="trailing" secondItem="BYA-e8-gNy" secondAttribute="trailing" id="SvI-Vh-wX6"/>
-                            <constraint firstAttribute="bottom" secondItem="BYA-e8-gNy" secondAttribute="bottom" id="VT6-RO-g9Q"/>
-                            <constraint firstItem="BYA-e8-gNy" firstAttribute="leading" secondItem="PG3-K2-4YM" secondAttribute="leading" id="aDb-EV-3Ad"/>
-                            <constraint firstItem="BYA-e8-gNy" firstAttribute="top" secondItem="VHG-Yc-9xn" secondAttribute="top" id="ar0-4U-Ept"/>
-                            <constraint firstItem="PG3-K2-4YM" firstAttribute="bottom" secondItem="BYA-e8-gNy" secondAttribute="bottom" id="i9o-TH-TLt"/>
-                            <constraint firstItem="PG3-K2-4YM" firstAttribute="leading" secondItem="VHG-Yc-9xn" secondAttribute="leading" id="p6d-gS-w4o"/>
+                            <constraint firstItem="BYA-e8-gNy" firstAttribute="leading" secondItem="PG3-K2-4YM" secondAttribute="leading" id="P14-Aj-WGy"/>
+                            <constraint firstItem="BYA-e8-gNy" firstAttribute="top" secondItem="PG3-K2-4YM" secondAttribute="top" id="bZz-wh-rVw"/>
+                            <constraint firstItem="BYA-e8-gNy" firstAttribute="leading" secondItem="VHG-Yc-9xn" secondAttribute="leading" id="fEs-Fe-S9L"/>
+                            <constraint firstAttribute="bottom" secondItem="BYA-e8-gNy" secondAttribute="bottom" id="i3v-RW-FeL"/>
+                            <constraint firstAttribute="trailing" secondItem="BYA-e8-gNy" secondAttribute="trailing" id="oeE-3v-bgh"/>
+                            <constraint firstItem="PG3-K2-4YM" firstAttribute="bottom" secondItem="BYA-e8-gNy" secondAttribute="bottom" id="ya3-ex-gRh"/>
+                            <constraint firstItem="PG3-K2-4YM" firstAttribute="top" secondItem="VHG-Yc-9xn" secondAttribute="top" id="ybR-N0-Kyx"/>
+                            <constraint firstItem="BYA-e8-gNy" firstAttribute="trailing" secondItem="PG3-K2-4YM" secondAttribute="trailing" id="zlE-ta-780"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Login" id="EZW-2I-n5i"/>
+                    <tabBarItem key="tabBarItem" title="Log In" id="EZW-2I-n5i"/>
                     <connections>
                         <outlet property="passwordField" destination="rTr-wu-5ef" id="bgb-ay-5I9"/>
                         <outlet property="usernameField" destination="ySx-6X-rw1" id="xWc-tr-7BV"/>
@@ -960,7 +955,7 @@ Al10 8LA</string>
         <!--Sign Up View Controller-->
         <scene sceneID="gXW-Bm-gLg">
             <objects>
-                <viewController storyboardIdentifier="SignUp" id="gx9-gs-Gd7" customClass="SignUpViewController" customModule="PosterApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUp" id="gx9-gs-Gd7" customClass="SignUpViewController" customModule="eVeed" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vCP-il-CfE"/>
                         <viewControllerLayoutGuide type="bottom" id="r2n-lY-CR5"/>
@@ -981,7 +976,7 @@ Al10 8LA</string>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hFl-a9-Tdh">
                                             <rect key="frame" x="171" y="141" width="258" height="318"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eveed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lHR-iu-HKq">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="eVeed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lHR-iu-HKq">
                                                     <rect key="frame" x="80" y="20" width="100" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -1097,7 +1092,7 @@ Al10 8LA</string>
         <!--Feed-->
         <scene sceneID="H9G-Hh-mJq">
             <objects>
-                <navigationController storyboardIdentifier="Feed Nav" automaticallyAdjustsScrollViewInsets="NO" id="CDf-hf-fCd" customClass="FeedNavigationController" customModule="PosterApp" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Feed Nav" automaticallyAdjustsScrollViewInsets="NO" id="CDf-hf-fCd" customClass="FeedNavigationController" customModule="eVeed" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Feed" id="ofG-ck-4RM"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="N3w-gR-YPt">
@@ -1116,7 +1111,7 @@ Al10 8LA</string>
         <!--Favourites-->
         <scene sceneID="t3O-ob-L9K">
             <objects>
-                <viewController storyboardIdentifier="Favourites" title="Favourites" id="02K-8X-2Wa" customClass="FavouritesViewController" customModule="PosterApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Favourites" title="Favourites" id="02K-8X-2Wa" customClass="FavouritesViewController" customModule="eVeed" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mR6-zY-FSK"/>
                         <viewControllerLayoutGuide type="bottom" id="3Sk-JG-DMY"/>
@@ -1144,7 +1139,7 @@ Al10 8LA</string>
                                                 <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                             </collectionViewFlowLayout>
                                             <cells>
-                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Event Cell" id="nb7-XH-FsT" customClass="EventCollectionViewCell" customModule="PosterApp" customModuleProvider="target">
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Event Cell" id="nb7-XH-FsT" customClass="EventCollectionViewCell" customModule="eVeed" customModuleProvider="target">
                                                     <rect key="frame" x="20" y="7" width="280" height="463"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">

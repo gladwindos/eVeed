@@ -39,13 +39,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             UIApplication.sharedApplication().endIgnoringInteractionEvents()
             
             if ((user) != nil) {
-                
-                let alert = UIAlertController(title: "Success", message: "Logged In", preferredStyle: UIAlertControllerStyle.Alert)
-                
-                
-                alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
-                    
-//                    self.dismissViewControllerAnimated(true, completion: nil)
                     
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
                         
@@ -57,10 +50,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                         
                         self.presentViewController(tbVc, animated: true, completion: nil)
                     })
-                    
-                }))
-                
-                self.presentViewController(alert, animated: true, completion: nil)
                 
                 self.usernameField.text = ""
                 
@@ -68,7 +57,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
             } else {
                 
-                let alert = UIAlertController(title: "Error", message: "\(error)", preferredStyle: UIAlertControllerStyle.Alert)
+                let alert = UIAlertController(title: "Error", message: "\(error!.userInfo["error"]!)", preferredStyle: UIAlertControllerStyle.Alert)
                 
                 alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
                 
