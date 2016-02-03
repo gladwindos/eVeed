@@ -186,10 +186,10 @@
                                             <constraint firstAttribute="height" constant="380" id="ZK5-Vr-qKJ"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set It Off" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jxe-54-crv">
-                                        <rect key="frame" x="239" y="72" width="123" height="39"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jxe-54-crv">
+                                        <rect key="frame" x="32" y="72" width="536" height="39"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="39" id="ZTz-J6-E2c"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="39" id="ZTz-J6-E2c"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="28"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -279,8 +279,10 @@
                                     <constraint firstItem="S4K-oE-d1E" firstAttribute="centerX" secondItem="RVa-Oy-Dgr" secondAttribute="centerX" id="OQQ-BA-ocg"/>
                                     <constraint firstItem="reG-pE-RbA" firstAttribute="leading" secondItem="3Rg-nV-qd4" secondAttribute="leading" constant="10" id="XK5-3b-aCr"/>
                                     <constraint firstItem="S4K-oE-d1E" firstAttribute="centerX" secondItem="ynL-Am-uHh" secondAttribute="centerX" id="av8-XA-mWg"/>
+                                    <constraint firstAttribute="trailing" secondItem="jxe-54-crv" secondAttribute="trailing" constant="32" id="b9f-qc-LN8"/>
                                     <constraint firstItem="2Mf-jd-XbS" firstAttribute="trailing" secondItem="60n-LK-1iA" secondAttribute="trailing" id="enz-OV-HOF"/>
                                     <constraint firstItem="S4K-oE-d1E" firstAttribute="trailing" secondItem="meI-nd-Bgi" secondAttribute="trailing" id="fqZ-lx-WUq"/>
+                                    <constraint firstItem="jxe-54-crv" firstAttribute="leading" secondItem="3Rg-nV-qd4" secondAttribute="leading" constant="32" id="g4B-o5-kBd"/>
                                     <constraint firstItem="meI-nd-Bgi" firstAttribute="leading" secondItem="S4K-oE-d1E" secondAttribute="leading" id="iV0-PO-8B5"/>
                                     <constraint firstItem="meI-nd-Bgi" firstAttribute="top" secondItem="dZo-pm-tgr" secondAttribute="bottom" constant="8" symbolic="YES" id="lqW-UD-CwG"/>
                                     <constraint firstItem="dZo-pm-tgr" firstAttribute="top" secondItem="2Mf-jd-XbS" secondAttribute="bottom" constant="24" id="ojq-hm-rS9"/>
@@ -560,12 +562,12 @@ Al10 8LA</string>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRR-wP-7TR">
-                                        <rect key="frame" x="151" y="1438" width="73" height="36"/>
+                                        <rect key="frame" x="139" y="1438" width="98" height="36"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="73" id="vj7-vN-AbC"/>
+                                            <constraint firstAttribute="width" constant="98" id="vj7-vN-AbC"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                        <state key="normal" title="Post"/>
+                                        <state key="normal" title="Add Event"/>
                                         <connections>
                                             <action selector="postEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i0C-jn-ODg"/>
                                         </connections>

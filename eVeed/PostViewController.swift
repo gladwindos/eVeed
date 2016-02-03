@@ -65,7 +65,7 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
     
     var universityTextFieldHolder = "University?"
     
-    let universityOptions = ["University of Hertfordshire", "Other"]
+    let universityOptions = ["Hertfordshire", "Other"]
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return universityOptions.count
@@ -130,7 +130,7 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
     
     @IBOutlet var eventExtraInfo: UITextView!
     
-    var extraInfoHolder = "E.g Contact Info"
+    var extraInfoHolder = "e.g. contact info, age restrictions, ect..."
     
     @IBOutlet weak var eventLocation: UITextView!
     
@@ -191,7 +191,7 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
             
             let imageData = UIImageJPEGRepresentation(imageToPost.image!, 0.5)
             
-            let imageFile = PFFile(name: "\(eventTitle.text!)_image.png", data: imageData!)
+            let imageFile = PFFile(name: "eveed_event.png", data: imageData!)
             
             post["imageFile"] = imageFile
             
@@ -205,7 +205,7 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
                 
                 if error == nil {
                     
-                    let alert = UIAlertController(title: "Done", message: "Event has been posted successfully", preferredStyle: UIAlertControllerStyle.Alert)
+                    let alert = UIAlertController(title: "eVeed", message: "Your event has been posted successfully", preferredStyle: UIAlertControllerStyle.Alert)
                     
                     
                     alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in

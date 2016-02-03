@@ -116,7 +116,7 @@ class SearchTableViewController: UITableViewController {
     
     func filterContentForSearch(searchText: String, scope: String = "All") {
         filteredEvents = createdEvents.filter { event in
-            return event.title.lowercaseString.containsString(searchText.lowercaseString)
+            return (event.title.lowercaseString.containsString(searchText.lowercaseString)) || (event.university.lowercaseString.containsString(searchText.lowercaseString))
             
         }
         tableView.reloadData()
@@ -129,6 +129,8 @@ class SearchTableViewController: UITableViewController {
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
+        
+        searchController.searchBar.placeholder = "Search Event or University"
         
         loadEvents()
         

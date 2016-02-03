@@ -89,6 +89,8 @@ class FavouritesViewController: UIViewController {
         
         query.whereKey("objectId", containedIn: userFavourites)
         
+        query.orderByAscending("eventDate")
+        
         var newImage: UIImage!
         
         query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in

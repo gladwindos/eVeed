@@ -44,6 +44,8 @@ class EditPostTableViewController: UITableViewController {
         
         query.whereKey("userid", equalTo: (currentUser?.objectId)!)
         
+        query.orderByAscending("eventDate")
+        
         var newImage: UIImage!
         
         query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
