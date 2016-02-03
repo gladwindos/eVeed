@@ -36,7 +36,7 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
     
     @IBOutlet var imageToPost: UIImageView!
     
-    var imageHolder: UIImage = UIImage(named: "eVeed_logo_black")!
+    var imageHolder: UIImage = UIImage(named: "eVeed_logo_white")!
     
     @IBOutlet var chooseImageOutlet: UIButton!
     
@@ -106,7 +106,7 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
         
         datePicker.datePickerMode = .DateAndTime
         
-        textField.inputView = datePicker
+        dateText.inputView = datePicker
         
         datePicker.addTarget(self, action: "datePickerChanged:", forControlEvents: .ValueChanged)
     }
@@ -247,6 +247,9 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
         // Do any additional setup after loading the view, typically from a nib.
         
         self.dateText.delegate = self
+        
+        eventTitle.delegate = self
+        eventTicketLink.delegate = self
         
         scrollView.keyboardDismissMode = .OnDrag
         

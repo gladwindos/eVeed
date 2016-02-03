@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     func displayAlert(title: String, message: String) {
         
@@ -107,7 +107,7 @@ class SignUpViewController: UIViewController {
         
     }
     
-    func textFieldShouldReturn(TextField: UITextField!) -> Bool {
+    func textFieldShouldReturn(TextField: UITextField) -> Bool {
         
         TextField.resignFirstResponder()
         
@@ -118,6 +118,10 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        emailField.delegate = self
+        usernameField.delegate = self
+        passwordField.delegate = self
     }
 
     override func didReceiveMemoryWarning() {

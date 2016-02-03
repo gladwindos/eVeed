@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var usernameField: UITextField!
     
@@ -83,6 +83,10 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        usernameField.delegate = self
+        
+        passwordField.delegate = self
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -100,7 +104,7 @@ class LoginViewController: UIViewController {
         
     }
     
-    func textFieldShouldReturn(TextField: UITextField!) -> Bool {
+    func textFieldShouldReturn(TextField: UITextField) -> Bool {
         
         TextField.resignFirstResponder()
         
