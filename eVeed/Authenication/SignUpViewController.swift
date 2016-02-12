@@ -39,13 +39,17 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             
             displayAlert("invalid", message: "Username must be greater than 5 characters")
             
+        } else if username?.characters.count > 30 {
+            
+            displayAlert("Invalid", message: "Username is too long")
+            
         } else if password?.characters.count < 8 {
             
             displayAlert("Invalid", message: "Password must be greater than 8 characters")
             
         } else if email?.characters.count < 8 {
             
-            displayAlert("invalid", message: "email must be greater than 8 characters")
+            displayAlert("Invalid", message: "email must be greater than 8 characters")
             
         } else {
             

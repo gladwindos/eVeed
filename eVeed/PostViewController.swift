@@ -197,9 +197,14 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
     @IBAction func postEvent(sender: UIButton) {
         
         if ((eventTitle.text?.isEmpty) == true) {
+            
             displayAlert("Error", message: "Please enter a title")
             
-        } else if eventLocation.text.isEmpty == true {
+        } else if eventTitle.text?.characters.count > 50 {
+            
+            displayAlert("Error", message: "Title is too long")
+            
+        }else if eventLocation.text.isEmpty == true {
             
             displayAlert("Error", message: "Please enter a location")
             
