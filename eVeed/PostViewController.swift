@@ -30,6 +30,60 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
         
     }
     
+    @IBOutlet weak var addEventOutlet: UIButton!
+    
+    
+    @IBOutlet weak var deleteEventOutlet: UIButton!
+    
+    @IBAction func deleteAction(sender: AnyObject) {
+        
+        let alert = UIAlertController(title: "Delete!", message: "Are you sure you want to delete this event?", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        alert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action) -> Void in
+            
+            let query = PFQuery(className: "Event")
+            
+            query.getObjectInBackgroundWithId(self.idHolder, block: { (object, error) -> Void in
+                if error == nil {
+                    
+                    object?.deleteInBackgroundWithBlock({ (success, error) -> Void in
+                        if error == nil {
+                            
+                            let user = PFUser.currentUser()
+                            
+                            user!.removeObject(self.idHolder, forKey: "favourites")
+                            
+                            user?.saveInBackground()
+                            
+                            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                                
+                                let tbVc: UITabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Tab Bar Controller") as! TabBarController
+                                
+                                tbVc.viewDidLoad()
+                                
+                                tbVc.selectedIndex = 1
+                                
+                                self.presentViewController(tbVc, animated: true, completion: nil)
+                            })
+                            
+                        }
+                    })
+                }
+            })
+            
+        }))
+        
+        alert.addAction(UIAlertAction(title: "No", style: .Default, handler: nil))
+        
+        
+        
+        
+        self.presentViewController(alert, animated: true, completion: nil)
+        
+        
+    }
+    
+    
     var activityIndicator = UIActivityIndicatorView()
     
     @IBOutlet var scrollView: UIScrollView!
@@ -150,13 +204,7 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
             displayAlert("Error", message: "Please enter a location")
             
         } else {
-        
-            activityIndicator = UIActivityIndicatorView(frame: self.view.frame)
-            activityIndicator.backgroundColor = UIColor(white: 1.0, alpha: 0.5)
-            activityIndicator.center = self.view.center
-            activityIndicator.hidesWhenStopped = true
-            activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
-            view.addSubview(activityIndicator)
+            
             activityIndicator.startAnimating()
             
             UIApplication.sharedApplication().beginIgnoringInteractionEvents()
@@ -245,6 +293,26 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        activityIndicator = UIActivityIndicatorView(frame: self.view.frame)
+        activityIndicator.backgroundColor = UIColor(white: 1.0, alpha: 0.5)
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+        view.addSubview(activityIndicator)
+        
+        if editingPost == false {
+            
+            deleteEventOutlet.hidden = true
+            
+            addEventOutlet.setTitle("Add Event", forState: .Normal)
+            
+        } else {
+            
+            deleteEventOutlet.hidden = false
+            
+            addEventOutlet.setTitle("Update Event", forState: .Normal)
+        }
         
         self.dateText.delegate = self
         

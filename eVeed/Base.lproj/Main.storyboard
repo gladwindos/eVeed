@@ -447,11 +447,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1500"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2fb-jz-4JQ">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1500"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1600"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7eY-Ux-Yeu">
                                         <rect key="frame" x="137" y="410" width="102" height="24"/>
@@ -486,7 +486,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="URL"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="University?" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hF5-FU-q55">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="University?" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hF5-FU-q55">
                                         <rect key="frame" x="27" y="1359" width="321" height="30"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="URL"/>
@@ -564,12 +564,25 @@ Al10 8LA</string>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRR-wP-7TR">
                                         <rect key="frame" x="139" y="1438" width="98" height="36"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="98" id="vj7-vN-AbC"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="98" id="vj7-vN-AbC"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <state key="normal" title="Add Event"/>
                                         <connections>
                                             <action selector="postEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i0C-jn-ODg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7PG-YS-d6z">
+                                        <rect key="frame" x="127" y="1498" width="122" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="122" id="8Si-jw-AGn"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <state key="normal" title="Delete Event">
+                                            <color key="titleColor" red="0.92549026010000002" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="deleteAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gau-ab-msU"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -592,6 +605,7 @@ Al10 8LA</string>
                                     <constraint firstItem="2v2-ls-G5a" firstAttribute="top" secondItem="2fb-jz-4JQ" secondAttribute="top" constant="100" id="G4q-oM-Rav"/>
                                     <constraint firstItem="bzv-Jo-STA" firstAttribute="centerX" secondItem="s8z-q9-E1Z" secondAttribute="centerX" id="HCt-AQ-CU4"/>
                                     <constraint firstItem="Z4n-Z7-MXq" firstAttribute="top" secondItem="N0w-yi-oZA" secondAttribute="bottom" constant="8" symbolic="YES" id="IVc-q8-ehf"/>
+                                    <constraint firstItem="7PG-YS-d6z" firstAttribute="top" secondItem="JRR-wP-7TR" secondAttribute="bottom" constant="24" id="Jjy-XB-HfO"/>
                                     <constraint firstItem="JRR-wP-7TR" firstAttribute="top" secondItem="s8z-q9-E1Z" secondAttribute="bottom" constant="139" id="Mt0-yM-urf"/>
                                     <constraint firstItem="bzv-Jo-STA" firstAttribute="top" secondItem="Z4n-Z7-MXq" secondAttribute="bottom" constant="49" id="RS3-nH-LHw"/>
                                     <constraint firstItem="hF5-FU-q55" firstAttribute="leading" secondItem="Yfe-Hz-7Ei" secondAttribute="leading" id="U8W-yz-Ieh"/>
@@ -599,6 +613,7 @@ Al10 8LA</string>
                                     <constraint firstItem="U9r-Wb-mGy" firstAttribute="top" secondItem="1bD-Hk-Qfs" secondAttribute="bottom" constant="55" id="aGo-6f-PcA"/>
                                     <constraint firstItem="N0w-yi-oZA" firstAttribute="centerX" secondItem="Z4n-Z7-MXq" secondAttribute="centerX" constant="-1" id="deE-zx-0WE"/>
                                     <constraint firstItem="bzv-Jo-STA" firstAttribute="centerX" secondItem="Z4n-Z7-MXq" secondAttribute="centerX" id="eIV-lp-6Bd"/>
+                                    <constraint firstItem="7PG-YS-d6z" firstAttribute="centerX" secondItem="JRR-wP-7TR" secondAttribute="centerX" id="eSe-E6-DPu"/>
                                     <constraint firstItem="Z4n-Z7-MXq" firstAttribute="leading" secondItem="2fb-jz-4JQ" secondAttribute="leading" constant="32" id="fLf-vo-4Ru"/>
                                     <constraint firstItem="JRR-wP-7TR" firstAttribute="top" secondItem="hF5-FU-q55" secondAttribute="bottom" constant="49" id="fYf-Es-yt3"/>
                                     <constraint firstItem="JRR-wP-7TR" firstAttribute="centerX" secondItem="s8z-q9-E1Z" secondAttribute="centerX" id="gW5-AK-ijt"/>
@@ -633,10 +648,12 @@ Al10 8LA</string>
                     </view>
                     <tabBarItem key="tabBarItem" title="Add Event" id="o6a-6t-EXd"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="1500"/>
+                    <size key="freeformSize" width="375" height="1600"/>
                     <connections>
+                        <outlet property="addEventOutlet" destination="JRR-wP-7TR" id="mx9-FB-iw2"/>
                         <outlet property="chooseImageOutlet" destination="5Hn-O2-14s" id="2ha-yp-xeZ"/>
                         <outlet property="dateText" destination="8RC-J3-gLJ" id="8LG-tt-MVV"/>
+                        <outlet property="deleteEventOutlet" destination="7PG-YS-d6z" id="GmO-3V-dHh"/>
                         <outlet property="eventExtraInfo" destination="Z4n-Z7-MXq" id="pDK-jV-Ywg"/>
                         <outlet property="eventLocation" destination="s8z-q9-E1Z" id="N5X-0G-U10"/>
                         <outlet property="eventTicketLink" destination="Yfe-Hz-7Ei" id="1ql-Ia-SDh"/>

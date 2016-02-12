@@ -215,48 +215,6 @@ class EditPostTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return true
     }
-    
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        
-        let selectedEvent = createdEvents[indexPath.row]
-        
-        if editingStyle == UITableViewCellEditingStyle.Delete {
-            
-            let alert = UIAlertController(title: "Delete!", message: "Are you sure you want to delete this event?", preferredStyle: UIAlertControllerStyle.Alert)
-            
-            alert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action) -> Void in
-                
-                self.createdEvents.removeAtIndex(indexPath.row)
-                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-                
-                let query = PFQuery(className: "Event")
-                
-                query.getObjectInBackgroundWithId(selectedEvent.eventID, block: { (object, error) -> Void in
-                    if error == nil {
-                        print("delete")
-                        object?.deleteInBackground()
-                    }
-                })
-                
-                
-            }))
-            
-            alert.addAction(UIAlertAction(title: "No", style: .Default, handler: { (action) -> Void in
-                
-                self.dismissViewControllerAnimated(true, completion: nil)
-                
-            }))
-            
-            
-            
-            
-            self.presentViewController(alert, animated: true, completion: nil)
-            
-            
-            
-            
-        }
-    }
 
     /*
     // Override to support conditional editing of the table view.
