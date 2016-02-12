@@ -160,6 +160,8 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
         
         datePicker.datePickerMode = .DateAndTime
         
+        datePicker.date = finalDate
+        
         dateText.inputView = datePicker
         
         datePicker.addTarget(self, action: "datePickerChanged:", forControlEvents: .ValueChanged)

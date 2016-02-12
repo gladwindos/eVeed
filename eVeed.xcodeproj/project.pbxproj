@@ -277,7 +277,7 @@
 				TargetAttributes = {
 					BE12041F1C1A061A00B9B9C1 = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = FSD88N3NS6;
+						DevelopmentTeam = 2Q9529P8CN;
 					};
 				};
 			};
@@ -446,7 +446,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/eVeed/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.gladwin.eVeed;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gladwindos.eveed;
 				PRODUCT_NAME = eVeed;
 				PROVISIONING_PROFILE = "";
 			};
@@ -466,7 +466,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/eVeed/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.gladwin.eVeed;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gladwindos.eveed;
 				PRODUCT_NAME = eVeed;
 				PROVISIONING_PROFILE = "";
 			};
