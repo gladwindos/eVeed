@@ -39,6 +39,10 @@
 		BEEDD1411C3702DF00B1F2DE /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEDD1401C3702DF00B1F2DE /* MenuTableViewController.swift */; };
 		BEEDD1431C37296A00B1F2DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEC2E7001C3335A6007CE64B /* Main.storyboard */; };
 		BEF4DB091C28BCA5005C2928 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF4DB081C28BCA5005C2928 /* WebViewController.swift */; };
+		BEF7576E1C6E3F7700E2CD37 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEF7576D1C6E3F7700E2CD37 /* Accounts.framework */; };
+		BEF757701C6E3F7E00E2CD37 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEF7576F1C6E3F7E00E2CD37 /* Social.framework */; };
+		BEF757731C6E474800E2CD37 /* ParseTwitterUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEF757711C6E474800E2CD37 /* ParseTwitterUtils.framework */; };
+		BEF757741C6E474800E2CD37 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEF757721C6E474800E2CD37 /* ParseUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +80,10 @@
 		BECF9C821C4FF872006AA222 /* EditPostTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPostTableViewController.swift; sourceTree = "<group>"; };
 		BEEDD1401C3702DF00B1F2DE /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		BEF4DB081C28BCA5005C2928 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		BEF7576D1C6E3F7700E2CD37 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		BEF7576F1C6E3F7E00E2CD37 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		BEF757711C6E474800E2CD37 /* ParseTwitterUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseTwitterUtils.framework; path = "parse-library-1.10.0/ParseTwitterUtils.framework"; sourceTree = "<group>"; };
+		BEF757721C6E474800E2CD37 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = "parse-library-1.10.0/ParseUI.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,9 +91,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEF757701C6E3F7E00E2CD37 /* Social.framework in Frameworks */,
+				BEF7576E1C6E3F7700E2CD37 /* Accounts.framework in Frameworks */,
 				BE12044C1C1A070300B9B9C1 /* libsqlite3.tbd in Frameworks */,
 				BE12044A1C1A06F800B9B9C1 /* libz.tbd in Frameworks */,
+				BEF757731C6E474800E2CD37 /* ParseTwitterUtils.framework in Frameworks */,
 				BE1204481C1A06F000B9B9C1 /* SystemConfiguration.framework in Frameworks */,
+				BEF757741C6E474800E2CD37 /* ParseUI.framework in Frameworks */,
 				BE1204461C1A06E600B9B9C1 /* StoreKit.framework in Frameworks */,
 				BE1204441C1A06DF00B9B9C1 /* Security.framework in Frameworks */,
 				BE1204421C1A06D900B9B9C1 /* QuartzCore.framework in Frameworks */,
@@ -138,6 +150,10 @@
 		BE12044D1C1A071C00B9B9C1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BEF757711C6E474800E2CD37 /* ParseTwitterUtils.framework */,
+				BEF757721C6E474800E2CD37 /* ParseUI.framework */,
+				BEF7576F1C6E3F7E00E2CD37 /* Social.framework */,
+				BEF7576D1C6E3F7700E2CD37 /* Accounts.framework */,
 				BE1204351C1A069900B9B9C1 /* Bolts.framework */,
 				BE1204361C1A069900B9B9C1 /* Parse.framework */,
 				BE12044E1C1A074900B9B9C1 /* System Frameworks */,

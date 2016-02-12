@@ -9,6 +9,7 @@
 import UIKit
 import Parse
 import Bolts
+import ParseTwitterUtils
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -29,6 +30,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // [Optional] Track statistics around application opens.
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
+        
+        PFTwitterUtils.initializeWithConsumerKey("NwAjYNiwUD87sY0spw7joQbGB",  consumerSecret:"Lr2AYd1gi6MQG4HT2Dw1jDCDijpOayu82f5Iu7h2x348SIWpsJ")
         
         return true
     }

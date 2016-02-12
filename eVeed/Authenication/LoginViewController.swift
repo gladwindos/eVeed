@@ -8,33 +8,31 @@
 
 import UIKit
 import Parse
+import ParseTwitterUtils
+import ParseUI
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var usernameField: UITextField!
     
     @IBOutlet weak var passwordField: UITextField!
+        
+    var activityIndicator = UIActivityIndicatorView()
     
     @IBAction func loginAction(sender: AnyObject) {
         
         let username = self.usernameField.text?.lowercaseString.stringByReplacingOccurrencesOfString(" ", withString: "")
         let password = self.passwordField.text
         
-        var activityIndicator = UIActivityIndicatorView()
         
-        activityIndicator = UIActivityIndicatorView(frame: self.view.frame)
-        activityIndicator.backgroundColor = UIColor(white: 1.0, alpha: 0.5)
-        activityIndicator.center = self.view.center
-        activityIndicator.hidesWhenStopped = true
-        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
-        view.addSubview(activityIndicator)
+        
         activityIndicator.startAnimating()
         
         UIApplication.sharedApplication().beginIgnoringInteractionEvents()
         
         PFUser.logInWithUsernameInBackground(username!, password: password!) { (user, error) -> Void in
             
-            activityIndicator.stopAnimating()
+            self.activityIndicator.stopAnimating()
             
             UIApplication.sharedApplication().endIgnoringInteractionEvents()
             
@@ -67,6 +65,54 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    @IBAction func twitterLoginAction(sender: AnyObject) {
+        
+        activityIndicator.startAnimating()
+        
+        PFTwitterUtils.logInWithBlock { (user: PFUser?, error: NSError?) -> Void in
+            
+            self.activityIndicator.stopAnimating()
+            
+            if let user = user {
+                if user.isNew {
+                    
+                    user.username = PFTwitterUtils.twitter()?.screenName
+                    
+                    user.saveInBackground()
+                    
+                    user["favourites"] = []
+                    
+                } else {
+                    
+                }
+                
+                let alert = UIAlertController(title: "eVeed", message: "You have logged in as \(user.username!)", preferredStyle: .Alert)
+                
+                alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
+                    
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        
+                        let tbVc: UITabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Tab Bar Controller") as! TabBarController
+                        
+                        tbVc.viewDidLoad()
+                        
+                        tbVc.selectedIndex = 1
+                        
+                        self.presentViewController(tbVc, animated: true, completion: nil)
+                    })
+                    
+                    
+                }))
+                
+                self.presentViewController(alert, animated: true, completion: nil)
+                
+                                
+            } else {
+                
+            }
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,6 +122,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         passwordField.delegate = self
         
+        activityIndicator = UIActivityIndicatorView(frame: self.view.frame)
+        activityIndicator.backgroundColor = UIColor(white: 1.0, alpha: 0.5)
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+        view.addSubview(activityIndicator)
     }
 
     override func didReceiveMemoryWarning() {
