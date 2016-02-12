@@ -23,7 +23,7 @@ class EventDetailsViewController: UIViewController {
     
     @IBAction func shareAction(sender: UIBarButtonItem) {
         
-        let aVC = UIActivityViewController(activityItems: ["Check out this event on Eveed!", eventTitle.text!, eventImage.image!], applicationActivities: nil)
+        let aVC = UIActivityViewController(activityItems: ["Check out \"\(eventTitle.text!)\" on eVeed!", eventImage.image!], applicationActivities: nil)
         
         self.presentViewController(aVC, animated: true, completion: nil)
         

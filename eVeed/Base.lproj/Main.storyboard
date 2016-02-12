@@ -1238,7 +1238,7 @@ Al10 8LA</string>
                                 <action selector="refreshAction:" destination="02K-8X-2Wa" id="i79-vm-LMx"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Menu" style="plain" id="gU8-HS-gbT">
+                        <barButtonItem key="rightBarButtonItem" title="Menu" id="gU8-HS-gbT">
                             <connections>
                                 <segue destination="a7Q-eg-jde" kind="show" id="gwu-XZ-2fj"/>
                             </connections>
@@ -1299,6 +1299,6 @@ Al10 8LA</string>
         <image name="eVeed_logo_white" width="498" height="450"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="g4W-h6-yPB"/>
+        <segue reference="G7t-MD-7uc"/>
     </inferredMetricsTieBreakers>
 </document>
