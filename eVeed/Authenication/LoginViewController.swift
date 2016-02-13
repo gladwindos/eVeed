@@ -82,6 +82,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     
                     user["favourites"] = []
                     
+                    user["admin"] = false
+                    
                 } else {
                     
                 }

@@ -69,6 +69,8 @@ class FeedViewController: UIViewController {
         
         var newImage: UIImage!
         
+        query.whereKey("reviewed", equalTo: true)
+        
         query.whereKey("eventDate", greaterThanOrEqualTo: NSDate())
         
         query.orderByAscending("eventDate")

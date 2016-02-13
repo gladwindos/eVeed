@@ -196,6 +196,8 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
     
     var editingPost = false
     
+    let isAdmin = PFUser.currentUser()!["admin"] as! Bool
+    
     @IBAction func postEvent(sender: UIButton) {
         
         if ((eventTitle.text?.isEmpty) == true) {
@@ -216,8 +218,6 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
             
             UIApplication.sharedApplication().beginIgnoringInteractionEvents()
             
-            
-            
             let post = PFObject(className: "Event")
             
             if editingPost == true {
@@ -228,7 +228,11 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
             
             post["title"] = eventTitle.text
             
+            if isAdmin == false {
+            
             post["userid"] = PFUser.currentUser()?.objectId
+                
+            }
             
             post["eventDate"] = finalDate
             
@@ -237,6 +241,15 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
             post["extraInfo"] = eventExtraInfo.text
             
             post["location"] = eventLocation.text
+            
+            if isAdmin == true {
+                
+                post["reviewed"] = true
+                
+            } else {
+                
+                post["reviewed"] = false
+            }
             
             if universityTextField.text == "University?" {
                 universityTextField.text = "Other"
@@ -260,7 +273,15 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
                 
                 if error == nil {
                     
-                    let alert = UIAlertController(title: "eVeed", message: "Your event has been posted successfully", preferredStyle: UIAlertControllerStyle.Alert)
+                    var message = "Your event has been submitted for review"
+                    
+                    if self.editingPost == true {
+                        
+                        message = "Your event has been updated"
+                        
+                    }
+                    
+                    let alert = UIAlertController(title: "eVeed", message: message, preferredStyle: UIAlertControllerStyle.Alert)
                     
                     
                     alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
@@ -292,9 +313,10 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
             
             chooseImageOutlet.setTitle("Choose Image", forState: UIControlState.Normal)
             
-            editingPost = false
+//            editingPost = false
         }
     }
+    
     
 
     override func viewDidLoad() {
@@ -307,12 +329,12 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
         activityIndicator.hidesWhenStopped = true
         activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
         view.addSubview(activityIndicator)
-        
+                
         if editingPost == false {
             
             deleteEventOutlet.hidden = true
             
-            addEventOutlet.setTitle("Add Event", forState: .Normal)
+            addEventOutlet.setTitle("Submit for Review", forState: .Normal)
             
         } else {
             

@@ -63,6 +63,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             newUser.password = password
             newUser.email = finalEmail
             newUser["favourites"] = []
+            newUser["admin"] = false
             
             // Sign up user asynchronously
             newUser.signUpInBackgroundWithBlock({ (success, error) -> Void in

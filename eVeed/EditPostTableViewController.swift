@@ -19,6 +19,7 @@ class EditPostTableViewController: UITableViewController {
 
     }
     
+    var reviewSegue = false
     
     var createdEvents: [Event] = []
     
@@ -42,7 +43,14 @@ class EditPostTableViewController: UITableViewController {
         
         let query = PFQuery(className: "Event")
         
-        query.whereKey("userid", equalTo: (currentUser?.objectId)!)
+        if currentUser!["admin"] as! Bool == false {
+            
+            query.whereKey("userid", equalTo: (currentUser?.objectId)!)
+        }
+        
+        if reviewSegue == true {
+            query.whereKey("reviewed", equalTo: false)
+        }
         
         query.orderByAscending("eventDate")
         

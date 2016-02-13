@@ -13,12 +13,19 @@ class MenuTableViewController: UITableViewController {
     
     // Maybe change to dictionary later and iterate over
     
-    let events = ["Add Event", "My Events", "Log Out"]
+    var events = ["Add Event", "My Events", "Log Out"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = PFUser.currentUser()?.username!
+        
+        let user = PFUser.currentUser()
+        
+        if user!["admin"] as! Bool == true {
+            
+            events.append("Review Events")
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -65,7 +72,7 @@ class MenuTableViewController: UITableViewController {
         
         self.showViewController(pVc, sender: self)
             
-        } else if indexPath.row == 1 {
+        } else if indexPath.row == 1 || indexPath.row == 3{
             
             performSegueWithIdentifier("edit post", sender: self)
             
@@ -121,6 +128,23 @@ class MenuTableViewController: UITableViewController {
 
         }
         
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "edit post" {
+            if let indexPath = self.tableView.indexPathForSelectedRow?.row {
+                
+                if indexPath == 3 {
+                    
+                    let editVc: EditPostTableViewController = segue.destinationViewController as! EditPostTableViewController
+                    
+                    editVc.reviewSegue = true
+                    
+                }
+                
+            }
+        }
     }
 
     /*

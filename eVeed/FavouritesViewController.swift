@@ -87,6 +87,8 @@ class FavouritesViewController: UIViewController {
         
         let query = PFQuery(className: "Event")
         
+        query.whereKey("reviewed", equalTo: true)
+        
         query.whereKey("objectId", containedIn: userFavourites)
         
         query.orderByAscending("eventDate")

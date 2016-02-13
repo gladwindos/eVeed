@@ -413,7 +413,7 @@
         <!--My Events-->
         <scene sceneID="g2s-VK-Eua">
             <objects>
-                <tableViewController title="My Events" id="9oF-8C-cFz" customClass="EditPostTableViewController" customModule="eVeed" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Edit Post Table" title="My Events" id="9oF-8C-cFz" customClass="EditPostTableViewController" customModule="eVeed" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="B6n-Kj-GOY">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -562,12 +562,12 @@ Al10 8LA</string>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRR-wP-7TR">
-                                        <rect key="frame" x="139" y="1438" width="98" height="36"/>
+                                        <rect key="frame" x="101" y="1438" width="175" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="98" id="vj7-vN-AbC"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                        <state key="normal" title="Add Event"/>
+                                        <state key="normal" title="Submit for Review"/>
                                         <connections>
                                             <action selector="postEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i0C-jn-ODg"/>
                                         </connections>
