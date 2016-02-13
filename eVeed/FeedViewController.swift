@@ -69,6 +69,8 @@ class FeedViewController: UIViewController {
         
         var newImage: UIImage!
         
+        query.whereKey("eventDate", greaterThanOrEqualTo: NSDate())
+        
         query.orderByAscending("eventDate")
         
         query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
