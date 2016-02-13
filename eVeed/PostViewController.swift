@@ -313,7 +313,6 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
             
             chooseImageOutlet.setTitle("Choose Image", forState: UIControlState.Normal)
             
-//            editingPost = false
         }
     }
     

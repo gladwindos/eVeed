@@ -20,12 +20,13 @@ class MenuTableViewController: UITableViewController {
         
         self.title = PFUser.currentUser()?.username!
         
-        let user = PFUser.currentUser()
-        
-        if user!["admin"] as! Bool == true {
+        if let isAdmin = PFUser.currentUser()!["admin"] {
             
-            events.append("Review Events")
+            if isAdmin as! Bool == true {
+                events.append("Review Events")
+            }
         }
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
