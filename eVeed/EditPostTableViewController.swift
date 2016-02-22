@@ -14,6 +14,13 @@ class EditPostTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        activityIndicator = UIActivityIndicatorView(frame: self.view.frame)
+        activityIndicator.backgroundColor = UIColor(white: 1.0, alpha: 0.5)
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+        view.addSubview(activityIndicator)
+        
         loadEvents()
         
 
@@ -27,12 +34,7 @@ class EditPostTableViewController: UITableViewController {
     
     func loadEvents() {
         
-        activityIndicator = UIActivityIndicatorView(frame: self.view.frame)
-        activityIndicator.backgroundColor = UIColor(white: 1.0, alpha: 0.5)
-        activityIndicator.center = self.view.center
-        activityIndicator.hidesWhenStopped = true
-        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
-        view.addSubview(activityIndicator)
+        
         activityIndicator.startAnimating()
         
         UIApplication.sharedApplication().beginIgnoringInteractionEvents()
@@ -165,6 +167,9 @@ class EditPostTableViewController: UITableViewController {
         
         let pVc: PostViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Add Post") as! PostViewController
         
+        pVc.view.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
+        
         let query = PFQuery(className: "Event")
         
         query.getObjectInBackgroundWithId(selectedEvent.eventID) { (object, error) -> Void in
@@ -210,7 +215,8 @@ class EditPostTableViewController: UITableViewController {
                 })
             }
             
-            pVc.viewDidLoad()
+            self.activityIndicator.stopAnimating()
+//            pVc.viewDidLoad()
         }
         
         

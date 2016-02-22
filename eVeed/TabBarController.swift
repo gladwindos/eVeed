@@ -16,6 +16,10 @@ class TabBarController: UITabBarController {
         // Do any additional setup after loading the view.
         
         setNewViewControllers()
+        
+        if PFUser.currentUser() == nil {
+            self.selectedIndex = 1
+        }
 
     }
     

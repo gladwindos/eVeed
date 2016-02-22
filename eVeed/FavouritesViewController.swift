@@ -47,6 +47,13 @@ class FavouritesViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        activityIndicator = UIActivityIndicatorView(frame: self.view.frame)
+        activityIndicator.backgroundColor = UIColor(white: 1.0, alpha: 0.5)
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+        view.addSubview(activityIndicator)
+        
         loadEVents()
         
     }
@@ -55,12 +62,7 @@ class FavouritesViewController: UIViewController {
     
     func loadEVents() {
         
-        activityIndicator = UIActivityIndicatorView(frame: self.view.frame)
-        activityIndicator.backgroundColor = UIColor(white: 1.0, alpha: 0.5)
-        activityIndicator.center = self.view.center
-        activityIndicator.hidesWhenStopped = true
-        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
-        view.addSubview(activityIndicator)
+        
         activityIndicator.startAnimating()
         
         UIApplication.sharedApplication().beginIgnoringInteractionEvents()
@@ -191,6 +193,9 @@ class FavouritesViewController: UIViewController {
                 
                 let infoVC: EventDetailsViewController = segue.destinationViewController as! EventDetailsViewController
                 
+                infoVC.view.addSubview(activityIndicator)
+                activityIndicator.startAnimating()
+                
                 let cellEventId = createdEvents[indexPath.row].eventID
                 
                 let query = PFQuery(className: "Event")
@@ -305,7 +310,8 @@ class FavouritesViewController: UIViewController {
                             
                         }
                         
-                        infoVC.viewDidLoad()
+                        self.activityIndicator.stopAnimating()
+//                        infoVC.viewDidLoad()
                     }
                 })
                 

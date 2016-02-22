@@ -43,6 +43,13 @@ class FeedViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        activityIndicator = UIActivityIndicatorView(frame: self.view.frame)
+        activityIndicator.backgroundColor = UIColor(white: 1.0, alpha: 0.5)
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+        view.addSubview(activityIndicator)
+        
         loadEvents()
         
     }
@@ -53,12 +60,7 @@ class FeedViewController: UIViewController {
     
     func loadEvents() {
         
-        activityIndicator = UIActivityIndicatorView(frame: self.view.frame)
-        activityIndicator.backgroundColor = UIColor(white: 1.0, alpha: 0.5)
-        activityIndicator.center = self.view.center
-        activityIndicator.hidesWhenStopped = true
-        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
-        view.addSubview(activityIndicator)
+        
         activityIndicator.startAnimating()
         
         UIApplication.sharedApplication().beginIgnoringInteractionEvents()
@@ -173,6 +175,10 @@ class FeedViewController: UIViewController {
                 
                 let infoVC: EventDetailsViewController = segue.destinationViewController as! EventDetailsViewController
                 
+                infoVC.view.addSubview(activityIndicator)
+                
+                activityIndicator.startAnimating()
+                
                 let cellEventId = createdEvents[indexPath.row].eventID
                 
                 let query = PFQuery(className: "Event")
@@ -284,8 +290,8 @@ class FeedViewController: UIViewController {
                             
                         }
                         
-                        
-                        infoVC.viewDidLoad()
+                        self.activityIndicator.stopAnimating()
+//                        infoVC.viewDidLoad()
                     }
                 })
                 
