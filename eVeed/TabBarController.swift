@@ -27,7 +27,10 @@ class TabBarController: UITabBarController {
     
     func setNewViewControllers() {
         
-        let vc1: UINavigationController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Feed Nav") as! UINavigationController
+//        let vc1: UINavigationController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Feed Nav") as! UINavigationController
+//        
+        
+        let vc1 = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Reveal") as! SWRevealViewController
         
         vc1.tabBarItem.image = UIImage(named: "Activity_Feed-50")
         

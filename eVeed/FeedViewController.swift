@@ -32,6 +32,10 @@ class FeedViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     
+    @IBOutlet weak var filterButton: UIBarButtonItem!
+    
+    var currentUni = "All"
+    
     
     @IBAction func refreshAction(sender: AnyObject) {
         
@@ -42,6 +46,15 @@ class FeedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        filterButton.target = self.revealViewController()
+        
+        filterButton.action = Selector("revealToggle:")
+        
+        if currentUni != "All" {
+            
+            self.title = currentUni
+        }
         
         activityIndicator = UIActivityIndicatorView(frame: self.view.frame)
         activityIndicator.backgroundColor = UIColor(white: 1.0, alpha: 0.5)
@@ -71,6 +84,10 @@ class FeedViewController: UIViewController {
         
         var newImage: UIImage!
         
+        if currentUni != "All" {
+            
+            query.whereKey("university", equalTo: currentUni)
+        }
         query.whereKey("reviewed", equalTo: true)
         
         query.whereKey("eventDate", greaterThanOrEqualTo: NSDate())

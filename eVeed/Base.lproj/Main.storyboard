@@ -8,6 +8,29 @@
     </dependencies>
     <scenes>
         <!--Feed-->
+        <scene sceneID="ToG-me-a90">
+            <objects>
+                <viewController storyboardIdentifier="Reveal" id="X5p-Sg-dlW" customClass="SWRevealViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="98E-jc-dXV"/>
+                        <viewControllerLayoutGuide type="bottom" id="Q0Z-IW-gZS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="si3-sc-Rdn">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Feed" id="OU1-vH-pk0"/>
+                    <connections>
+                        <segue destination="ijS-v9-y5d" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="js1-jK-SYJ"/>
+                        <segue destination="CDf-hf-fCd" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="INO-OC-6AU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2eJ-SP-37u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3722" y="-1595"/>
+        </scene>
+        <!--Feed-->
         <scene sceneID="N0a-Z1-iOT">
             <objects>
                 <viewController storyboardIdentifier="Feed" title="Feed" id="P1b-g5-Sgi" customClass="FeedViewController" customModule="eVeed" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,20 +39,20 @@
                         <viewControllerLayoutGuide type="bottom" id="f2a-VF-eel"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Xjh-cT-JiB">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="concert_background" translatesAutoresizingMaskIntoConstraints="NO" id="3uG-7i-QS2">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hpp-v5-l2L">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="wus-18-qUP">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tVu-aU-eb1">
-                                            <rect key="frame" x="0.0" y="67" width="600" height="476"/>
+                                            <rect key="frame" x="0.0" y="67" width="600" height="525"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="20" minimumInteritemSpacing="10" id="uE4-5H-EKO">
                                                 <size key="itemSize" width="280" height="463"/>
@@ -39,7 +62,7 @@
                                             </collectionViewFlowLayout>
                                             <cells>
                                                 <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Event Cell" id="TUZ-C2-nF1" customClass="EventCollectionViewCell" customModule="eVeed" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="7" width="280" height="463"/>
+                                                    <rect key="frame" x="20" y="31" width="280" height="463"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                         <rect key="frame" x="0.0" y="0.0" width="280" height="463"/>
@@ -117,7 +140,8 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" title="Feed" id="HkP-hB-ugb">
-                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="8kn-QU-8qd">
+                        <barButtonItem key="leftBarButtonItem" title="filter" id="ldR-G5-zSJ"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="8kn-QU-8qd">
                             <connections>
                                 <action selector="refreshAction:" destination="P1b-g5-Sgi" id="WfW-E6-FJN"/>
                             </connections>
@@ -126,11 +150,12 @@
                     <connections>
                         <outlet property="backgroundImageView" destination="3uG-7i-QS2" id="y53-cp-8k0"/>
                         <outlet property="collectionView" destination="tVu-aU-eb1" id="V0b-ga-1Xh"/>
+                        <outlet property="filterButton" destination="ldR-G5-zSJ" id="oeC-kJ-Ttb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="71J-4A-D5A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3926" y="-628"/>
+            <point key="canvasLocation" x="4072" y="-628"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="hu8-sr-LWw">
@@ -164,6 +189,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VTA-dW-30A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6236" y="-592"/>
+        </scene>
+        <!--Back TableVC-->
+        <scene sceneID="PFZ-Mu-pbM">
+            <objects>
+                <tableViewController id="ijS-v9-y5d" customClass="BackTableVC" customModule="eVeed" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="jYf-8O-2Zx">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="i3N-ed-hAe">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="i3N-ed-hAe" id="Xr1-K7-MK1">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="CDf-hf-fCd" kind="custom" identifier="filterUni" customClass="SWRevealViewControllerSeguePushController" id="xQP-oh-wrU"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ijS-v9-y5d" id="1Y1-cI-Ymm"/>
+                            <outlet property="delegate" destination="ijS-v9-y5d" id="ELw-bL-Qa2"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tSq-gK-iKH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4710" y="-1651"/>
         </scene>
         <!--Event Details-->
         <scene sceneID="hNC-IC-Rz8">
@@ -678,9 +734,9 @@ Al10 8LA</string>
                     </tabBar>
                     <connections>
                         <segue destination="RDp-ab-SAe" kind="relationship" relationship="viewControllers" id="D1P-bR-EV1"/>
-                        <segue destination="CDf-hf-fCd" kind="relationship" relationship="viewControllers" id="09L-to-WAc"/>
                         <segue destination="Kct-tr-fa9" kind="relationship" relationship="viewControllers" id="QN7-UK-S39"/>
                         <segue destination="8w6-wM-DTs" kind="relationship" relationship="viewControllers" id="n7D-EE-9B3"/>
+                        <segue destination="X5p-Sg-dlW" kind="relationship" relationship="viewControllers" id="qwM-tl-V96"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qY3-0b-so6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1142,7 +1198,7 @@ Al10 8LA</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ahi-q1-Xlc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2884" y="-648"/>
+            <point key="canvasLocation" x="3138" y="-500"/>
         </scene>
         <!--Favourites-->
         <scene sceneID="t3O-ob-L9K">
@@ -1250,14 +1306,14 @@ Al10 8LA</string>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Favourites" id="vEg-7K-TL6">
-                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="iix-iL-duF">
-                            <connections>
-                                <action selector="refreshAction:" destination="02K-8X-2Wa" id="i79-vm-LMx"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Menu" id="gU8-HS-gbT">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="gU8-HS-gbT">
                             <connections>
                                 <segue destination="a7Q-eg-jde" kind="show" id="gwu-XZ-2fj"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="iix-iL-duF">
+                            <connections>
+                                <action selector="refreshAction:" destination="02K-8X-2Wa" id="i79-vm-LMx"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1316,6 +1372,7 @@ Al10 8LA</string>
         <image name="eVeed_logo_white" width="498" height="450"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="G7t-MD-7uc"/>
+        <segue reference="xQP-oh-wrU"/>
+        <segue reference="g4W-h6-yPB"/>
     </inferredMetricsTieBreakers>
 </document>
