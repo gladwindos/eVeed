@@ -140,7 +140,7 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" title="Feed" id="HkP-hB-ugb">
-                        <barButtonItem key="leftBarButtonItem" title="filter" id="ldR-G5-zSJ"/>
+                        <barButtonItem key="leftBarButtonItem" title="Filter" id="ldR-G5-zSJ"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="8kn-QU-8qd">
                             <connections>
                                 <action selector="refreshAction:" destination="P1b-g5-Sgi" id="WfW-E6-FJN"/>

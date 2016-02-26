@@ -14,7 +14,7 @@ class BackTableVC: UITableViewController {
     var universities = [String]()
     
     override func viewDidLoad() {
-        universities = ["All", "Hertfordshire", "Bedfordshire"]
+        universities = ["All", "Hertfordshire", "Bedfordshire", "Northampton", "Wolverhampton"]
         
         
     }
@@ -34,7 +34,7 @@ class BackTableVC: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "filterUni" {
             
-            var indexpath: NSIndexPath = self.tableView.indexPathForSelectedRow!
+            let indexpath: NSIndexPath = self.tableView.indexPathForSelectedRow!
             
             let feedNavVC = segue.destinationViewController as! FeedNavigationController
             
