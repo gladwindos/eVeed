@@ -119,7 +119,7 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
     
     var universityTextFieldHolder = "University?"
     
-    let universityOptions = ["All", "Hertfordshire", "Bedfordshire", "Northampton", "Wolverhampton"]
+    let universityOptions = ["All", "Hertfordshire", "Bedfordshire", "Northampton", "Wolverhampton", "Other"]
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return universityOptions.count

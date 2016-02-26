@@ -949,9 +949,9 @@ Al10 8LA</string>
                                                         <segue destination="gx9-gs-Gd7" kind="presentation" id="BkV-Mr-RpG"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vtx-yu-NV7">
-                                                    <rect key="frame" x="72" y="311" width="126" height="30"/>
-                                                    <state key="normal" title="Log in with Twitter"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vtx-yu-NV7">
+                                                    <rect key="frame" x="13" y="295" width="246" height="54"/>
+                                                    <state key="normal" image="twitter-sign-in"/>
                                                     <connections>
                                                         <action selector="twitterLoginAction:" destination="RDp-ab-SAe" eventType="touchUpInside" id="LDR-wO-QqW"/>
                                                     </connections>
@@ -959,16 +959,16 @@ Al10 8LA</string>
                                             </subviews>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                             <constraints>
-                                                <constraint firstItem="vtx-yu-NV7" firstAttribute="leading" secondItem="4Eh-3P-3eW" secondAttribute="leading" constant="72" id="2fg-24-8kk"/>
+                                                <constraint firstItem="vtx-yu-NV7" firstAttribute="leading" secondItem="4Eh-3P-3eW" secondAttribute="leading" constant="13" id="2fg-24-8kk"/>
                                                 <constraint firstItem="ySx-6X-rw1" firstAttribute="centerX" secondItem="vHC-yk-ITN" secondAttribute="centerX" constant="-0.25" id="3be-7l-kxX"/>
                                                 <constraint firstAttribute="centerX" secondItem="vHC-yk-ITN" secondAttribute="centerX" constant="-0.5" id="6Gs-9F-whD"/>
                                                 <constraint firstItem="rTr-wu-5ef" firstAttribute="leading" secondItem="ySx-6X-rw1" secondAttribute="leading" id="6L3-xx-b7E"/>
                                                 <constraint firstItem="ySx-6X-rw1" firstAttribute="top" secondItem="vHC-yk-ITN" secondAttribute="bottom" constant="2" id="7Vl-bv-N0G"/>
                                                 <constraint firstItem="vHC-yk-ITN" firstAttribute="centerX" secondItem="ySx-6X-rw1" secondAttribute="centerX" id="7zE-de-l06"/>
-                                                <constraint firstItem="vtx-yu-NV7" firstAttribute="top" secondItem="hhn-iu-xcX" secondAttribute="bottom" constant="18" id="8qT-nq-97h"/>
+                                                <constraint firstItem="vtx-yu-NV7" firstAttribute="top" secondItem="hhn-iu-xcX" secondAttribute="bottom" constant="2" id="8qT-nq-97h"/>
                                                 <constraint firstItem="ySx-6X-rw1" firstAttribute="leading" secondItem="4Eh-3P-3eW" secondAttribute="leading" constant="13" id="Glh-UN-s1F"/>
                                                 <constraint firstItem="vHC-yk-ITN" firstAttribute="top" secondItem="4Eh-3P-3eW" secondAttribute="top" constant="20" id="Hyf-TR-OLN"/>
-                                                <constraint firstItem="vtx-yu-NV7" firstAttribute="bottom" secondItem="4Eh-3P-3eW" secondAttribute="bottomMargin" id="IvW-77-Scr"/>
+                                                <constraint firstItem="vtx-yu-NV7" firstAttribute="bottom" secondItem="4Eh-3P-3eW" secondAttribute="bottomMargin" constant="8" id="IvW-77-Scr"/>
                                                 <constraint firstItem="rTr-wu-5ef" firstAttribute="top" secondItem="ySx-6X-rw1" secondAttribute="bottom" constant="23" id="MiP-Bj-PWu"/>
                                                 <constraint firstItem="rTr-wu-5ef" firstAttribute="top" secondItem="ySx-6X-rw1" secondAttribute="bottom" constant="23" id="Shg-sy-G2O"/>
                                                 <constraint firstItem="NrL-Ve-YqB" firstAttribute="centerX" secondItem="1Mi-aq-4rg" secondAttribute="centerX" id="TA5-O2-sAQ"/>
@@ -977,7 +977,7 @@ Al10 8LA</string>
                                                 <constraint firstItem="ySx-6X-rw1" firstAttribute="centerX" secondItem="4Eh-3P-3eW" secondAttribute="centerX" id="YUz-jk-HnB"/>
                                                 <constraint firstItem="vHC-yk-ITN" firstAttribute="centerX" secondItem="ySx-6X-rw1" secondAttribute="centerX" constant="0.5" id="gSm-W7-dVr"/>
                                                 <constraint firstItem="ySx-6X-rw1" firstAttribute="trailing" secondItem="rTr-wu-5ef" secondAttribute="trailing" id="gb9-L9-hge"/>
-                                                <constraint firstItem="vtx-yu-NV7" firstAttribute="centerX" secondItem="hhn-iu-xcX" secondAttribute="centerX" id="gpe-aO-bR1"/>
+                                                <constraint firstItem="vtx-yu-NV7" firstAttribute="centerX" secondItem="hhn-iu-xcX" secondAttribute="centerX" constant="1" id="gpe-aO-bR1"/>
                                                 <constraint firstItem="NrL-Ve-YqB" firstAttribute="top" secondItem="rTr-wu-5ef" secondAttribute="bottom" constant="32" id="hPz-5a-Z6v"/>
                                                 <constraint firstItem="1Mi-aq-4rg" firstAttribute="top" secondItem="NrL-Ve-YqB" secondAttribute="bottom" constant="8" symbolic="YES" id="jOX-vF-l8X"/>
                                                 <constraint firstItem="NrL-Ve-YqB" firstAttribute="centerX" secondItem="rTr-wu-5ef" secondAttribute="centerX" constant="-0.5" id="kvH-x0-tvW"/>
@@ -1370,6 +1370,7 @@ Al10 8LA</string>
         <image name="concert_background" width="1920" height="1280"/>
         <image name="eVeed_logo_black" width="498" height="450"/>
         <image name="eVeed_logo_white" width="498" height="450"/>
+        <image name="twitter-sign-in" width="246" height="54"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="xQP-oh-wrU"/>

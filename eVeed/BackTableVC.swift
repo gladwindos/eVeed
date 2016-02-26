@@ -14,7 +14,7 @@ class BackTableVC: UITableViewController {
     var universities = [String]()
     
     override func viewDidLoad() {
-        universities = ["All", "Hertfordshire", "Bedfordshire", "Northampton", "Wolverhampton"]
+        universities = ["All", "Hertfordshire", "Bedfordshire", "Northampton", "Wolverhampton", "Other"]
         
         
     }
