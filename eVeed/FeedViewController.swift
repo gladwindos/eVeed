@@ -51,6 +51,12 @@ class FeedViewController: UIViewController {
         
         filterButton.action = Selector("revealToggle:")
         
+        if self.revealViewController() != nil {
+            
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
+        }
+        
         if currentUni != "All" {
             
             self.title = currentUni
